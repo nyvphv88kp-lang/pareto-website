@@ -19,9 +19,19 @@
 
   <style>
     .faq-answer { display: none; }
+
+    /* Calendar switching */
+    .cal-panel { display: none; }
+    .cal-panel.active { display: block; }
+    .cal-panel > div {
+      width: 100%;
+      height: 700px;
+      overflow: scroll;
+      border-radius: 12px;
+    }
+
     .payment-icon {
       height: 32px;
-      width: auto;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -118,23 +128,31 @@
       <div class="section-header" style="text-align:left; max-width:100%; margin:3rem 0 1.5rem;" data-aos="fade-up">
         <span class="section-label">Step 2</span>
         <h2 style="font-size:1.6rem;">Choose your time</h2>
-        <p style="margin-top:0.5rem; font-size:0.9rem;">All times shown in your local timezone. A Google Meet link is generated automatically with your confirmation.</p>
+        <p style="margin-top:0.5rem; font-size:0.9rem;">All times shown in your local timezone. A Google Meet link is sent automatically with your confirmation email.</p>
       </div>
 
-      <div class="calendar-wrapper" data-aos="fade-up">
-        <!-- REPLACE: embed your Cal.com widget here. -->
-        <!-- Instructions: Log into cal.com → Go to your event type → Share → Embed → Copy the iframe code and paste it here, replacing this placeholder block. -->
-        <div class="calendar-wrapper__placeholder">
-          <span>📅</span>
-          <h3 style="color:var(--navy);">Booking Calendar</h3>
-          <p>After setting up your Cal.com account, replace this block with your Cal.com embed code.</p>
-          <p style="font-size:0.82rem;">See <strong>SETUP-GUIDE.md</strong> in your project folder for step-by-step instructions.</p>
-          <br>
-          <p style="font-size:0.78rem; background:var(--bg); padding:1rem; border-radius:8px; max-width:500px; text-align:left;">
-            <strong>Example embed code (replace this placeholder):</strong><br><br>
-            &lt;iframe src="https://cal.com/YOUR-USERNAME/1to1-economics" style="width:100%;height:700px;border:none;"&gt;&lt;/iframe&gt;
-          </p>
+      <div class="calendar-wrapper" data-aos="fade-up" style="padding:0; background:transparent; border:none; box-shadow:none; min-height:auto;">
+
+        <!-- 1-to-1 Calendar -->
+        <div class="cal-panel active" id="cal-1to1">
+          <div id="my-cal-inline-1-to-1-tutoring-session"></div>
         </div>
+
+        <!-- Group Session Calendar -->
+        <div class="cal-panel" id="cal-group">
+          <div id="my-cal-inline-group-session"></div>
+        </div>
+
+        <!-- IA Support Calendar -->
+        <div class="cal-panel" id="cal-ia">
+          <div id="my-cal-inline-ib-internal-assessment-support"></div>
+        </div>
+
+        <!-- Extended Essay Calendar -->
+        <div class="cal-panel" id="cal-ee">
+          <div id="my-cal-inline-extended-essay-premium"></div>
+        </div>
+
       </div>
 
       <!-- Step 3: How It Works -->
@@ -245,7 +263,7 @@
               <span class="faq-trigger__icon">+</span>
             </button>
             <div class="faq-answer">
-              The Extended Essay is a high-stakes 4,000-word IB research paper with significant university-level expectations. As an active IB Examiner, I offer specialist guidance at every stage: topic and research question selection, argument structure, source integration, criterion-by-criterion review, and draft feedback. The premium price reflects the depth and specialisation of this service.
+              The Extended Essay is a high-stakes 4,000-word IB research paper. As an active IB Examiner, I offer specialist guidance at every stage: topic and research question selection, argument structure, source integration, criterion-by-criterion review, and draft feedback. The premium price reflects the depth and specialisation of this service.
             </div>
           </div>
 
@@ -275,7 +293,74 @@
     </div>
   </footer>
 
-  <!-- ======== SCRIPTS ======== -->
+  <!-- ======== CAL.COM EMBEDS ======== -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.eu/embed/embed.js", "init");
+
+    Cal("init", "1-to-1-tutoring-session", {origin:"https://app.cal.eu"});
+    Cal.ns["1-to-1-tutoring-session"]("inline", {
+      elementOrSelector:"#my-cal-inline-1-to-1-tutoring-session",
+      config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+      calLink: "pareto.education/1-to-1-tutoring-session",
+    });
+    Cal.ns["1-to-1-tutoring-session"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+
+    Cal("init", "group-session", {origin:"https://app.cal.eu"});
+    Cal.ns["group-session"]("inline", {
+      elementOrSelector:"#my-cal-inline-group-session",
+      config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+      calLink: "pareto.education/group-session",
+    });
+    Cal.ns["group-session"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+
+    Cal("init", "ib-internal-assessment-support", {origin:"https://app.cal.eu"});
+    Cal.ns["ib-internal-assessment-support"]("inline", {
+      elementOrSelector:"#my-cal-inline-ib-internal-assessment-support",
+      config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+      calLink: "pareto.education/ib-internal-assessment-support",
+    });
+    Cal.ns["ib-internal-assessment-support"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+
+    Cal("init", "extended-essay-premium", {origin:"https://app.cal.eu"});
+    Cal.ns["extended-essay-premium"]("inline", {
+      elementOrSelector:"#my-cal-inline-extended-essay-premium",
+      config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+      calLink: "pareto.education/extended-essay-premium",
+    });
+    Cal.ns["extended-essay-premium"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+
+  <!-- ======== SESSION SWITCHER ======== -->
+  <script>
+    const calMap = {
+      '1to1':  'cal-1to1',
+      'group': 'cal-group',
+      'ia':    'cal-ia',
+      'ee':    'cal-ee'
+    };
+
+    document.querySelectorAll('.session-type-card').forEach(function(card) {
+      card.addEventListener('click', function() {
+        // Update card selection
+        document.querySelectorAll('.session-type-card').forEach(function(c) {
+          c.classList.remove('selected');
+          c.setAttribute('aria-pressed', 'false');
+        });
+        card.classList.add('selected');
+        card.setAttribute('aria-pressed', 'true');
+
+        // Switch calendar panel
+        var session = card.getAttribute('data-session');
+        document.querySelectorAll('.cal-panel').forEach(function(p) {
+          p.classList.remove('active');
+        });
+        var target = document.getElementById(calMap[session]);
+        if (target) target.classList.add('active');
+      });
+    });
+  </script>
+
+  <!-- ======== SITE SCRIPTS ======== -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.min.js"></script>
   <script src="animations.js"></script>
 
