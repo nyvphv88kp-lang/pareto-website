@@ -35,6 +35,33 @@
     @keyframes aos-fallback { from { opacity: 0; } to { opacity: 1; transform: none; } }
     [data-aos] { animation: aos-fallback 0.4s ease 1.5s both; }
 
+    /* Session cards — larger, professional SVG icons */
+    .session-selector { gap: 1.25rem; }
+    .session-type-card {
+      padding: 2.5rem 1.5rem 2rem;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+    .session-type-card:hover { transform: translateY(-2px); box-shadow: 0 4px 24px rgba(15,39,68,.10); }
+    .session-type-card.selected { box-shadow: 0 0 0 4px rgba(201,164,74,.12); }
+    .session-type-card__icon {
+      width: 64px; height: 64px;
+      margin: 0 auto 1.2rem;
+      border-radius: 16px;
+      background: #0f2744;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .session-type-card__icon svg {
+      width: 30px; height: 30px;
+      stroke: #c9a44a; fill: none;
+      stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+    }
+    .session-type-card--premium .session-type-card__icon { background: #c9a44a; }
+    .session-type-card--premium .session-type-card__icon svg { stroke: #0f2744; }
+    .session-type-card h4 { font-size: 1.05rem; margin-bottom: 0.4rem; }
+    .session-type-card p { font-size: 0.85rem; }
+    .session-type-card .price { font-size: 1.4rem; margin-top: 0.8rem; }
+
     .faq-answer { display: none; }
 
     /* Calendar switching */
@@ -111,30 +138,38 @@
       <div class="session-selector" data-aos="fade-up" data-aos-delay="100" role="group" aria-label="Session type selection">
 
         <div class="session-type-card selected" role="button" tabindex="0" aria-pressed="true" data-session="1to1">
-          <div class="session-type-card__icon">📚</div>
+          <div class="session-type-card__icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          </div>
           <h4>1-to-1 Tutoring</h4>
-          <p style="font-size:0.78rem; color:var(--text-muted); margin:0.3rem 0;">60 min · Private</p>
+          <p>60 min · Private session</p>
           <div class="price">$55</div>
         </div>
 
         <div class="session-type-card" role="button" tabindex="0" aria-pressed="false" data-session="group">
-          <div class="session-type-card__icon">👥</div>
+          <div class="session-type-card__icon">
+            <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3 2.7-5.5 6-5.5s6 2.5 6 5.5"/><circle cx="17" cy="8" r="3"/><path d="M21 20c0-3-2.7-5.5-6-5.5"/></svg>
+          </div>
           <h4>Group Session</h4>
-          <p style="font-size:0.78rem; color:var(--text-muted); margin:0.3rem 0;">90 min · Up to 6</p>
-          <div class="price">$30 <span style="font-size:0.7rem; font-weight:500;">/student</span></div>
+          <p>90 min · Up to 6 students</p>
+          <div class="price">$30 <span style="font-size:0.8rem; font-weight:500;">/student</span></div>
         </div>
 
         <div class="session-type-card" role="button" tabindex="0" aria-pressed="false" data-session="ia">
-          <div class="session-type-card__icon">📝</div>
+          <div class="session-type-card__icon">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
           <h4>IA Support</h4>
-          <p style="font-size:0.78rem; color:var(--text-muted); margin:0.3rem 0;">60 min · IB IA Focus</p>
+          <p>60 min · IB IA focus</p>
           <div class="price">$65</div>
         </div>
 
         <div class="session-type-card session-type-card--premium" role="button" tabindex="0" aria-pressed="false" data-session="ee">
-          <div class="session-type-card__icon">🏆</div>
+          <div class="session-type-card__icon">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
           <h4>Extended Essay</h4>
-          <p style="font-size:0.78rem; color:var(--text-muted); margin:0.3rem 0;">60 min · IB EE Focus</p>
+          <p>60 min · IB EE focus</p>
           <div class="price">$75</div>
           <span class="premium-tag">Premium</span>
         </div>
