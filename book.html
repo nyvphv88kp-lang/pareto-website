@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
+    /* Hero — guaranteed visible regardless of style.css version */
     .page-hero {
       padding: 10rem 0 5rem;
       text-align: center;
@@ -26,17 +27,35 @@
     .page-hero h1 { color: #ffffff; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; line-height: 1.2; font-size: clamp(2.4rem, 5vw, 4rem); }
     .page-hero p  { color: rgba(255,255,255,.7); font-size: 1.05rem; margin-top: 0.8rem; }
     .page-hero .section-label { color: #c9a44a; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; display: block; margin-bottom: 0.6rem; }
+
+    /* Remove AOS hiding from hero content */
     .page-hero [data-aos] { opacity: 1 !important; transform: none !important; }
 
+    /* Fallback: if AOS fails to init, show all content after 1.5s via CSS animation */
     @keyframes aos-fallback { from { opacity: 0; } to { opacity: 1; transform: none; } }
     [data-aos] { animation: aos-fallback 0.4s ease 1.5s both; }
 
+    /* Session cards — larger, professional SVG icons */
     .session-selector { gap: 1.25rem; }
-    .session-type-card { padding: 2.5rem 1.5rem 2rem; border-radius: 20px; transition: all 0.3s ease; }
+    .session-type-card {
+      padding: 2.5rem 1.5rem 2rem;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
     .session-type-card:hover { transform: translateY(-2px); box-shadow: 0 4px 24px rgba(15,39,68,.10); }
     .session-type-card.selected { box-shadow: 0 0 0 4px rgba(201,164,74,.12); }
-    .session-type-card__icon { width: 64px; height: 64px; margin: 0 auto 1.2rem; border-radius: 16px; background: #0f2744; display: flex; align-items: center; justify-content: center; }
-    .session-type-card__icon svg { width: 30px; height: 30px; stroke: #c9a44a; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .session-type-card__icon {
+      width: 64px; height: 64px;
+      margin: 0 auto 1.2rem;
+      border-radius: 16px;
+      background: #0f2744;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .session-type-card__icon svg {
+      width: 30px; height: 30px;
+      stroke: #c9a44a; fill: none;
+      stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+    }
     .session-type-card--premium .session-type-card__icon { background: #c9a44a; }
     .session-type-card--premium .session-type-card__icon svg { stroke: #0f2744; }
     .session-type-card h4 { font-size: 1.05rem; margin-bottom: 0.4rem; }
@@ -44,13 +63,36 @@
     .session-type-card .price { font-size: 1.4rem; margin-top: 0.8rem; }
 
     .faq-answer { display: none; }
+
+    /* Calendar switching */
     .cal-panel { display: none; }
     .cal-panel.active { display: block; }
-    .cal-panel > div { width: 100%; height: 700px; overflow: scroll; border-radius: 12px; }
+    .cal-panel > div {
+      width: 100%;
+      height: 700px;
+      overflow: scroll;
+      border-radius: 12px;
+    }
+
+    .payment-icon {
+      height: 32px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 4px 12px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.04em;
+    }
   </style>
 </head>
 <body>
 
+  <!-- ======== NAVIGATION ======== -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="container nav__inner">
       <a href="index.html" class="nav__logo">Pareto<span>.</span></a>
@@ -74,6 +116,7 @@
     </div>
   </nav>
 
+  <!-- ======== HERO ======== -->
   <section class="page-hero" aria-labelledby="book-heading">
     <div class="container">
       <span class="section-label" data-aos="fade-down">Online Sessions</span>
@@ -82,9 +125,11 @@
     </div>
   </section>
 
+  <!-- ======== BOOKING ======== -->
   <section class="section" id="calendar" aria-label="Booking section">
     <div class="container">
 
+      <!-- Step 1: Session Type -->
       <div class="section-header" style="text-align:left; max-width:100%; margin-bottom:2rem;" data-aos="fade-up">
         <span class="section-label">Step 1</span>
         <h2 style="font-size:1.6rem;">Choose your session type</h2>
@@ -131,6 +176,7 @@
 
       </div>
 
+      <!-- Step 2: Calendar -->
       <div class="section-header" style="text-align:left; max-width:100%; margin:3rem 0 1.5rem;" data-aos="fade-up">
         <span class="section-label">Step 2</span>
         <h2 style="font-size:1.6rem;">Choose your time</h2>
@@ -138,20 +184,30 @@
       </div>
 
       <div class="calendar-wrapper" style="padding:0; background:transparent; border:none; box-shadow:none; min-height:auto;">
+
+        <!-- 1-to-1 Calendar -->
         <div class="cal-panel active" id="cal-1to1">
           <div id="my-cal-inline-1-to-1-tutoring-session"></div>
         </div>
+
+        <!-- Group Session Calendar -->
         <div class="cal-panel" id="cal-group">
           <div id="my-cal-inline-group-session"></div>
         </div>
+
+        <!-- IA Support Calendar -->
         <div class="cal-panel" id="cal-ia">
           <div id="my-cal-inline-ib-internal-assessment-support"></div>
         </div>
+
+        <!-- Extended Essay Calendar -->
         <div class="cal-panel" id="cal-ee">
           <div id="my-cal-inline-extended-essay-premium"></div>
         </div>
+
       </div>
 
+      <!-- Step 3: How It Works -->
       <div class="section-header" style="text-align:left; max-width:100%; margin:3rem 0 1.5rem;" data-aos="fade-up">
         <span class="section-label">Step 3</span>
         <h2 style="font-size:1.6rem;">How sessions work</h2>
@@ -175,14 +231,17 @@
         </div>
       </div>
 
-      <div data-aos="fade-up" style="margin-top:3rem;">
+      <!-- Payment Methods -->
+      <div data-aos="fade-up">
         <h3 style="text-align:center; margin-bottom:1.5rem; font-size:1rem; color:var(--text-muted); font-family:var(--font-body); font-weight:600; text-transform:uppercase; letter-spacing:0.08em;">Payment accepted via</h3>
         <div class="payment-logos">
 
+          <!-- VISA -->
           <span style="display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 18px;border-radius:8px;background:#1A1F71;">
             <span style="color:#fff;font-style:italic;font-weight:900;font-size:1.15rem;letter-spacing:1px;font-family:Arial,sans-serif;">VISA</span>
           </span>
 
+          <!-- Mastercard -->
           <span style="display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 14px;border-radius:8px;background:#fff;border:1px solid #e2e2e2;">
             <svg width="46" height="30" viewBox="0 0 46 30" fill="none">
               <circle cx="17" cy="15" r="13" fill="#EB001B"/>
@@ -191,20 +250,24 @@
             </svg>
           </span>
 
+          <!-- AMEX -->
           <span style="display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 18px;border-radius:8px;background:#006FCF;">
             <span style="color:#fff;font-weight:800;font-size:0.85rem;letter-spacing:2px;font-family:Arial,sans-serif;">AMEX</span>
           </span>
 
+          <!-- Apple Pay -->
           <span style="display:inline-flex;align-items:center;justify-content:center;gap:5px;height:44px;padding:0 18px;border-radius:8px;background:#000;">
             <svg width="16" height="20" viewBox="0 0 16 20" fill="white"><path d="M13.5 10.6c0-2.5 2-3.7 2.1-3.8-1.1-1.6-2.9-1.8-3.5-1.9-1.5-.15-2.9.9-3.65.9-.75 0-1.9-.87-3.1-.85C3.55 5.08 1.8 6 .85 7.5-.15 9.15-.15 11.6 1 14c.7 1.6 3.15 5.5 4.55 5.5.65 0 1.5-.45 2.6-.45 1.1 0 1.6.45 2.6.45 1.4 0 3.7-3.85 4.3-5.5-.05-.02-2.6-1-2.55-3.4zM11 3.5c.6-.73 1-1.75.88-2.75-.85.04-1.9.57-2.5 1.28-.55.65-1.04 1.68-.91 2.66.93.07 1.93-.47 2.53-1.2z"/></svg>
             <span style="color:#fff;font-weight:500;font-size:0.95rem;font-family:-apple-system,Arial,sans-serif;">Pay</span>
           </span>
 
+          <!-- Google Pay -->
           <span style="display:inline-flex;align-items:center;justify-content:center;gap:4px;height:44px;padding:0 16px;border-radius:8px;background:#fff;border:1px solid #e2e2e2;">
             <svg width="18" height="18" viewBox="0 0 18 18"><path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#4285F4"/><path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" fill="#34A853"/><path d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" fill="#FBBC05"/><path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 6.29C4.672 4.163 6.656 3.58 9 3.58z" fill="#EA4335"/></svg>
             <span style="color:#5F6368;font-weight:500;font-size:0.95rem;font-family:Arial,sans-serif;">Pay</span>
           </span>
 
+          <!-- Stripe -->
           <span style="display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 18px;border-radius:8px;background:#635BFF;">
             <span style="color:#fff;font-weight:600;font-size:0.95rem;letter-spacing:0.02em;font-family:Arial,sans-serif;">Stripe</span>
           </span>
@@ -213,6 +276,7 @@
         <p style="text-align:center; font-size:0.78rem; color:var(--text-muted); margin-top:0.5rem;">Secure payments processed by Stripe. All currencies accepted — billed in USD.</p>
       </div>
 
+      <!-- Google Meet Banner -->
       <div class="meet-banner" data-aos="fade-up" style="margin-top:2rem;">
         <div class="meet-banner__icon">📹</div>
         <div>
@@ -221,38 +285,69 @@
         </div>
       </div>
 
+      <!-- FAQ -->
       <div style="margin-top:4rem;">
         <h2 data-aos="fade-up" style="margin-bottom:2rem;">Frequently asked questions</h2>
         <div class="faq-list" data-aos="fade-up">
 
           <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">What if I need to reschedule?<span class="faq-trigger__icon">+</span></button>
-            <div class="faq-answer">You can reschedule via the link in your confirmation email up to 24 hours before the session. Cancellations within 24 hours are non-refundable.</div>
+            <button class="faq-trigger" aria-expanded="false">
+              What if I need to reschedule?
+              <span class="faq-trigger__icon">+</span>
+            </button>
+            <div class="faq-answer">
+              You can reschedule via the link in your confirmation email up to 24 hours before the session. Cancellations within 24 hours are non-refundable.
+            </div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">What currencies do you accept?<span class="faq-trigger__icon">+</span></button>
-            <div class="faq-answer">All sessions are priced in USD. Stripe automatically handles currency conversion — you can pay with any major card regardless of your local currency.</div>
+            <button class="faq-trigger" aria-expanded="false">
+              What currencies do you accept?
+              <span class="faq-trigger__icon">+</span>
+            </button>
+            <div class="faq-answer">
+              All sessions are priced in USD. Stripe automatically handles currency conversion — you can pay with any major card regardless of your local currency.
+            </div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">Are sessions recorded?<span class="faq-trigger__icon">+</span></button>
-            <div class="faq-answer">Sessions can be recorded with your explicit consent. A copy would be shared with you via Google Drive after the session for review and revision purposes.</div>
+            <button class="faq-trigger" aria-expanded="false">
+              Are sessions recorded?
+              <span class="faq-trigger__icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Sessions can be recorded with your explicit consent. A copy would be shared with you via Google Drive after the session for review and revision purposes.
+            </div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">How many students are in a group session?<span class="faq-trigger__icon">+</span></button>
-            <div class="faq-answer">Group sessions require a minimum of 2 students and have a maximum of 4. This keeps the session focused and ensures every student has the opportunity to ask questions and receive meaningful feedback.</div>
+            <button class="faq-trigger" aria-expanded="false">
+              How many students are in a group session?
+              <span class="faq-trigger__icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Group sessions require a minimum of 2 students and have a maximum of 4. This keeps the session focused and ensures every student has the opportunity to ask questions and receive meaningful feedback.
+            </div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">Do I need to prepare anything before my first session?<span class="faq-trigger__icon">+</span></button>
-            <div class="faq-answer">It helps to have your most recent marked work (tests, essays, or IA drafts) ready to share on screen. If you don't have anything, that's fine — we'll start with a diagnostic conversation to identify the best focus areas.</div>
+            <button class="faq-trigger" aria-expanded="false">
+              Do I need to prepare anything before my first session?
+              <span class="faq-trigger__icon">+</span>
+            </button>
+            <div class="faq-answer">
+              It helps to have your most recent marked work (tests, essays, or IA drafts) ready to share on screen. If you don't have anything, that's fine — we'll start with a diagnostic conversation to identify the best focus areas.
+            </div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">What is the Extended Essay Premium service?<span class="faq-trigger__icon">+</span></button>
-            <div class="faq-answer">The Extended Essay is a high-stakes 4,000-word IB research paper with real university-level expectations. I offer specialist guidance at every stage: topic and research question selection, argument structure, source integration, criterion-by-criterion review, and draft feedback. The premium price reflects the depth and specialisation of this service.</div>
+            <button class="faq-trigger" aria-expanded="false">
+              What is the Extended Essay Premium service?
+              <span class="faq-trigger__icon">+</span>
+            </button>
+            <div class="faq-answer">
+              The Extended Essay is a high-stakes 4,000-word IB research paper with real university-level expectations. I offer specialist guidance at every stage: topic and research question selection, argument structure, source integration, criterion-by-criterion review, and draft feedback. The premium price reflects the depth and specialisation of this service.
+            </div>
           </div>
 
         </div>
@@ -261,55 +356,137 @@
     </div>
   </section>
 
+  <!-- ======== FOOTER ======== -->
   <footer class="footer" role="contentinfo">
     <div class="container">
-      <div class="footer__inner">
-        <div class="footer__logo">Pareto<span>.</span></div>
-        <nav class="footer__links" aria-label="Footer navigation">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="resources.html">Resources</a>
-          <a href="book.html">Book a Session</a>
-          <a href="privacy.html">Privacy Policy</a>
-        </nav>
+      <div class="footer__grid">
+
+        <div class="footer__brand">
+          <div class="footer__logo-lockup">
+            <span class="footer__logo-name">Pareto</span>
+            <span class="footer__logo-bullet">●</span>
+            <span class="footer__logo-economics">Economics</span>
+          </div>
+          <p class="footer__brand-desc">Online Economics tuition for IB, IGCSE and A-Level students. Excellence through insight.</p>
+        </div>
+
+        <div class="footer__col">
+          <p class="footer__col-title">Navigate</p>
+          <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="resources.html">Resources</a>
+            <a href="book.html">Book a Session</a>
+          </nav>
+        </div>
+
+        <div class="footer__col">
+          <p class="footer__col-title">Programmes</p>
+          <nav>
+            <a href="book.html">IB Economics SL/HL</a>
+            <a href="book.html">IGCSE Economics</a>
+            <a href="book.html">A-Level Economics</a>
+            <a href="book.html">IA &amp; EE Coaching</a>
+            <a href="book.html">Group Seminars</a>
+          </nav>
+        </div>
+
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <nav>
+            <a href="mailto:info@pareto.education">info@pareto.education</a>
+            <span>By appointment</span>
+            <span>Worldwide · CET</span>
+          </nav>
+        </div>
+
       </div>
+
       <div class="footer__bottom">
-        <p class="footer__copy">© 2025 Pareto. All rights reserved.</p>
-        <p class="footer__tagline">"Excellence through insight."</p>
+        <p class="footer__copy">© 2026 Pareto Economics. All rights reserved. · <a href="privacy.html">Privacy</a> · <a href="#">Terms</a></p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social-btn" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="footer__social-btn" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="footer__social-btn" aria-label="YouTube">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </footer>
 
+  <!-- ======== CAL.COM EMBEDS ======== -->
   <script type="text/javascript">
     (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.eu/embed/embed.js", "init");
+
     Cal("init", "1-to-1-tutoring-session", {origin:"https://app.cal.eu"});
-    Cal.ns["1-to-1-tutoring-session"]("inline", { elementOrSelector:"#my-cal-inline-1-to-1-tutoring-session", config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"}, calLink: "pareto.education/1-to-1-tutoring-session" });
+    Cal.ns["1-to-1-tutoring-session"]("inline", {
+      elementOrSelector:"#my-cal-inline-1-to-1-tutoring-session",
+      config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+      calLink: "pareto.education/1-to-1-tutoring-session",
+    });
     Cal.ns["1-to-1-tutoring-session"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+
     Cal("init", "group-session", {origin:"https://app.cal.eu"});
-    Cal.ns["group-session"]("inline", { elementOrSelector:"#my-cal-inline-group-session", config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"}, calLink: "pareto.education/group-session" });
+    Cal.ns["group-session"]("inline", {
+      elementOrSelector:"#my-cal-inline-group-session",
+      config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+      calLink: "pareto.education/group-session",
+    });
     Cal.ns["group-session"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+
     Cal("init", "ib-internal-assessment-support", {origin:"https://app.cal.eu"});
-    Cal.ns["ib-internal-assessment-support"]("inline", { elementOrSelector:"#my-cal-inline-ib-internal-assessment-support", config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"}, calLink: "pareto.education/ib-internal-assessment-support" });
+    Cal.ns["ib-internal-assessment-support"]("inline", {
+      elementOrSelector:"#my-cal-inline-ib-internal-assessment-support",
+      config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+      calLink: "pareto.education/ib-internal-assessment-support",
+    });
     Cal.ns["ib-internal-assessment-support"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+
     Cal("init", "extended-essay-premium", {origin:"https://app.cal.eu"});
-    Cal.ns["extended-essay-premium"]("inline", { elementOrSelector:"#my-cal-inline-extended-essay-premium", config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"}, calLink: "pareto.education/extended-essay-premium" });
+    Cal.ns["extended-essay-premium"]("inline", {
+      elementOrSelector:"#my-cal-inline-extended-essay-premium",
+      config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+      calLink: "pareto.education/extended-essay-premium",
+    });
     Cal.ns["extended-essay-premium"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
   </script>
 
+  <!-- ======== SESSION SWITCHER ======== -->
   <script>
-    const calMap = { '1to1':'cal-1to1', 'group':'cal-group', 'ia':'cal-ia', 'ee':'cal-ee' };
+    const calMap = {
+      '1to1':  'cal-1to1',
+      'group': 'cal-group',
+      'ia':    'cal-ia',
+      'ee':    'cal-ee'
+    };
+
     document.querySelectorAll('.session-type-card').forEach(function(card) {
       card.addEventListener('click', function() {
-        document.querySelectorAll('.session-type-card').forEach(function(c) { c.classList.remove('selected'); c.setAttribute('aria-pressed','false'); });
-        card.classList.add('selected'); card.setAttribute('aria-pressed','true');
+        // Update card selection
+        document.querySelectorAll('.session-type-card').forEach(function(c) {
+          c.classList.remove('selected');
+          c.setAttribute('aria-pressed', 'false');
+        });
+        card.classList.add('selected');
+        card.setAttribute('aria-pressed', 'true');
+
+        // Switch calendar panel
         var session = card.getAttribute('data-session');
-        document.querySelectorAll('.cal-panel').forEach(function(p) { p.classList.remove('active'); });
+        document.querySelectorAll('.cal-panel').forEach(function(p) {
+          p.classList.remove('active');
+        });
         var target = document.getElementById(calMap[session]);
         if (target) target.classList.add('active');
       });
     });
   </script>
 
+  <!-- ======== SITE SCRIPTS ======== -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.min.js"></script>
   <script src="animations.js"></script>
 
