@@ -18,6 +18,23 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
+    /* Hero — guaranteed visible regardless of style.css version */
+    .page-hero {
+      padding: 10rem 0 5rem;
+      text-align: center;
+      background: linear-gradient(135deg, #0f2744 0%, #1a3a5e 100%);
+    }
+    .page-hero h1 { color: #ffffff; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; line-height: 1.2; font-size: clamp(2.4rem, 5vw, 4rem); }
+    .page-hero p  { color: rgba(255,255,255,.7); font-size: 1.05rem; margin-top: 0.8rem; }
+    .page-hero .section-label { color: #c9a44a; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; display: block; margin-bottom: 0.6rem; }
+
+    /* Remove AOS hiding from hero content */
+    .page-hero [data-aos] { opacity: 1 !important; transform: none !important; }
+
+    /* Fallback: if AOS fails to init, show all content after 1.5s via CSS animation */
+    @keyframes aos-fallback { from { opacity: 0; } to { opacity: 1; transform: none; } }
+    [data-aos] { animation: aos-fallback 0.4s ease 1.5s both; }
+
     .faq-answer { display: none; }
 
     /* Calendar switching */
@@ -131,7 +148,7 @@
         <p style="margin-top:0.5rem; font-size:0.9rem;">All times shown in your local timezone. A Google Meet link is sent automatically with your confirmation email.</p>
       </div>
 
-      <div class="calendar-wrapper" data-aos="fade-up" style="padding:0; background:transparent; border:none; box-shadow:none; min-height:auto;">
+      <div class="calendar-wrapper" style="padding:0; background:transparent; border:none; box-shadow:none; min-height:auto;">
 
         <!-- 1-to-1 Calendar -->
         <div class="cal-panel active" id="cal-1to1">
@@ -341,6 +358,7 @@
 
     document.querySelectorAll('.session-type-card').forEach(function(card) {
       card.addEventListener('click', function() {
+        // Update card selection
         document.querySelectorAll('.session-type-card').forEach(function(c) {
           c.classList.remove('selected');
           c.setAttribute('aria-pressed', 'false');
@@ -348,6 +366,7 @@
         card.classList.add('selected');
         card.setAttribute('aria-pressed', 'true');
 
+        // Switch calendar panel
         var session = card.getAttribute('data-session');
         document.querySelectorAll('.cal-panel').forEach(function(p) {
           p.classList.remove('active');
