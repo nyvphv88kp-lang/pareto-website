@@ -358,7 +358,6 @@
 
     document.querySelectorAll('.session-type-card').forEach(function(card) {
       card.addEventListener('click', function() {
-        // Update card selection
         document.querySelectorAll('.session-type-card').forEach(function(c) {
           c.classList.remove('selected');
           c.setAttribute('aria-pressed', 'false');
@@ -366,7 +365,6 @@
         card.classList.add('selected');
         card.setAttribute('aria-pressed', 'true');
 
-        // Switch calendar panel
         var session = card.getAttribute('data-session');
         document.querySelectorAll('.cal-panel').forEach(function(p) {
           p.classList.remove('active');
