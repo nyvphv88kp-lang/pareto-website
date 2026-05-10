@@ -68,28 +68,6 @@
     .pareto-principle-card h4 { color: var(--gold); font-size: 1rem; margin-bottom: 0.6rem; }
     .pareto-principle-card p { font-size: 0.875rem; color: rgba(255,255,255,.75); line-height: 1.7; }
 
-    .faculty-grid { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem; }
-    .faculty-card {
-      display: flex; align-items: center; gap: 1rem;
-      padding: 1rem 1.25rem;
-      background: #fff; border: 1px solid #e2e2e2; border-radius: 14px;
-    }
-    .faculty-avatar {
-      width: 52px; height: 52px; border-radius: 50%;
-      background: var(--navy);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; color: var(--gold);
-      flex-shrink: 0;
-    }
-    .faculty-name { font-weight: 600; font-size: 0.95rem; }
-    .faculty-role { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.15rem; }
-    .faculty-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.35rem; }
-    .faculty-tag {
-      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em;
-      background: rgba(15,39,68,.07); color: var(--navy);
-      border-radius: 4px; padding: 2px 7px;
-    }
-
     /* ── Section 3: Achievement Ticker ── */
     .achievement-ticker { background: var(--navy); padding: 4rem 0; overflow: hidden; }
     .ticker-label {
@@ -179,12 +157,12 @@
       <div class="about-content">
 
         <!-- Photo -->
-        <div class="about-photo" data-aos="fade-right">
-          <div class="about-photo__frame">
+        <div class="about-photo" data-aos="fade-right" style="max-width:320px;">
+          <div class="about-photo__frame" style="aspect-ratio:3/4;">
             <img
               src="assets/images/tutor-photo.jpg"
               alt="Ms. C. Bolito — Lead Tutor & Founder"
-              style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"
+              style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:inherit;"
               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
             />
             <div class="about-photo__placeholder" style="display:none;">
@@ -277,7 +255,7 @@
     <div class="container">
       <div class="philosophy-layout">
 
-        <!-- Left: Philosophy + Faculty -->
+        <!-- Left: Philosophy -->
         <div data-aos="fade-right">
           <span class="section-label">Our Approach</span>
           <h2 style="margin-bottom:1.5rem;">Teaching Philosophy</h2>
@@ -293,34 +271,9 @@
               Learning should be demanding and genuinely enjoyable. Our sessions use live examples, current economic events, and targeted practice — not passive re-teaching. Every session ends with something concrete: a skill, a model, a technique that moves the grade. No filler. No vague revision plans. Just focused, productive work.
             </p>
           </div>
-
-          <!-- Faculty -->
-          <div style="margin-top:3rem;">
-            <h3 style="font-size:1.15rem;margin-bottom:0.4rem;">The Pareto Faculty</h3>
-            <p style="font-size:0.875rem;color:var(--text-muted);margin-bottom:1.25rem;">Our sessions are delivered by curriculum-trained educators who combine academic rigour with real-world Economics experience. Every Pareto tutor is exam-literate and results-focused.</p>
-
-            <div class="faculty-grid">
-              <div class="faculty-card">
-                <div class="faculty-avatar">CB</div>
-                <div>
-                  <div class="faculty-name">Ms. C. Bolito</div>
-                  <div class="faculty-role">Lead Tutor &amp; Founder · IB Examiner</div>
-                  <div class="faculty-tags">
-                    <span class="faculty-tag">IB SL/HL</span>
-                    <span class="faculty-tag">IGCSE</span>
-                    <span class="faculty-tag">A-Level</span>
-                    <span class="faculty-tag">AP Micro</span>
-                    <span class="faculty-tag">AP Macro</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.75rem;">As Pareto grows, our faculty expands — all held to the same standard of academic excellence and examiner-level insight.</p>
-          </div>
         </div>
 
-        <!-- Right: Classroom photo + Pareto principle card -->
+        <!-- Right: Classroom photo + captions -->
         <div data-aos="fade-left" data-aos-delay="100">
           <div class="team-photo-wrapper">
             <img
@@ -332,6 +285,11 @@
               <span>🖼️</span>
               <p>Upload a classroom photo as<br><strong>assets/images/team-teaching.jpg</strong></p>
             </div>
+          </div>
+
+          <div style="margin-top:1.25rem; padding:1.25rem 1.5rem; border-left:3px solid var(--gold); background:#fff; border-radius:0 12px 12px 0;">
+            <h4 style="font-size:0.95rem; font-weight:700; color:var(--navy); margin-bottom:0.5rem;">The Pareto Faculty</h4>
+            <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.7; margin:0;">Our sessions are delivered by curriculum-trained educators who combine academic rigour with real-world Economics experience. Every Pareto tutor is exam-literate and results-focused.</p>
           </div>
 
           <div class="pareto-principle-card">
