@@ -26,7 +26,7 @@
     @keyframes aos-fallback { from { opacity: 0; } to { opacity: 1; transform: none; } }
     [data-aos] { animation: aos-fallback 0.4s ease 1.5s both; }
 
-    /* ── Combined Profile + Philosophy layout ── */
+    /* ── Main two-column layout ── */
     .profile-philosophy-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -44,13 +44,7 @@
       gap: 1.25rem;
       margin-bottom: 2rem;
     }
-    .profile-photo-small {
-      flex-shrink: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.6rem;
-    }
+    .profile-photo-small { flex-shrink: 0; }
     .profile-photo-small img {
       width: 100px;
       height: 130px;
@@ -60,14 +54,25 @@
       display: block;
     }
 
-    /* ── Classroom photo (right col) ── */
+    /* ── Sub-layout: cards LEFT, classroom photo RIGHT ── */
+    .philosophy-sub-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      align-items: start;
+      margin-top: 2rem;
+    }
+    @media (max-width: 1100px) {
+      .philosophy-sub-layout { grid-template-columns: 1fr; }
+    }
+
+    /* ── Classroom photo ── */
     .team-photo-wrapper {
-      border-radius: 20px;
+      border-radius: 16px;
       overflow: hidden;
-      aspect-ratio: 4/3;
+      aspect-ratio: 3/4;
       background: #ddd;
       position: relative;
-      margin-top: 2rem;
     }
     .team-photo-wrapper img {
       width: 100%; height: 100%;
@@ -80,18 +85,28 @@
       text-align: center; gap: 0.75rem;
       color: #888; background: #e8e8e8;
     }
-    .team-photo-placeholder span { font-size: 2.5rem; }
-    .team-photo-placeholder p { font-size: 0.85rem; line-height: 1.5; }
+    .team-photo-placeholder span { font-size: 2rem; }
+    .team-photo-placeholder p { font-size: 0.8rem; line-height: 1.5; }
+
+    /* ── Pareto cards ── */
+    .pareto-faculty-card {
+      padding: 1.25rem 1.5rem;
+      border-left: 3px solid var(--gold);
+      background: #fff;
+      border-radius: 0 12px 12px 0;
+      margin-bottom: 1rem;
+    }
+    .pareto-faculty-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
+    .pareto-faculty-card p  { font-size: 0.82rem; color: var(--text-muted); line-height: 1.7; margin: 0; }
 
     .pareto-principle-card {
-      margin-top: 1.5rem;
       background: var(--navy);
       color: #fff;
-      border-radius: 16px;
-      padding: 1.5rem 1.75rem;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
     }
-    .pareto-principle-card h4 { color: var(--gold); font-size: 1rem; margin-bottom: 0.6rem; }
-    .pareto-principle-card p { font-size: 0.875rem; color: rgba(255,255,255,.75); line-height: 1.7; }
+    .pareto-principle-card h4 { color: var(--gold); font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .pareto-principle-card p  { font-size: 0.82rem; color: rgba(255,255,255,.75); line-height: 1.7; margin: 0; }
 
     /* ── Section 3: Achievement Ticker ── */
     .achievement-ticker { background: var(--navy); padding: 4rem 0; overflow: hidden; }
@@ -184,7 +199,6 @@
         <!-- ── LEFT: Photo + Name + Credentials ── -->
         <div>
 
-          <!-- Photo inline with name — same height as name block -->
           <div class="profile-header">
             <div class="profile-photo-small">
               <img
@@ -201,7 +215,6 @@
             </div>
           </div>
 
-          <!-- Credential cards -->
           <div class="about-credentials">
 
             <div class="credential-item" style="grid-column: 1 / -1;">
@@ -240,57 +253,56 @@
 
         </div>
 
-        <!-- ── RIGHT: Teaching Philosophy + Classroom photo ── -->
+        <!-- ── RIGHT: Philosophy + sub-layout (cards | photo) ── -->
         <div data-aos="fade-left">
           <span class="section-label">Our Approach</span>
-          <h2 style="margin-bottom:1.5rem;">Teaching Philosophy</h2>
+          <h2 style="margin-bottom:1.25rem;">Teaching Philosophy</h2>
 
-          <div style="display:flex; flex-direction:column; gap:1rem; color:var(--text); line-height:1.8; font-size:0.97rem;">
+          <div style="display:flex; flex-direction:column; gap:0.9rem; color:var(--text); line-height:1.8; font-size:0.97rem;">
             <p>
-              I came to teaching from the private sector, and that experience shapes every session I run. Economics is not an abstract academic exercise — it is the logic underpinning every business decision, policy choice, and market movement. When a student grasps that connection, the subject stops being difficult and becomes genuinely compelling. My job is to make that click happen, fast.
+              Economics is not a subject you memorise — it is a discipline you learn to think in. Having built a career in the private sector before entering education, I bring a practitioner's clarity to every session: real applications, precise analytical frameworks, and the examiner's instinct for what earns marks.
             </p>
             <p>
-              Having held senior roles — Head of Department, Curriculum Development Coordinator, Senior Course Advisor — across international schools gives me a structural view of learning that most tutors lack. I understand not just what the syllabus requires, but how top-performing students think, plan, and write. The gap between a 5 and a 7 is almost never about intelligence. It is about precision: knowing which skills account for which marks, which command terms demand which structure, and which real-world examples move an examiner. I teach that knowledge directly.
-            </p>
-            <p>
-              Learning should be demanding and genuinely enjoyable. Our sessions use live examples, current economic events, and targeted practice — not passive re-teaching. Every session ends with something concrete: a skill, a model, a technique that moves the grade. No filler. No vague revision plans. Just focused, productive work.
+              The gap between a 5 and a 7 is rarely talent. It is precision — command term mastery, diagram accuracy, structured evaluation, and well-chosen evidence. I teach that knowledge directly. Every session ends with something concrete that moves the grade. No filler. No vague revision plans.
             </p>
           </div>
 
-          <!-- Classroom photo -->
-          <div class="team-photo-wrapper">
-            <img
-              src="assets/images/team-teaching.jpg"
-              alt="Economics tutoring session in progress"
-              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-            />
-            <div class="team-photo-placeholder">
-              <span>🖼️</span>
-              <p>Upload a classroom photo as<br><strong>assets/images/team-teaching.jpg</strong></p>
+          <!-- Sub-layout: Pareto cards LEFT, classroom photo RIGHT -->
+          <div class="philosophy-sub-layout">
+
+            <!-- Cards -->
+            <div>
+              <div class="pareto-faculty-card">
+                <h4>The Pareto Faculty</h4>
+                <p>Our sessions are delivered by curriculum-trained educators who combine academic rigour with real-world Economics experience. Every Pareto tutor is exam-literate and results-focused.</p>
+              </div>
+              <div class="pareto-principle-card">
+                <h4>The Pareto Principle</h4>
+                <p>80% of exam marks come from 20% of the right skills — diagram precision, command term awareness, structured evaluation, and well-chosen examples. Our sessions target that 20%, relentlessly.</p>
+              </div>
             </div>
-          </div>
 
-          <!-- Faculty caption -->
-          <div style="margin-top:1.25rem; padding:1.25rem 1.5rem; border-left:3px solid var(--gold); background:#fff; border-radius:0 12px 12px 0;">
-            <h4 style="font-size:0.95rem; font-weight:700; color:var(--navy); margin-bottom:0.5rem;">The Pareto Faculty</h4>
-            <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.7; margin:0;">Our sessions are delivered by curriculum-trained educators who combine academic rigour with real-world Economics experience. Every Pareto tutor is exam-literate and results-focused.</p>
-          </div>
+            <!-- Classroom photo -->
+            <div class="team-photo-wrapper">
+              <img
+                src="assets/images/team-teaching.jpg"
+                alt="Economics tutoring session in progress"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+              />
+              <div class="team-photo-placeholder">
+                <span>🖼️</span>
+                <p>Upload photo as<br><strong>assets/images/team-teaching.jpg</strong></p>
+              </div>
+            </div>
 
-          <!-- Pareto Principle card -->
-          <div class="pareto-principle-card">
-            <h4>The Pareto Principle</h4>
-            <p>
-              Vilfredo Pareto observed that 80% of outcomes come from 20% of causes. In exam preparation this is strikingly true: a small cluster of skills — diagram precision, command term awareness, structured evaluation, and well-chosen real-world examples — accounts for the vast majority of marks available. Our sessions target that 20%, relentlessly.
-            </p>
           </div>
-
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ======== SECTION 3: ACHIEVEMENT TICKER ======== -->
+  <!-- ======== ACHIEVEMENT TICKER ======== -->
   <section class="achievement-ticker" aria-label="Key results and achievements">
     <p class="ticker-label">Our Results</p>
     <div class="ticker-track-wrapper">
