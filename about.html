@@ -68,6 +68,28 @@
     .pareto-principle-card h4 { color: var(--gold); font-size: 1rem; margin-bottom: 0.6rem; }
     .pareto-principle-card p { font-size: 0.875rem; color: rgba(255,255,255,.75); line-height: 1.7; }
 
+    .faculty-grid { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem; }
+    .faculty-card {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff; border: 1px solid #e2e2e2; border-radius: 14px;
+    }
+    .faculty-avatar {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; color: var(--gold);
+      flex-shrink: 0;
+    }
+    .faculty-name { font-weight: 600; font-size: 0.95rem; }
+    .faculty-role { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.15rem; }
+    .faculty-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.35rem; }
+    .faculty-tag {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em;
+      background: rgba(15,39,68,.07); color: var(--navy);
+      border-radius: 4px; padding: 2px 7px;
+    }
+
     /* ── Section 3: Achievement Ticker ── */
     .achievement-ticker { background: var(--navy); padding: 4rem 0; overflow: hidden; }
     .ticker-label {
@@ -96,9 +118,9 @@
     }
     .ticker-stat em { color: var(--gold); font-style: normal; }
     .ticker-desc {
-      font-size: 0.78rem; color: rgba(255,255,255,.45);
+      font-size: 0.72rem; color: rgba(255,255,255,.45);
       text-transform: uppercase; letter-spacing: 0.09em;
-      max-width: 150px; line-height: 1.4;
+      white-space: nowrap; line-height: 1.4;
     }
     .ticker-sep { width: 1px; height: 3.5rem; background: rgba(255,255,255,.1); flex-shrink: 0; }
 
@@ -157,7 +179,7 @@
       <div class="about-content">
 
         <!-- Photo -->
-        <div class="about-photo" data-aos="fade-right" style="max-width:320px;">
+        <div class="about-photo" style="max-width:300px; align-self:flex-start;">
           <div class="about-photo__frame" style="aspect-ratio:3/4;">
             <img
               src="assets/images/tutor-photo.jpg"
@@ -170,44 +192,24 @@
               <p>Add your photo as<br><strong>assets/images/tutor-photo.jpg</strong></p>
             </div>
           </div>
-          <div class="about-photo__badge">IB Examiner &amp; Economics Teacher</div>
+          <div class="about-photo__badge">Economics Teacher &amp; Examiner</div>
         </div>
 
         <!-- Credentials -->
-        <div data-aos="fade-left" data-aos-delay="100">
+        <div>
           <span class="section-label">Lead Tutor &amp; Founder</span>
           <h2 style="margin-bottom:0.3rem;">Ms. C. Bolito</h2>
           <p style="font-size:1rem;font-weight:600;color:var(--gold);margin-bottom:2rem;">IB Examiner · Head of Department · Economist · 10+ Years</p>
 
           <div class="about-credentials">
 
-            <div class="credential-item">
+            <div class="credential-item" style="grid-column: 1 / -1;">
               <div class="credential-item__icon">
                 <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
               </div>
               <div>
-                <span class="credential-item__label">Undergraduate</span>
-                <div class="credential-item__value">BS Economics</div>
-              </div>
-            </div>
-
-            <div class="credential-item">
-              <div class="credential-item__icon">
-                <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/><line x1="12" y1="22" x2="12" y2="15"/></svg>
-              </div>
-              <div>
-                <span class="credential-item__label">Postgraduate</span>
-                <div class="credential-item__value">Masters in Public Policy &amp; Governance</div>
-              </div>
-            </div>
-
-            <div class="credential-item">
-              <div class="credential-item__icon">
-                <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
-              </div>
-              <div>
-                <span class="credential-item__label">Teaching Qualification</span>
-                <div class="credential-item__value">Post-graduate Certificate in Education</div>
+                <span class="credential-item__label">Qualifications</span>
+                <div class="credential-item__value">BS Economics · Masters in Public Policy &amp; Governance · Post-graduate Certificate in Education</div>
               </div>
             </div>
 
@@ -218,16 +220,6 @@
               <div>
                 <span class="credential-item__label">Leadership Roles</span>
                 <div class="credential-item__value">Head of Department · Curriculum Development Coordinator · Senior Course Advisor</div>
-              </div>
-            </div>
-
-            <div class="credential-item">
-              <div class="credential-item__icon">
-                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-              </div>
-              <div>
-                <span class="credential-item__label">IB Examiner</span>
-                <div class="credential-item__value">Active examiner · Thousands of scripts marked</div>
               </div>
             </div>
 
@@ -271,6 +263,7 @@
               Learning should be demanding and genuinely enjoyable. Our sessions use live examples, current economic events, and targeted practice — not passive re-teaching. Every session ends with something concrete: a skill, a model, a technique that moves the grade. No filler. No vague revision plans. Just focused, productive work.
             </p>
           </div>
+
         </div>
 
         <!-- Right: Classroom photo + captions -->
@@ -287,7 +280,7 @@
             </div>
           </div>
 
-          <div style="margin-top:1.25rem; padding:1.25rem 1.5rem; border-left:3px solid var(--gold); background:#fff; border-radius:0 12px 12px 0;">
+          <div style="margin-top:1.25rem; padding: 1.25rem 1.5rem; border-left: 3px solid var(--gold); background: #fff; border-radius: 0 12px 12px 0;">
             <h4 style="font-size:0.95rem; font-weight:700; color:var(--navy); margin-bottom:0.5rem;">The Pareto Faculty</h4>
             <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.7; margin:0;">Our sessions are delivered by curriculum-trained educators who combine academic rigour with real-world Economics experience. Every Pareto tutor is exam-literate and results-focused.</p>
           </div>
