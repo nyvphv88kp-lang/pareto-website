@@ -123,6 +123,19 @@
       max-width: 150px; line-height: 1.4;
     }
     .ticker-sep { width: 1px; height: 3.5rem; background: rgba(255,255,255,.1); flex-shrink: 0; }
+
+    /* ── Credential SVG icons ── */
+    .credential-item__icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: #0f2744;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .credential-item__icon svg {
+      width: 22px; height: 22px;
+      stroke: #c9a44a; fill: none;
+      stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+    }
   </style>
 </head>
 <body>
@@ -191,7 +204,9 @@
           <div class="about-credentials">
 
             <div class="credential-item">
-              <div class="credential-item__icon">🎓</div>
+              <div class="credential-item__icon">
+                <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
               <div>
                 <span class="credential-item__label">Undergraduate</span>
                 <div class="credential-item__value">BS Economics</div>
@@ -199,7 +214,9 @@
             </div>
 
             <div class="credential-item">
-              <div class="credential-item__icon">🎓</div>
+              <div class="credential-item__icon">
+                <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/><line x1="12" y1="22" x2="12" y2="15"/></svg>
+              </div>
               <div>
                 <span class="credential-item__label">Postgraduate</span>
                 <div class="credential-item__value">Masters in Public Policy &amp; Governance</div>
@@ -207,7 +224,9 @@
             </div>
 
             <div class="credential-item">
-              <div class="credential-item__icon">📜</div>
+              <div class="credential-item__icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+              </div>
               <div>
                 <span class="credential-item__label">Teaching Qualification</span>
                 <div class="credential-item__value">Post-graduate Certificate in Education</div>
@@ -215,7 +234,9 @@
             </div>
 
             <div class="credential-item">
-              <div class="credential-item__icon">💼</div>
+              <div class="credential-item__icon">
+                <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4h6v4"/></svg>
+              </div>
               <div>
                 <span class="credential-item__label">Leadership Roles</span>
                 <div class="credential-item__value">Head of Department · Curriculum Development Coordinator · Senior Course Advisor</div>
@@ -223,7 +244,9 @@
             </div>
 
             <div class="credential-item">
-              <div class="credential-item__icon">📋</div>
+              <div class="credential-item__icon">
+                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              </div>
               <div>
                 <span class="credential-item__label">IB Examiner</span>
                 <div class="credential-item__value">Active examiner · Thousands of scripts marked</div>
@@ -231,7 +254,9 @@
             </div>
 
             <div class="credential-item">
-              <div class="credential-item__icon">📐</div>
+              <div class="credential-item__icon">
+                <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              </div>
               <div>
                 <span class="credential-item__label">Curricula</span>
                 <div class="credential-item__value">IB SL/HL · IGCSE · A-Level · AP Microeconomics · AP Macroeconomics</div>
