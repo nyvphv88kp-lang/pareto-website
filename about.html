@@ -54,25 +54,14 @@
       display: block;
     }
 
-    /* ── Sub-layout: cards LEFT, classroom photo RIGHT ── */
-    .philosophy-sub-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
-      align-items: start;
-      margin-top: 2rem;
-    }
-    @media (max-width: 1100px) {
-      .philosophy-sub-layout { grid-template-columns: 1fr; }
-    }
-
-    /* ── Classroom photo ── */
+    /* ── Classroom photo (right col, below philosophy) ── */
     .team-photo-wrapper {
       border-radius: 16px;
       overflow: hidden;
-      aspect-ratio: 3/4;
+      aspect-ratio: 4/3;
       background: #ddd;
       position: relative;
+      margin-top: 2rem;
     }
     .team-photo-wrapper img {
       width: 100%; height: 100%;
@@ -88,7 +77,7 @@
     .team-photo-placeholder span { font-size: 2rem; }
     .team-photo-placeholder p { font-size: 0.8rem; line-height: 1.5; }
 
-    /* ── Pareto cards ── */
+    /* ── Pareto cards (left col, below credentials) ── */
     .pareto-faculty-card {
       padding: 1.25rem 1.5rem;
       border-left: 3px solid var(--gold);
@@ -108,7 +97,7 @@
     .pareto-principle-card h4 { color: var(--gold); font-size: 0.9rem; margin-bottom: 0.4rem; }
     .pareto-principle-card p  { font-size: 0.82rem; color: rgba(255,255,255,.75); line-height: 1.7; margin: 0; }
 
-    /* ── Section 3: Achievement Ticker ── */
+    /* ── Achievement Ticker ── */
     .achievement-ticker { background: var(--navy); padding: 4rem 0; overflow: hidden; }
     .ticker-label {
       text-align: center; font-size: 0.72rem; font-weight: 700;
@@ -191,14 +180,17 @@
     </div>
   </section>
 
-  <!-- ======== COMBINED PROFILE + PHILOSOPHY ======== -->
+  <!-- ======== PROFILE + PHILOSOPHY ======== -->
   <section class="section" aria-label="About Ms. C. Bolito">
     <div class="container">
       <div class="profile-philosophy-layout">
 
-        <!-- ── LEFT: Photo + Name + Credentials ── -->
+        <!-- ══════════════════════════════════════
+             LEFT: Photo · Credentials · Pareto cards
+             ══════════════════════════════════════ -->
         <div>
 
+          <!-- Photo + Name -->
           <div class="profile-header">
             <div class="profile-photo-small">
               <img
@@ -215,6 +207,7 @@
             </div>
           </div>
 
+          <!-- Credential cards -->
           <div class="about-credentials">
 
             <div class="credential-item" style="grid-column: 1 / -1;">
@@ -249,11 +242,26 @@
 
           </div>
 
+          <!-- Book button -->
           <a href="book.html" class="btn btn--primary" style="margin-top:2rem; display:inline-block;">Book a Session</a>
+
+          <!-- Pareto Faculty + Principle cards -->
+          <div style="margin-top:2rem;">
+            <div class="pareto-faculty-card">
+              <h4>The Pareto Faculty</h4>
+              <p>Our sessions are delivered by curriculum-trained educators who combine academic rigour with real-world Economics experience. Every Pareto tutor is exam-literate and results-focused.</p>
+            </div>
+            <div class="pareto-principle-card">
+              <h4>The Pareto Principle</h4>
+              <p>80% of exam marks come from 20% of the right skills — diagram precision, command term awareness, structured evaluation, and well-chosen examples. Our sessions target that 20%, relentlessly.</p>
+            </div>
+          </div>
 
         </div>
 
-        <!-- ── RIGHT: Philosophy + sub-layout (cards | photo) ── -->
+        <!-- ══════════════════════════════════════
+             RIGHT: Teaching Philosophy · Classroom photo
+             ══════════════════════════════════════ -->
         <div data-aos="fade-left">
           <span class="section-label">Our Approach</span>
           <h2 style="margin-bottom:1.25rem;">Teaching Philosophy</h2>
@@ -267,35 +275,19 @@
             </p>
           </div>
 
-          <!-- Sub-layout: Pareto cards LEFT, classroom photo RIGHT -->
-          <div class="philosophy-sub-layout">
-
-            <!-- Cards -->
-            <div>
-              <div class="pareto-faculty-card">
-                <h4>The Pareto Faculty</h4>
-                <p>Our sessions are delivered by curriculum-trained educators who combine academic rigour with real-world Economics experience. Every Pareto tutor is exam-literate and results-focused.</p>
-              </div>
-              <div class="pareto-principle-card">
-                <h4>The Pareto Principle</h4>
-                <p>80% of exam marks come from 20% of the right skills — diagram precision, command term awareness, structured evaluation, and well-chosen examples. Our sessions target that 20%, relentlessly.</p>
-              </div>
+          <!-- Classroom photo below philosophy text -->
+          <div class="team-photo-wrapper">
+            <img
+              src="assets/images/team-teaching.jpg"
+              alt="Economics tutoring session in progress"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+            />
+            <div class="team-photo-placeholder">
+              <span>🖼️</span>
+              <p>Upload photo as<br><strong>assets/images/team-teaching.jpg</strong></p>
             </div>
-
-            <!-- Classroom photo -->
-            <div class="team-photo-wrapper">
-              <img
-                src="assets/images/team-teaching.jpg"
-                alt="Economics tutoring session in progress"
-                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-              />
-              <div class="team-photo-placeholder">
-                <span>🖼️</span>
-                <p>Upload photo as<br><strong>assets/images/team-teaching.jpg</strong></p>
-              </div>
-            </div>
-
           </div>
+
         </div>
 
       </div>
