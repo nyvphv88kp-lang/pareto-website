@@ -26,23 +26,48 @@
     @keyframes aos-fallback { from { opacity: 0; } to { opacity: 1; transform: none; } }
     [data-aos] { animation: aos-fallback 0.4s ease 1.5s both; }
 
-    /* ── Section 2: Philosophy + Team ── */
-    .philosophy-layout {
+    /* ── Combined Profile + Philosophy layout ── */
+    .profile-philosophy-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 5rem;
       align-items: start;
     }
     @media (max-width: 900px) {
-      .philosophy-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .profile-philosophy-layout { grid-template-columns: 1fr; gap: 3rem; }
     }
 
+    /* ── Small photo inline with name ── */
+    .profile-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .profile-photo-small {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .profile-photo-small img {
+      width: 100px;
+      height: 130px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 12px;
+      display: block;
+    }
+
+    /* ── Classroom photo (right col) ── */
     .team-photo-wrapper {
       border-radius: 20px;
       overflow: hidden;
       aspect-ratio: 4/3;
       background: #ddd;
       position: relative;
+      margin-top: 2rem;
     }
     .team-photo-wrapper img {
       width: 100%; height: 100%;
@@ -67,28 +92,6 @@
     }
     .pareto-principle-card h4 { color: var(--gold); font-size: 1rem; margin-bottom: 0.6rem; }
     .pareto-principle-card p { font-size: 0.875rem; color: rgba(255,255,255,.75); line-height: 1.7; }
-
-    .faculty-grid { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem; }
-    .faculty-card {
-      display: flex; align-items: center; gap: 1rem;
-      padding: 1rem 1.25rem;
-      background: #fff; border: 1px solid #e2e2e2; border-radius: 14px;
-    }
-    .faculty-avatar {
-      width: 52px; height: 52px; border-radius: 50%;
-      background: var(--navy);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; color: var(--gold);
-      flex-shrink: 0;
-    }
-    .faculty-name { font-weight: 600; font-size: 0.95rem; }
-    .faculty-role { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.15rem; }
-    .faculty-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.35rem; }
-    .faculty-tag {
-      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em;
-      background: rgba(15,39,68,.07); color: var(--navy);
-      border-radius: 4px; padding: 2px 7px;
-    }
 
     /* ── Section 3: Achievement Ticker ── */
     .achievement-ticker { background: var(--navy); padding: 4rem 0; overflow: hidden; }
@@ -173,34 +176,32 @@
     </div>
   </section>
 
-  <!-- ======== SECTION 1: PROFILE ======== -->
-  <section class="section" aria-label="Tutor profile">
+  <!-- ======== COMBINED PROFILE + PHILOSOPHY ======== -->
+  <section class="section" aria-label="About Ms. C. Bolito">
     <div class="container">
-      <div class="about-content">
+      <div class="profile-philosophy-layout">
 
-        <!-- Photo -->
-        <div class="about-photo" style="max-width:300px; align-self:flex-start;">
-          <div class="about-photo__frame" style="aspect-ratio:3/4;">
-            <img
-              src="assets/images/tutor-photo.jpg"
-              alt="Ms. C. Bolito — Lead Tutor & Founder"
-              style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:inherit;"
-              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-            />
-            <div class="about-photo__placeholder" style="display:none;">
-              <span>📷</span>
-              <p>Add your photo as<br><strong>assets/images/tutor-photo.jpg</strong></p>
+        <!-- ── LEFT: Photo + Name + Credentials ── -->
+        <div>
+
+          <!-- Photo inline with name — same height as name block -->
+          <div class="profile-header">
+            <div class="profile-photo-small">
+              <img
+                src="assets/images/tutor-photo.jpg"
+                alt="Ms. C. Bolito — Lead Tutor & Founder"
+                onerror="this.style.display='none';"
+              />
+            </div>
+            <div>
+              <span class="section-label">Lead Tutor &amp; Founder</span>
+              <h2 style="margin-bottom:0.3rem;">Ms. C. Bolito</h2>
+              <p style="font-size:0.9rem; font-weight:600; color:var(--gold); margin-bottom:0.9rem; line-height:1.5;">IB Examiner · Head of Department · Economist · 10+ Years</p>
+              <span style="display:inline-block; background:var(--gold); color:var(--navy); font-size:0.65rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:5px 14px; border-radius:50px;">Economics Teacher &amp; Examiner</span>
             </div>
           </div>
-          <div class="about-photo__badge">Economics Teacher &amp; Examiner</div>
-        </div>
 
-        <!-- Credentials -->
-        <div>
-          <span class="section-label">Lead Tutor &amp; Founder</span>
-          <h2 style="margin-bottom:0.3rem;">Ms. C. Bolito</h2>
-          <p style="font-size:1rem;font-weight:600;color:var(--gold);margin-bottom:2rem;">IB Examiner · Head of Department · Economist · 10+ Years</p>
-
+          <!-- Credential cards -->
           <div class="about-credentials">
 
             <div class="credential-item" style="grid-column: 1 / -1;">
@@ -235,24 +236,16 @@
 
           </div>
 
-          <a href="book.html" class="btn btn--primary" style="margin-top:2rem;display:inline-block;">Book a Session</a>
+          <a href="book.html" class="btn btn--primary" style="margin-top:2rem; display:inline-block;">Book a Session</a>
+
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ======== SECTION 2: PHILOSOPHY + TEAM ======== -->
-  <section class="section" style="background:#f4f3f0;" aria-label="Teaching philosophy and faculty">
-    <div class="container">
-      <div class="philosophy-layout">
-
-        <!-- Left: Philosophy -->
-        <div data-aos="fade-right">
+        <!-- ── RIGHT: Teaching Philosophy + Classroom photo ── -->
+        <div data-aos="fade-left">
           <span class="section-label">Our Approach</span>
           <h2 style="margin-bottom:1.5rem;">Teaching Philosophy</h2>
 
-          <div style="display:flex;flex-direction:column;gap:1rem;color:var(--text);line-height:1.8;font-size:0.97rem;">
+          <div style="display:flex; flex-direction:column; gap:1rem; color:var(--text); line-height:1.8; font-size:0.97rem;">
             <p>
               I came to teaching from the private sector, and that experience shapes every session I run. Economics is not an abstract academic exercise — it is the logic underpinning every business decision, policy choice, and market movement. When a student grasps that connection, the subject stops being difficult and becomes genuinely compelling. My job is to make that click happen, fast.
             </p>
@@ -264,10 +257,7 @@
             </p>
           </div>
 
-        </div>
-
-        <!-- Right: Classroom photo + captions -->
-        <div data-aos="fade-left" data-aos-delay="100">
+          <!-- Classroom photo -->
           <div class="team-photo-wrapper">
             <img
               src="assets/images/team-teaching.jpg"
@@ -280,17 +270,20 @@
             </div>
           </div>
 
-          <div style="margin-top:1.25rem; padding: 1.25rem 1.5rem; border-left: 3px solid var(--gold); background: #fff; border-radius: 0 12px 12px 0;">
+          <!-- Faculty caption -->
+          <div style="margin-top:1.25rem; padding:1.25rem 1.5rem; border-left:3px solid var(--gold); background:#fff; border-radius:0 12px 12px 0;">
             <h4 style="font-size:0.95rem; font-weight:700; color:var(--navy); margin-bottom:0.5rem;">The Pareto Faculty</h4>
             <p style="font-size:0.875rem; color:var(--text-muted); line-height:1.7; margin:0;">Our sessions are delivered by curriculum-trained educators who combine academic rigour with real-world Economics experience. Every Pareto tutor is exam-literate and results-focused.</p>
           </div>
 
+          <!-- Pareto Principle card -->
           <div class="pareto-principle-card">
             <h4>The Pareto Principle</h4>
             <p>
               Vilfredo Pareto observed that 80% of outcomes come from 20% of causes. In exam preparation this is strikingly true: a small cluster of skills — diagram precision, command term awareness, structured evaluation, and well-chosen real-world examples — accounts for the vast majority of marks available. Our sessions target that 20%, relentlessly.
             </p>
           </div>
+
         </div>
 
       </div>
