@@ -4,35 +4,267 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pareto — Expert Economics Tutoring | IB · IGCSE · A-Level</title>
-  <meta name="description" content="Premium Economics tutoring for IB, IGCSE, and A-Level students worldwide. 1-to-1 sessions, group classes, IA support, and Extended Essay guidance." />
-  <meta name="keywords" content="IB Economics tutor, IGCSE Economics, A-Level Economics, Extended Essay economics, Internal Assessment economics" />
-
-  <!-- Open Graph -->
+  <meta name="description" content="Learn Economics from an IB Examiner with 10+ years of international experience. Premium 1-to-1 tutoring, group sessions, and curated resources for IB, IGCSE, and A-Level students worldwide." />
+  <meta name="keywords" content="IB Economics tutor, IGCSE Economics, A-Level Economics, IB examiner tutor, Extended Essay economics, Internal Assessment economics" />
   <meta property="og:title" content="Pareto — Expert Economics Tutoring" />
-  <meta property="og:description" content="Premium Economics tutoring for IB, IGCSE, and A-Level students. Book 1-to-1 sessions or access curated resources." />
+  <meta property="og:description" content="Learn Economics from an IB Examiner. Book 1-to-1 sessions or access curated resources." />
   <meta property="og:type" content="website" />
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-  <!-- AOS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-
-  <!-- Swiper -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-
-  <!-- Site CSS -->
   <link rel="stylesheet" href="style.css" />
 
   <style>
+    .hero {
+      min-height: 92vh;
+      background: linear-gradient(135deg, #0b1e36 0%, #0f2744 60%, #14305a 100%);
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 7rem 0 0; overflow: hidden; position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero__split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .hero__split { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero__news-panel { display: none; }
+    }
+    .hero__eyebrow {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero__eyebrow-line { width: 2.5rem; height: 2px; background: var(--gold); }
+    .hero__eyebrow-text {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold);
+    }
+    .hero h1 {
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 800; color: #fff; line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero__sub {
+      font-size: 1.05rem; color: rgba(255,255,255,.65);
+      line-height: 1.75; margin-bottom: 2rem; max-width: 480px;
+    }
+    .hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .hero__news-panel {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      overflow: hidden;
+      backdrop-filter: blur(4px);
+    }
+    .hero__news-panel-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .hero__news-panel-title {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--gold);
+    }
+    .hero__news-live {
+      display: flex; align-items: center; gap: 0.4rem;
+      font-size: 0.65rem; color: rgba(255,255,255,.4);
+    }
+    .hero__news-live-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: #4ade80;
+      animation: live-pulse 2s ease infinite;
+    }
+    @keyframes live-pulse {
+      0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
+    }
+    .hero__news-items { padding: 0.5rem 0; }
+    .hero__news-item {
+      display: block; padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      text-decoration: none; transition: background 0.2s;
+    }
+    .hero__news-item:last-child { border-bottom: none; }
+    .hero__news-item:hover { background: rgba(255,255,255,0.04); }
+    .hero__news-item-source {
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem;
+    }
+    .hero__news-item-title {
+      font-size: 0.88rem; font-weight: 600; color: rgba(255,255,255,.85);
+      line-height: 1.4; margin-bottom: 0.25rem;
+    }
+    .hero__news-item-date { font-size: 0.65rem; color: rgba(255,255,255,.3); }
+    .hero__news-loading {
+      padding: 2rem 1.5rem; text-align: center;
+      color: rgba(255,255,255,.3); font-size: 0.85rem;
+    }
+    .hero__news-view-all {
+      display: block; padding: 0.85rem 1.5rem; text-align: center;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--gold);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      text-decoration: none;
+    }
+    .hero__news-view-all:hover { background: rgba(201,164,74,0.08); }
+
+    .hero__ticker-strip {
+      background: rgba(0,0,0,0.25);
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 0.65rem 0; overflow: hidden;
+      margin-top: 4rem;
+    }
+    .hero__ticker-inner {
+      display: flex; width: max-content;
+      animation: ticker-scroll 35s linear infinite;
+      gap: 0;
+    }
+    .hero__ticker-inner:hover { animation-play-state: paused; }
+    .hero__ticker-item {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 0 2.5rem; white-space: nowrap;
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(255,255,255,.35);
+    }
+    .hero__ticker-item em { color: var(--gold); font-style: normal; }
+    .hero__ticker-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--gold); opacity: 0.5; }
+
+    .section-editorial-header {
+      display: flex; align-items: flex-end; gap: 1.5rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--navy);
+    }
+    .section-editorial-header h2 { margin: 0; font-size: clamp(1.6rem, 3vw, 2.2rem); }
+    .section-editorial-header__meta {
+      font-size: 0.75rem; color: var(--text-muted);
+      margin-left: auto; white-space: nowrap; padding-bottom: 0.2rem;
+    }
+    .section-editorial-header__meta a { color: var(--gold); text-decoration: none; }
+    .section-editorial-header__meta a:hover { text-decoration: underline; }
+
+    .economics-news { background: #f4f3f0; }
+
+    .news-primary-row {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .news-primary-row { grid-template-columns: 1fr; }
+    }
+    .news-secondary-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 900px) {
+      .news-secondary-row { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .news-secondary-row { grid-template-columns: 1fr; }
+    }
+
+    .news-card {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid #e8e6e1;
+      display: flex; flex-direction: column;
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .news-card:hover {
+      box-shadow: 0 8px 32px rgba(15,39,68,0.13);
+      transform: translateY(-3px);
+    }
+    .news-card__img { width: 100%; overflow: hidden; background: #ddd; flex-shrink: 0; }
+    .news-card__img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+    .news-card:hover .news-card__img img { transform: scale(1.03); }
+    .news-card--featured .news-card__img { height: 240px; }
+    .news-card--side    .news-card__img { height: 160px; }
+    .news-card--small   .news-card__img { height: 140px; }
+
+    .news-card__body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .news-card__source {
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold);
+      background: rgba(201,164,74,0.1); border-radius: 4px;
+      padding: 3px 8px; display: inline-block; margin-bottom: 0.6rem;
+      align-self: flex-start;
+    }
+    .news-card__title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700; color: var(--navy); line-height: 1.35;
+      margin-bottom: 0.6rem;
+    }
+    .news-card--featured .news-card__title { font-size: 1.35rem; }
+    .news-card--side     .news-card__title { font-size: 1rem; }
+    .news-card--small    .news-card__title { font-size: 0.9rem; }
+    .news-card__desc {
+      font-size: 0.85rem; color: var(--text-muted);
+      line-height: 1.65; flex: 1; margin-bottom: 0.75rem;
+    }
+    .news-card--small .news-card__desc { display: none; }
+    .news-card__date { font-size: 0.68rem; color: #aaa; margin-top: auto; }
+    .news-card__read-more {
+      font-size: 0.72rem; font-weight: 600; color: var(--gold);
+      text-transform: uppercase; letter-spacing: 0.08em;
+      margin-top: 0.75rem; display: flex; align-items: center; gap: 0.3rem;
+    }
+    .news-col-secondary { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .news-skeleton-row { display: grid; grid-template-columns: 3fr 2fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+    .news-skeleton-secondary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .skeleton-card { background: #fff; border-radius: 14px; border: 1px solid #e8e6e1; overflow: hidden; }
+    .skeleton-img { background: #e8e8e8; animation: skel 1.4s ease infinite; }
+    .skeleton-featured-img { height: 240px; }
+    .skeleton-side-img { height: 120px; }
+    .skeleton-small-img { height: 100px; }
+    .skeleton-body { padding: 1.25rem; }
+    .skeleton-line { background: #e8e8e8; border-radius: 4px; margin-bottom: 0.6rem; animation: skel 1.4s ease infinite; }
+    .skeleton-line--short { height: 10px; width: 40%; }
+    .skeleton-line--med   { height: 14px; width: 85%; }
+    .skeleton-line--long  { height: 12px; width: 100%; }
+    @keyframes skel { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+
+    .news-disclaimer {
+      font-size: 0.72rem; color: var(--text-muted);
+      text-align: center; margin-top: 2rem;
+      padding: 0.75rem 1rem;
+      background: rgba(15,39,68,0.04); border-radius: 8px;
+    }
+    .news-disclaimer a { color: var(--gold); text-decoration: none; }
+    .news-disclaimer a:hover { text-decoration: underline; }
+    .news-error {
+      grid-column: 1 / -1; text-align: center;
+      padding: 3rem 1rem; color: var(--text-muted); font-size: 0.9rem;
+    }
+    .news-error a { color: var(--gold); }
+
     .section--services { background: var(--bg); }
+    .section-divider { border: none; border-top: 1px solid #e2e2e2; margin: 0; }
+
+    @keyframes ticker-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
   </style>
 </head>
 <body>
 
-  <!-- ======== NAVIGATION ======== -->
+  <!-- NAVIGATION -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="container nav__inner">
       <a href="index.html" class="nav__logo">Pareto<span>.</span></a>
@@ -56,29 +288,76 @@
     </div>
   </nav>
 
-  <!-- ======== HERO ======== -->
+  <!-- HERO -->
   <section class="hero" aria-labelledby="hero-heading">
     <div class="container">
-      <div class="hero__content">
-        <div class="hero__badge" data-aos="fade-down" data-aos-delay="100">
-          IB Examiner · Expert Tutor
+      <div class="hero__split">
+
+        <div>
+          <div class="hero__eyebrow" data-aos="fade-right">
+            <div class="hero__eyebrow-line"></div>
+            <span class="hero__eyebrow-text">IB · IGCSE · A-Level · AP Economics</span>
+          </div>
+          <h1 id="hero-heading" data-aos="fade-up" data-aos-delay="100">
+            Economics,<br><em>mastered.</em>
+          </h1>
+          <p class="hero__sub" data-aos="fade-up" data-aos-delay="200">
+            Taught by an IB Examiner with 10+ years of international experience. Precision preparation that closes the gap between where you are and where you need to be.
+          </p>
+          <div class="hero__actions" data-aos="fade-up" data-aos-delay="300">
+            <a href="book.html" class="btn btn--primary">Book a Session</a>
+            <a href="resources.html" class="btn btn--outline">Free Resources</a>
+          </div>
         </div>
-        <h1 id="hero-heading" data-aos="fade-up" data-aos-delay="200">
-          Economics,<br><em>mastered.</em>
-        </h1>
-        <p class="hero__sub" data-aos="fade-up" data-aos-delay="300">
-          Learn from an IB Economics expert with over 10 years of teaching experience across IB, IGCSE, and A-Level curricula. Rigorous, clear, and results-driven.
-        </p>
-        <div class="hero__actions" data-aos="fade-up" data-aos-delay="400">
-          <a href="book.html" class="btn btn--primary">Book a Session</a>
-          <a href="resources.html" class="btn btn--outline">Explore Free Resources</a>
+
+        <div class="hero__news-panel" data-aos="fade-left" data-aos-delay="200">
+          <div class="hero__news-panel-header">
+            <span class="hero__news-panel-title">Economics in the News</span>
+            <span class="hero__news-live">
+              <span class="hero__news-live-dot"></span>
+              Live
+            </span>
+          </div>
+          <div class="hero__news-items" id="heroNewsItems">
+            <div class="hero__news-loading">Loading latest headlines…</div>
+          </div>
+          <a href="#economics-news" class="hero__news-view-all">View all stories ↓</a>
         </div>
+
       </div>
     </div>
-    <div class="hero__scroll" aria-hidden="true">Scroll</div>
+
+    <div class="hero__ticker-strip">
+      <div class="hero__ticker-inner">
+        <span class="hero__ticker-item"><em>Monetary Policy</em><span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item">Market Failure<span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item"><em>Comparative Advantage</em><span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item">Fiscal Stimulus<span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item"><em>Inflation &amp; CPI</em><span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item">GDP Growth<span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item"><em>Trade Policy</em><span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item">Environmental Economics<span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item"><em>Income Inequality</em><span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item">Aggregate Demand<span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item"><em>Exchange Rates</em><span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item">IB Economics HL/SL<span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item"><em>Monetary Policy</em><span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item">Market Failure<span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item"><em>Comparative Advantage</em><span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item">Fiscal Stimulus<span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item"><em>Inflation &amp; CPI</em><span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item">GDP Growth<span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item"><em>Trade Policy</em><span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item">Environmental Economics<span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item"><em>Income Inequality</em><span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item">Aggregate Demand<span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item"><em>Exchange Rates</em><span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item">IB Economics HL/SL<span class="hero__ticker-dot"></span></span>
+      </div>
+    </div>
   </section>
 
-  <!-- ======== TRUST BAR ======== -->
+  <!-- TRUST BAR -->
   <div class="trust-bar" role="region" aria-label="Key statistics">
     <div class="container">
       <div class="trust-bar__grid">
@@ -102,14 +381,16 @@
     </div>
   </div>
 
-  <!-- ======== SERVICES ======== -->
+  <!-- SERVICES -->
   <section class="section section--services" id="services" aria-labelledby="services-heading">
     <div class="container">
-      <div class="section-header">
-        <span class="section-label">What I Offer</span>
-        <h2 id="services-heading" data-aos="fade-up">Every student. Every level.</h2>
-        <p data-aos="fade-up" data-aos-delay="100">From IGCSE foundations to IB Extended Essays, each session is tailored precisely to your curriculum and your goals.</p>
+      <div class="section-editorial-header" data-aos="fade-up">
+        <h2 id="services-heading">Every student. Every level.</h2>
+        <span class="section-editorial-header__meta">From IGCSE foundations to Extended Essays</span>
       </div>
+      <p style="max-width:640px; color:var(--text-muted); line-height:1.75; margin-bottom:3rem;" data-aos="fade-up" data-aos-delay="50">
+        Each session is tailored precisely to your curriculum, your examiner, and your goals. No templates. No wasted time.
+      </p>
       <div class="services-grid">
 
         <div class="service-card" data-aos="fade-up" data-aos-delay="0" data-tilt>
@@ -129,7 +410,7 @@
         <div class="service-card" data-aos="fade-up" data-aos-delay="200" data-tilt>
           <div class="service-card__icon">📝</div>
           <h3>Internal Assessment Support</h3>
-          <p>Your IB Economics Commentary or Written Report is worth 20% of your final grade. I'll walk you through every criterion and review your drafts with examiner-level precision.</p>
+          <p>Your IB Economics Commentary or Written Report is worth 20% of your final grade. I'll walk you through every criterion, review your drafts, and tell you exactly what an examiner looks for — because I am one.</p>
           <div class="service-card__price">$65 <span>/ 60 min session</span></div>
         </div>
 
@@ -144,14 +425,83 @@
     </div>
   </section>
 
-  <!-- ======== FREE RESOURCES TEASER ======== -->
+  <hr class="section-divider" />
+
+  <!-- ECONOMICS IN FOCUS — LIVE NEWS -->
+  <section class="section economics-news" id="economics-news" aria-labelledby="news-heading">
+    <div class="container">
+
+      <div class="section-editorial-header" data-aos="fade-up">
+        <h2 id="news-heading">Economics in Focus</h2>
+        <span class="section-editorial-header__meta">
+          Live from
+          <a href="https://www.bbc.co.uk/news/business" target="_blank" rel="noopener">BBC Business</a>
+          &amp;
+          <a href="https://www.theguardian.com/business/economics" target="_blank" rel="noopener">The Guardian</a>
+        </span>
+      </div>
+
+      <div id="newsSkeleton">
+        <div class="news-skeleton-row">
+          <div class="skeleton-card">
+            <div class="skeleton-img skeleton-featured-img"></div>
+            <div class="skeleton-body">
+              <div class="skeleton-line skeleton-line--short"></div>
+              <div class="skeleton-line skeleton-line--med" style="height:20px;width:75%;margin-bottom:0.8rem;"></div>
+              <div class="skeleton-line skeleton-line--long"></div>
+              <div class="skeleton-line skeleton-line--long"></div>
+              <div class="skeleton-line skeleton-line--med" style="width:60%;margin-top:0.4rem;"></div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:1.5rem;">
+            <div class="skeleton-card">
+              <div class="skeleton-img skeleton-side-img"></div>
+              <div class="skeleton-body">
+                <div class="skeleton-line skeleton-line--short"></div>
+                <div class="skeleton-line skeleton-line--med"></div>
+              </div>
+            </div>
+            <div class="skeleton-card">
+              <div class="skeleton-img skeleton-side-img"></div>
+              <div class="skeleton-body">
+                <div class="skeleton-line skeleton-line--short"></div>
+                <div class="skeleton-line skeleton-line--med"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="news-skeleton-secondary">
+          <div class="skeleton-card"><div class="skeleton-img skeleton-small-img"></div><div class="skeleton-body"><div class="skeleton-line skeleton-line--short"></div><div class="skeleton-line skeleton-line--med"></div></div></div>
+          <div class="skeleton-card"><div class="skeleton-img skeleton-small-img"></div><div class="skeleton-body"><div class="skeleton-line skeleton-line--short"></div><div class="skeleton-line skeleton-line--med"></div></div></div>
+          <div class="skeleton-card"><div class="skeleton-img skeleton-small-img"></div><div class="skeleton-body"><div class="skeleton-line skeleton-line--short"></div><div class="skeleton-line skeleton-line--med"></div></div></div>
+        </div>
+      </div>
+
+      <div id="newsGrid" style="display:none;"></div>
+
+      <p class="news-disclaimer">
+        News sourced automatically from
+        <a href="https://www.bbc.co.uk/news/business" target="_blank" rel="noopener">BBC Business</a> and
+        <a href="https://www.theguardian.com/business/economics" target="_blank" rel="noopener">The Guardian Economics</a>.
+        These articles are external content — Pareto is not affiliated with either publication.
+        Use them as real-world examples in your Economics essays and IA commentaries.
+      </p>
+
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- FREE RESOURCES TEASER -->
   <section class="section resources-teaser" id="free-resources" aria-labelledby="free-resources-heading">
     <div class="container">
-      <div class="section-header">
-        <span class="section-label">Start for Free</span>
-        <h2 id="free-resources-heading" data-aos="fade-up">Resources to get you started</h2>
-        <p data-aos="fade-up" data-aos-delay="100">Download free study materials — no sign-up needed for most. A taste of what's in the full resource library.</p>
+      <div class="section-editorial-header" data-aos="fade-up">
+        <h2 id="free-resources-heading">Start for free</h2>
+        <span class="section-editorial-header__meta"><a href="resources.html" style="color:var(--gold);text-decoration:none;">Full resource library →</a></span>
       </div>
+      <p style="max-width:560px; color:var(--text-muted); line-height:1.75; margin-bottom:3rem;" data-aos="fade-up" data-aos-delay="50">
+        Download free study materials — no sign-up needed. A taste of what's in the full library.
+      </p>
       <div class="resources-teaser-grid">
 
         <div class="resource-teaser-card" data-aos="fade-up" data-aos-delay="0">
@@ -176,13 +526,10 @@
         </div>
 
       </div>
-      <div style="text-align:center; margin-top:3rem;" data-aos="fade-up">
-        <a href="resources.html" class="btn btn--outline-dark">View Full Resource Library →</a>
-      </div>
     </div>
   </section>
 
-  <!-- ======== TESTIMONIALS ======== -->
+  <!-- TESTIMONIALS -->
   <section class="section testimonials" id="testimonials" aria-labelledby="testimonials-heading">
     <div class="container">
       <div class="section-header">
@@ -210,7 +557,7 @@
           <div class="swiper-slide">
             <div class="testimonial-card">
               <div class="testimonial-card__stars">★★★★★</div>
-              <p class="testimonial-card__text">"The IA guidance completely changed how I approached my commentary. My tutor knew exactly what the examiners expect. Grade jumped from a 5 to a 7."</p>
+              <p class="testimonial-card__text">"The IA guidance completely changed how I approached my commentary. My tutor knew exactly what the examiners expect — because they ARE one. Grade jumped from a 5 to a 7."</p>
               <div class="testimonial-card__author">
                 <div class="testimonial-card__avatar">SM</div>
                 <div>
@@ -238,7 +585,7 @@
           <div class="swiper-slide">
             <div class="testimonial-card">
               <div class="testimonial-card__stars">★★★★★</div>
-              <p class="testimonial-card__text">"The group sessions are incredibly efficient. You cover so much ground and the questions from other students always end up clarifying things you didn't even know you were confused about."</p>
+              <p class="testimonial-card__text">"The group sessions are incredibly efficient. You cover so much ground and the questions from other students always clarify things you didn't even know you were confused about."</p>
               <div class="testimonial-card__author">
                 <div class="testimonial-card__avatar">PS</div>
                 <div>
@@ -282,21 +629,21 @@
       </div>
 
       <p style="text-align:center; font-size:0.78rem; color:rgba(255,255,255,.35); margin-top:1rem;">
-        Reviews generated as representative examples. Replace with real testimonials from your students.
+        Reviews are representative examples. Replace with real testimonials when collected.
       </p>
     </div>
   </section>
 
-  <!-- ======== CTA BANNER ======== -->
+  <!-- CTA BANNER -->
   <section class="cta-banner" aria-labelledby="cta-heading">
     <div class="container">
       <h2 id="cta-heading" data-aos="fade-up">Ready to reach your potential?</h2>
-      <p data-aos="fade-up" data-aos-delay="100">Book a session and gain the examiner's perspective on your work.</p>
+      <p data-aos="fade-up" data-aos-delay="100">Book a session with an IB Examiner. Your grade depends on knowing what they look for.</p>
       <a href="book.html" class="btn btn--primary" data-aos="fade-up" data-aos-delay="200">Book a Session Now</a>
     </div>
   </section>
 
-  <!-- ======== FOOTER ======== -->
+  <!-- FOOTER -->
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__grid">
@@ -359,11 +706,157 @@
     </div>
   </footer>
 
-  <!-- ======== SCRIPTS ======== -->
+  <!-- SCRIPTS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.0/dist/vanilla-tilt.min.js"></script>
   <script src="animations.js"></script>
+
+  <!-- LIVE NEWS LOADER -->
+  <script>
+    const NEWS_FEEDS = [
+      { url: 'https://feeds.bbci.co.uk/news/business/rss.xml',    source: 'BBC Business', count: 3 },
+      { url: 'https://www.theguardian.com/business/economics/rss', source: 'The Guardian', count: 3 },
+    ];
+
+    function stripHtml(html) {
+      const d = document.createElement('div');
+      d.innerHTML = html || '';
+      return (d.textContent || '').replace(/\s+/g, ' ').trim();
+    }
+
+    function formatDate(str) {
+      const d = new Date(str);
+      if (isNaN(d)) return '';
+      return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+    }
+
+    function fetchWithTimeout(url, ms) {
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), ms);
+      return fetch(url, { signal: ctrl.signal })
+        .then(r => { clearTimeout(timer); return r; })
+        .catch(e => { clearTimeout(timer); throw e; });
+    }
+
+    async function fetchViaRss2Json(feed) {
+      const url = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}&count=${feed.count}`;
+      const res  = await fetchWithTimeout(url, 8000);
+      const data = await res.json();
+      if (data.status === 'ok' && Array.isArray(data.items) && data.items.length > 0) {
+        return data.items.map(item => ({
+          title:       item.title       || '',
+          link:        item.link        || '#',
+          pubDate:     item.pubDate     || '',
+          description: item.description || '',
+          thumbnail:   item.thumbnail   || item.enclosure?.link || '',
+          feedSource:  feed.source,
+        }));
+      }
+      throw new Error('rss2json empty');
+    }
+
+    async function fetchViaAllOrigins(feed) {
+      const proxy = `https://api.allorigins.win/get?url=${encodeURIComponent(feed.url)}`;
+      const res   = await fetchWithTimeout(proxy, 10000);
+      const json  = await res.json();
+      const xml   = new DOMParser().parseFromString(json.contents, 'text/xml');
+      const nodes = Array.from(xml.querySelectorAll('item')).slice(0, feed.count);
+      return nodes.map(node => {
+        const get = tag => node.querySelector(tag)?.textContent?.trim() || '';
+        const thumb =
+          node.querySelector('media\\:thumbnail, thumbnail')?.getAttribute('url') ||
+          node.querySelector('media\\:content[medium="image"]')?.getAttribute('url') ||
+          node.querySelector('enclosure[type^="image"]')?.getAttribute('url') || '';
+        return {
+          title:       get('title'),
+          link:        get('link') || node.querySelector('link')?.nextSibling?.nodeValue?.trim() || '#',
+          pubDate:     get('pubDate'),
+          description: get('description'),
+          thumbnail:   thumb,
+          feedSource:  feed.source,
+        };
+      });
+    }
+
+    async function fetchFeed(feed) {
+      try      { return await fetchViaRss2Json(feed); }
+      catch(_) {
+        try    { return await fetchViaAllOrigins(feed); }
+        catch(_){ return []; }
+      }
+    }
+
+    function newsCardHtml(item, variant) {
+      const img = item.thumbnail
+        ? `<div class="news-card__img"><img src="${item.thumbnail}" alt="" loading="lazy" onerror="this.parentElement.style.display='none'"/></div>`
+        : '';
+      const desc = variant !== 'small'
+        ? `<p class="news-card__desc">${stripHtml(item.description).substring(0, 160).trim()}…</p>`
+        : '';
+      return `
+        <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="news-card news-card--${variant}">
+          ${img}
+          <div class="news-card__body">
+            <span class="news-card__source">${item.feedSource}</span>
+            <h3 class="news-card__title">${item.title}</h3>
+            ${desc}
+            <span class="news-card__date">${formatDate(item.pubDate)}</span>
+            ${variant === 'featured' ? '<span class="news-card__read-more">Read article →</span>' : ''}
+          </div>
+        </a>`;
+    }
+
+    function renderNewsGrid(items) {
+      const skeleton = document.getElementById('newsSkeleton');
+      const grid     = document.getElementById('newsGrid');
+      if (!grid) return;
+      if (items.length === 0) {
+        skeleton.style.display = 'none';
+        grid.style.display = 'block';
+        grid.innerHTML = `<p class="news-error">Live news temporarily unavailable. Visit <a href="https://www.bbc.co.uk/news/business" target="_blank" rel="noopener">BBC Business</a> or <a href="https://www.theguardian.com/business/economics" target="_blank" rel="noopener">The Guardian Economics</a> directly.</p>`;
+        return;
+      }
+      const featured   = items[0];
+      const sideItems  = items.slice(1, 3);
+      const smallItems = items.slice(3, 6);
+      grid.innerHTML = `
+        <div class="news-primary-row">
+          ${newsCardHtml(featured, 'featured')}
+          <div class="news-col-secondary">${sideItems.map(i => newsCardHtml(i, 'side')).join('')}</div>
+        </div>
+        ${smallItems.length ? `<div class="news-secondary-row">${smallItems.map(i => newsCardHtml(i, 'small')).join('')}</div>` : ''}
+      `;
+      skeleton.style.display = 'none';
+      grid.style.display = 'block';
+    }
+
+    function renderHeroNews(items) {
+      const el = document.getElementById('heroNewsItems');
+      if (!el) return;
+      if (items.length === 0) {
+        el.innerHTML = '<div class="hero__news-loading">Headlines unavailable right now.</div>';
+        return;
+      }
+      el.innerHTML = items.slice(0, 4).map(item => `
+        <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="hero__news-item">
+          <div class="hero__news-item-source">${item.feedSource}</div>
+          <div class="hero__news-item-title">${item.title}</div>
+          <div class="hero__news-item-date">${formatDate(item.pubDate)}</div>
+        </a>
+      `).join('');
+    }
+
+    async function loadNews() {
+      const results  = await Promise.all(NEWS_FEEDS.map(fetchFeed));
+      const allItems = results.flat();
+      allItems.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+      renderNewsGrid(allItems);
+      renderHeroNews(allItems);
+    }
+
+    window.addEventListener('load', loadNews);
+  </script>
 
 </body>
 </html>
