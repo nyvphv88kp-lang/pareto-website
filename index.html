@@ -337,10 +337,8 @@
     }
     .news-error a { color: var(--gold); }
 
-    /* ── Services section: keep existing but add editorial divider ── */
     .section--services { background: var(--bg); }
 
-    /* ── Homepage section spacing ── */
     .section-divider {
       border: none; border-top: 1px solid #e2e2e2; margin: 0;
     }
@@ -348,6 +346,13 @@
     @keyframes ticker-scroll {
       0%   { transform: translateX(0); }
       100% { transform: translateX(-50%); }
+    }
+
+    /* AOS override — prevent testimonials from staying hidden */
+    .testimonials [data-aos] {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
     }
   </style>
 </head>
@@ -382,7 +387,6 @@
     <div class="container">
       <div class="hero__split">
 
-        <!-- Left: editorial headline -->
         <div>
           <div class="hero__eyebrow" data-aos="fade-right">
             <div class="hero__eyebrow-line"></div>
@@ -400,7 +404,6 @@
           </div>
         </div>
 
-        <!-- Right: live news panel -->
         <div class="hero__news-panel" data-aos="fade-left" data-aos-delay="200">
           <div class="hero__news-panel-header">
             <span class="hero__news-panel-title">Economics in the News</span>
@@ -418,10 +421,8 @@
       </div>
     </div>
 
-    <!-- Scrolling topics strip -->
     <div class="hero__ticker-strip">
       <div class="hero__ticker-inner">
-        <!-- Set 1 -->
         <span class="hero__ticker-item"><em>Monetary Policy</em><span class="hero__ticker-dot"></span></span>
         <span class="hero__ticker-item">Price Elasticity<span class="hero__ticker-dot"></span></span>
         <span class="hero__ticker-item"><em>Comparative Advantage</em><span class="hero__ticker-dot"></span></span>
@@ -434,7 +435,6 @@
         <span class="hero__ticker-item">Aggregate Demand<span class="hero__ticker-dot"></span></span>
         <span class="hero__ticker-item"><em>Exchange Rates</em><span class="hero__ticker-dot"></span></span>
         <span class="hero__ticker-item">IB Economics HL/SL<span class="hero__ticker-dot"></span></span>
-        <!-- Set 2 — duplicate for seamless loop -->
         <span class="hero__ticker-item"><em>Monetary Policy</em><span class="hero__ticker-dot"></span></span>
         <span class="hero__ticker-item">Price Elasticity<span class="hero__ticker-dot"></span></span>
         <span class="hero__ticker-item"><em>Comparative Advantage</em><span class="hero__ticker-dot"></span></span>
@@ -535,7 +535,6 @@
         </span>
       </div>
 
-      <!-- Skeleton loader shown while JS fetches -->
       <div id="newsSkeleton">
         <div class="news-skeleton-row">
           <div class="skeleton-card">
@@ -572,18 +571,14 @@
         </div>
       </div>
 
-      <!-- 70/30 layout: news left, market data right -->
       <div class="news-layout">
 
-        <!-- LEFT 70%: news grid -->
         <div class="news-main">
           <div id="newsGrid" style="display:none;"></div>
         </div>
 
-        <!-- RIGHT 30%: live market data -->
         <div class="market-panel">
 
-          <!-- Exchange Rates widget -->
           <div class="market-widget">
             <div class="market-widget-header">
               <span class="market-widget-title">Exchange Rates</span>
@@ -597,7 +592,6 @@
             </p>
           </div>
 
-          <!-- Why it matters card -->
           <div class="market-widget" style="background:var(--navy);">
             <div style="padding:1.25rem;">
               <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">Why it matters</p>
@@ -607,7 +601,7 @@
           </div>
 
         </div>
-      </div><!-- end .news-layout -->
+      </div>
 
       <p class="news-disclaimer">
         News from <a href="https://edition.cnn.com/business" target="_blank" rel="noopener">CNN Business</a> &amp; <a href="https://www.aljazeera.com/economy/" target="_blank" rel="noopener">Al Jazeera Economy</a>.
@@ -662,10 +656,10 @@
     <div class="container">
       <div class="section-header">
         <span class="section-label">Student &amp; Parent Reviews</span>
-        <h2 id="testimonials-heading" data-aos="fade-up">Results that speak for themselves</h2>
+        <h2 id="testimonials-heading">Results that speak for themselves</h2>
       </div>
 
-      <div class="swiper swiper-testimonials" id="paretoSwiper" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper swiper-testimonials" id="paretoSwiper">
         <div class="swiper-wrapper">
 
           <div class="swiper-slide">
@@ -788,7 +782,6 @@
     </div>
   </section>
 
-  <!-- Auto-play testimonials swiper -->
   <script>
     window.addEventListener('load', function() {
       setTimeout(function() {
@@ -879,15 +872,12 @@
   <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.0/dist/vanilla-tilt.min.js"></script>
   <script src="animations.js"></script>
 
-  <!-- ======== LIVE NEWS LOADER ======== -->
   <script>
-    /* ── Sources ── */
     const NEWS_FEEDS = [
       { url: 'https://rss.cnn.com/rss/edition_business.rss',   source: 'CNN Business', count: 3 },
       { url: 'https://www.aljazeera.com/xml/rss/all.xml',       source: 'Al Jazeera',   count: 3 },
     ];
 
-    /* ── LocalStorage cache (5-hour TTL) ── */
     const CACHE_KEY = 'pareto_news_v3';
     const CACHE_TTL = 5 * 60 * 60 * 1000;
     function getCached(allowStale) {
@@ -903,7 +893,6 @@
       try { localStorage.setItem(CACHE_KEY, JSON.stringify({ items, ts: Date.now() })); } catch {}
     }
 
-    /* ── Utilities ── */
     function stripHtml(html) {
       const d = document.createElement('div');
       d.innerHTML = html || '';
@@ -922,7 +911,6 @@
         .catch(e => { clearTimeout(t); throw e; });
     }
 
-    /* ── Proxy 1: rss2json.com ── */
     async function viaRss2Json(feed) {
       const res  = await fetchWithTimeout(
         `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}&count=${feed.count}`, 9000);
@@ -937,14 +925,12 @@
       }));
     }
 
-    /* ── Proxy 2: corsproxy.io ── */
     async function viaCorsProxyIo(feed) {
       const res  = await fetchWithTimeout(`https://corsproxy.io/?${encodeURIComponent(feed.url)}`, 11000);
       const text = await res.text();
       return parseRssXml(text, feed);
     }
 
-    /* ── Proxy 3: allorigins.win ── */
     async function viaAllOrigins(feed) {
       const res  = await fetchWithTimeout(`https://api.allorigins.win/get?url=${encodeURIComponent(feed.url)}`, 12000);
       const json = await res.json();
@@ -957,7 +943,6 @@
       if (!nodes.length) throw new Error('empty');
       return nodes.map(node => {
         const get = sel => { try { return node.querySelector(sel)?.textContent?.trim() || ''; } catch { return ''; } };
-        /* Try every common RSS image pattern */
         let thumb = '';
         const imgTry = [
           () => node.querySelector('media\\:thumbnail')?.getAttribute('url'),
@@ -987,7 +972,6 @@
       return [];
     }
 
-    /* ── Image extraction from content/description HTML ── */
     function extractFirstImage(html) {
       if (!html) return '';
       try { const d = document.createElement('div'); d.innerHTML = html; return d.querySelector('img[src]')?.getAttribute('src') || ''; }
@@ -1000,7 +984,6 @@
       return '';
     }
 
-    /* ── Render ── */
     function newsCardHtml(item, variant) {
       const thumb = getThumb(item);
       const imgHtml = thumb
@@ -1055,21 +1038,16 @@
     }
 
     async function loadNews() {
-      /* Serve fresh cache instantly */
       const cached = getCached(false);
       if (cached) { renderNewsGrid(cached); renderHeroNews(cached); return; }
-
-      /* Fetch live from all feeds in parallel */
       const results  = await Promise.all(NEWS_FEEDS.map(fetchFeed));
       const allItems = results.flat().filter(i => i.title);
       allItems.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
-
       if (allItems.length) {
         setCached(allItems);
         renderNewsGrid(allItems);
         renderHeroNews(allItems);
       } else {
-        /* All APIs failed — try stale cache before showing error */
         const stale = getCached(true);
         renderNewsGrid(stale || []);
         renderHeroNews(stale || []);
@@ -1078,7 +1056,6 @@
 
     window.addEventListener('load', loadNews);
 
-    /* ── Exchange Rate Widget ── */
     const RATE_PAIRS = [
       { code: 'EUR', name: 'USD / EUR', flag: '🇪🇺' },
       { code: 'GBP', name: 'USD / GBP', flag: '🇬🇧' },
