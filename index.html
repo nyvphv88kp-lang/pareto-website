@@ -18,7 +18,6 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    /* ── Hero: split editorial layout ── */
     .hero {
       min-height: 92vh;
       background: linear-gradient(135deg, #0b1e36 0%, #0f2744 60%, #14305a 100%);
@@ -61,7 +60,6 @@
     }
     .hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-    /* Hero news panel */
     .hero__news-panel {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.1);
@@ -119,7 +117,6 @@
     }
     .hero__news-view-all:hover { background: rgba(201,164,74,0.08); }
 
-    /* Hero bottom topics ticker */
     .hero__ticker-strip {
       background: rgba(0,0,0,0.25);
       border-top: 1px solid rgba(255,255,255,0.07);
@@ -141,7 +138,6 @@
     .hero__ticker-item em { color: var(--gold); font-style: normal; }
     .hero__ticker-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--gold); opacity: 0.5; }
 
-    /* ── Editorial section header style ── */
     .section-editorial-header {
       display: flex; align-items: flex-end; gap: 1.5rem;
       margin-bottom: 2.5rem;
@@ -153,94 +149,54 @@
       font-size: 0.75rem; color: var(--text-muted);
       margin-left: auto; white-space: nowrap; padding-bottom: 0.2rem;
     }
-    .section-editorial-header__meta a {
-      color: var(--gold); text-decoration: none;
-    }
+    .section-editorial-header__meta a { color: var(--gold); text-decoration: none; }
     .section-editorial-header__meta a:hover { text-decoration: underline; }
 
-    /* ── Economics in Focus news section ── */
     .economics-news { background: #f4f3f0; }
 
-    .news-primary-row {
-      display: grid;
-      grid-template-columns: 3fr 2fr;
-      gap: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-    @media (max-width: 768px) {
-      .news-primary-row { grid-template-columns: 1fr; }
-    }
-
-    .news-secondary-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-    @media (max-width: 900px) {
-      .news-secondary-row { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 600px) {
-      .news-secondary-row { grid-template-columns: 1fr; }
-    }
-
-    .news-card {
+    /* News feed list */
+    .news-feed {
       background: #fff;
       border-radius: 14px;
+      border: 1px solid #e8e6e1;
       overflow: hidden;
+    }
+    .news-feed-item {
+      display: block;
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid #f0ede8;
       text-decoration: none;
       color: inherit;
-      border: 1px solid #e8e6e1;
-      display: flex; flex-direction: column;
-      transition: box-shadow 0.25s, transform 0.25s;
+      transition: background 0.15s;
     }
-    .news-card:hover {
-      box-shadow: 0 8px 32px rgba(15,39,68,0.13);
-      transform: translateY(-3px);
+    .news-feed-item:last-child { border-bottom: none; }
+    .news-feed-item:hover { background: #fafaf8; }
+    .news-feed-meta {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 0.5rem;
     }
-    .news-card__img {
-      width: 100%; overflow: hidden; background: #ddd;
-      flex-shrink: 0;
-    }
-    .news-card__img img {
-      width: 100%; height: 100%; object-fit: cover; display: block;
-      transition: transform 0.4s;
-    }
-    .news-card:hover .news-card__img img { transform: scale(1.03); }
-    .news-card--featured .news-card__img { height: 240px; }
-    .news-card--side .news-card__img { height: 160px; }
-    .news-card--small .news-card__img { height: 140px; }
-
-    .news-card__body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
-    .news-card__source {
-      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em;
+    .news-feed-source {
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em;
       text-transform: uppercase; color: var(--gold);
       background: rgba(201,164,74,0.1); border-radius: 4px;
-      padding: 3px 8px; display: inline-block; margin-bottom: 0.6rem;
-      align-self: flex-start;
+      padding: 2px 7px; flex-shrink: 0;
     }
-    .news-card__title {
+    .news-feed-date { font-size: 0.63rem; color: #bbb; }
+    .news-feed-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-weight: 700; color: var(--navy); line-height: 1.35;
-      margin-bottom: 0.6rem;
+      font-size: 1rem; font-weight: 700; color: var(--navy);
+      line-height: 1.35; margin-bottom: 0.45rem;
     }
-    .news-card--featured .news-card__title { font-size: 1.35rem; }
-    .news-card--side    .news-card__title { font-size: 1rem; }
-    .news-card--small   .news-card__title { font-size: 0.9rem; }
-    .news-card__desc {
-      font-size: 0.85rem; color: var(--text-muted);
-      line-height: 1.65; flex: 1; margin-bottom: 0.75rem;
+    .news-feed-excerpt {
+      font-size: 0.83rem; color: var(--text-muted);
+      line-height: 1.65; margin-bottom: 0.4rem;
     }
-    .news-card--small .news-card__desc { display: none; }
-    .news-card__date { font-size: 0.68rem; color: #aaa; margin-top: auto; }
-    .news-card__read-more {
-      font-size: 0.72rem; font-weight: 600; color: var(--gold);
+    .news-feed-link {
+      font-size: 0.68rem; font-weight: 600; color: var(--gold);
       text-transform: uppercase; letter-spacing: 0.08em;
-      margin-top: 0.75rem; display: flex; align-items: center; gap: 0.3rem;
     }
 
-    .news-col-secondary { display: flex; flex-direction: column; gap: 1.5rem; }
-
-    /* ── 70/30 news + market layout ── */
+    /* 70/30 layout */
     .news-layout {
       display: grid;
       grid-template-columns: 7fr 3fr;
@@ -286,40 +242,24 @@
     .market-disclaimer a { color: var(--gold); text-decoration: none; }
     .market-loading { padding: 1.5rem; text-align: center; color: var(--text-muted); font-size: 0.82rem; }
 
-    /* Placeholder when no image is available */
-    .news-card__img--empty {
-      background: linear-gradient(135deg, #0b1e36 0%, #14305a 100%);
-      position: relative; overflow: hidden;
+    /* Skeleton */
+    .skeleton-feed {
+      background: #fff; border-radius: 14px; border: 1px solid #e8e6e1; overflow: hidden;
     }
-    .news-card__img--empty::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 60'%3E%3Cpolyline points='5,55 20,40 35,48 50,20 65,30 80,10 95,18' fill='none' stroke='%23c9a44a' stroke-width='2' stroke-opacity='0.25'/%3E%3C/svg%3E") center/70% no-repeat;
+    .skeleton-feed-item {
+      padding: 1.25rem 1.5rem; border-bottom: 1px solid #f0ede8;
     }
-
-    /* Skeleton loader */
-    .news-skeleton-row {
-      display: grid; grid-template-columns: 3fr 2fr; gap: 1.5rem; margin-bottom: 1.5rem;
-    }
-    .news-skeleton-secondary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .skeleton-card {
-      background: #fff; border-radius: 14px; border: 1px solid #e8e6e1;
-      overflow: hidden;
-    }
-    .skeleton-img { background: #e8e8e8; animation: skel 1.4s ease infinite; }
-    .skeleton-featured-img { height: 240px; }
-    .skeleton-side-img { height: 120px; }
-    .skeleton-small-img { height: 100px; }
-    .skeleton-body { padding: 1.25rem; }
+    .skeleton-feed-item:last-child { border-bottom: none; }
     .skeleton-line {
-      background: #e8e8e8; border-radius: 4px; margin-bottom: 0.6rem;
+      background: #e8e8e8; border-radius: 4px; margin-bottom: 0.55rem;
       animation: skel 1.4s ease infinite;
     }
-    .skeleton-line--short { height: 10px; width: 40%; }
-    .skeleton-line--med   { height: 14px; width: 85%; }
-    .skeleton-line--long  { height: 12px; width: 100%; }
+    .skeleton-line--short { height: 10px; width: 35%; }
+    .skeleton-line--med   { height: 15px; width: 90%; }
+    .skeleton-line--long  { height: 11px; width: 100%; }
+    .skeleton-line--long2 { height: 11px; width: 75%; }
     @keyframes skel {
-      0%, 100% { opacity: 1; } 50% { opacity: 0.45; }
+      0%, 100% { opacity: 1; } 50% { opacity: 0.4; }
     }
 
     .news-disclaimer {
@@ -332,16 +272,13 @@
     .news-disclaimer a:hover { text-decoration: underline; }
 
     .news-error {
-      grid-column: 1 / -1; text-align: center;
-      padding: 3rem 1rem; color: var(--text-muted); font-size: 0.9rem;
+      padding: 3rem 1rem; text-align: center;
+      color: var(--text-muted); font-size: 0.9rem;
     }
     .news-error a { color: var(--gold); }
 
     .section--services { background: var(--bg); }
-
-    .section-divider {
-      border: none; border-top: 1px solid #e2e2e2; margin: 0;
-    }
+    .section-divider { border: none; border-top: 1px solid #e2e2e2; margin: 0; }
 
     @keyframes ticker-scroll {
       0%   { transform: translateX(0); }
@@ -358,7 +295,6 @@
 </head>
 <body>
 
-  <!-- ======== NAVIGATION ======== -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="container nav__inner">
       <a href="index.html" class="nav__logo">Pareto<span>.</span></a>
@@ -382,11 +318,9 @@
     </div>
   </nav>
 
-  <!-- ======== HERO ======== -->
   <section class="hero" aria-labelledby="hero-heading">
     <div class="container">
       <div class="hero__split">
-
         <div>
           <div class="hero__eyebrow" data-aos="fade-right">
             <div class="hero__eyebrow-line"></div>
@@ -403,24 +337,18 @@
             <a href="resources.html" class="btn btn--outline">Free Resources</a>
           </div>
         </div>
-
         <div class="hero__news-panel" data-aos="fade-left" data-aos-delay="200">
           <div class="hero__news-panel-header">
             <span class="hero__news-panel-title">Economics in the News</span>
-            <span class="hero__news-live">
-              <span class="hero__news-live-dot"></span>
-              Live
-            </span>
+            <span class="hero__news-live"><span class="hero__news-live-dot"></span>Live</span>
           </div>
           <div class="hero__news-items" id="heroNewsItems">
             <div class="hero__news-loading">Loading latest headlines…</div>
           </div>
           <a href="#economics-news" class="hero__news-view-all">View all stories ↓</a>
         </div>
-
       </div>
     </div>
-
     <div class="hero__ticker-strip">
       <div class="hero__ticker-inner">
         <span class="hero__ticker-item"><em>Monetary Policy</em><span class="hero__ticker-dot"></span></span>
@@ -451,7 +379,6 @@
     </div>
   </section>
 
-  <!-- ======== TRUST BAR ======== -->
   <div class="trust-bar" role="region" aria-label="Key statistics">
     <div class="container">
       <div class="trust-bar__grid">
@@ -475,7 +402,6 @@
     </div>
   </div>
 
-  <!-- ======== SERVICES ======== -->
   <section class="section section--services" id="services" aria-labelledby="services-heading">
     <div class="container">
       <div class="section-editorial-header" data-aos="fade-up">
@@ -486,42 +412,36 @@
         Each session is tailored precisely to your curriculum, your examiner, and your goals. No templates. No wasted time.
       </p>
       <div class="services-grid">
-
         <div class="service-card" data-aos="fade-up" data-aos-delay="0" data-tilt>
           <div class="service-card__icon">📚</div>
           <h3>1-to-1 Tutoring</h3>
           <p>Private sessions tailored to your exact syllabus and learning gaps. I review your past work, identify the weak points, and focus every minute on what will raise your grade.</p>
           <div class="service-card__price">$55 <span>/ 60 min session</span></div>
         </div>
-
         <div class="service-card" data-aos="fade-up" data-aos-delay="100" data-tilt>
           <div class="service-card__icon">👥</div>
           <h3>Group Sessions</h3>
           <p>Collaborate in a small group of 2–4 students. Cover paper structure, key diagrams, and exam technique together — more affordable, surprisingly effective, and energising.</p>
           <div class="service-card__price">$30 <span>/ student · 90 min</span></div>
         </div>
-
         <div class="service-card" data-aos="fade-up" data-aos-delay="200" data-tilt>
           <div class="service-card__icon">📝</div>
           <h3>Internal Assessment Support</h3>
           <p>Your IB Economics Commentary or Written Report is worth 20% of your final grade. I'll walk you through every criterion, review your drafts, and tell you exactly what an examiner looks for — because I am one.</p>
           <div class="service-card__price">$65 <span>/ 60 min session</span></div>
         </div>
-
         <div class="service-card service-card--premium" data-aos="fade-up" data-aos-delay="300" data-tilt>
           <div class="service-card__icon">🏆</div>
           <h3>Extended Essay</h3>
           <p>The Extended Essay is a 4,000-word research paper with real university-level expectations. I guide you from topic selection through to a polished, grade-ready final draft.</p>
           <div class="service-card__price">$75 <span>/ 60 min session</span></div>
         </div>
-
       </div>
     </div>
   </section>
 
   <hr class="section-divider" />
 
-  <!-- ======== ECONOMICS IN FOCUS — LIVE NEWS ======== -->
   <section class="section economics-news" id="economics-news" aria-labelledby="news-heading">
     <div class="container">
 
@@ -529,56 +449,38 @@
         <h2 id="news-heading">Economics in Focus</h2>
         <span class="section-editorial-header__meta">
           Live from
-          <a href="https://edition.cnn.com/business" target="_blank" rel="noopener">CNN Business</a>
+          <a href="https://edition.cnn.com/business" target="_blank" rel="noopener">CNN Business</a>,
+          <a href="https://www.bbc.com/news/business" target="_blank" rel="noopener">BBC Business</a>
           &amp;
-          <a href="https://www.aljazeera.com/economy/" target="_blank" rel="noopener">Al Jazeera Economy</a>
+          <a href="https://www.aljazeera.com/economy/" target="_blank" rel="noopener">Al Jazeera</a>
         </span>
       </div>
 
       <div id="newsSkeleton">
-        <div class="news-skeleton-row">
-          <div class="skeleton-card">
-            <div class="skeleton-img skeleton-featured-img"></div>
-            <div class="skeleton-body">
-              <div class="skeleton-line skeleton-line--short"></div>
-              <div class="skeleton-line skeleton-line--med" style="height:20px;width:75%;margin-bottom:0.8rem;"></div>
-              <div class="skeleton-line skeleton-line--long"></div>
-              <div class="skeleton-line skeleton-line--long"></div>
-              <div class="skeleton-line skeleton-line--med" style="width:60%;margin-top:0.4rem;"></div>
+        <div class="news-layout">
+          <div class="news-main">
+            <div class="skeleton-feed">
+              <div class="skeleton-feed-item"><div class="skeleton-line skeleton-line--short"></div><div class="skeleton-line skeleton-line--med" style="height:17px;width:80%;"></div><div class="skeleton-line skeleton-line--long"></div><div class="skeleton-line skeleton-line--long2"></div></div>
+              <div class="skeleton-feed-item"><div class="skeleton-line skeleton-line--short"></div><div class="skeleton-line skeleton-line--med" style="height:17px;width:70%;"></div><div class="skeleton-line skeleton-line--long"></div><div class="skeleton-line skeleton-line--long2"></div></div>
+              <div class="skeleton-feed-item"><div class="skeleton-line skeleton-line--short"></div><div class="skeleton-line skeleton-line--med" style="height:17px;width:85%;"></div><div class="skeleton-line skeleton-line--long"></div><div class="skeleton-line skeleton-line--long2"></div></div>
+              <div class="skeleton-feed-item"><div class="skeleton-line skeleton-line--short"></div><div class="skeleton-line skeleton-line--med" style="height:17px;width:75%;"></div><div class="skeleton-line skeleton-line--long"></div><div class="skeleton-line skeleton-line--long2"></div></div>
+              <div class="skeleton-feed-item"><div class="skeleton-line skeleton-line--short"></div><div class="skeleton-line skeleton-line--med" style="height:17px;width:90%;"></div><div class="skeleton-line skeleton-line--long"></div><div class="skeleton-line skeleton-line--long2"></div></div>
             </div>
           </div>
-          <div style="display:flex;flex-direction:column;gap:1.5rem;">
-            <div class="skeleton-card">
-              <div class="skeleton-img skeleton-side-img"></div>
-              <div class="skeleton-body">
-                <div class="skeleton-line skeleton-line--short"></div>
-                <div class="skeleton-line skeleton-line--med"></div>
-              </div>
-            </div>
-            <div class="skeleton-card">
-              <div class="skeleton-img skeleton-side-img"></div>
-              <div class="skeleton-body">
-                <div class="skeleton-line skeleton-line--short"></div>
-                <div class="skeleton-line skeleton-line--med"></div>
-              </div>
+          <div class="market-panel">
+            <div class="market-widget">
+              <div class="market-widget-header"><span class="market-widget-title">Exchange Rates</span></div>
+              <div style="padding:1rem;"><div class="skeleton-line skeleton-line--long" style="margin-bottom:1rem;"></div><div class="skeleton-line skeleton-line--long" style="margin-bottom:1rem;"></div><div class="skeleton-line skeleton-line--long" style="margin-bottom:1rem;"></div></div>
             </div>
           </div>
-        </div>
-        <div class="news-skeleton-secondary">
-          <div class="skeleton-card"><div class="skeleton-img skeleton-small-img"></div><div class="skeleton-body"><div class="skeleton-line skeleton-line--short"></div><div class="skeleton-line skeleton-line--med"></div></div></div>
-          <div class="skeleton-card"><div class="skeleton-img skeleton-small-img"></div><div class="skeleton-body"><div class="skeleton-line skeleton-line--short"></div><div class="skeleton-line skeleton-line--med"></div></div></div>
-          <div class="skeleton-card"><div class="skeleton-img skeleton-small-img"></div><div class="skeleton-body"><div class="skeleton-line skeleton-line--short"></div><div class="skeleton-line skeleton-line--med"></div></div></div>
         </div>
       </div>
 
       <div class="news-layout">
-
         <div class="news-main">
           <div id="newsGrid" style="display:none;"></div>
         </div>
-
         <div class="market-panel">
-
           <div class="market-widget">
             <div class="market-widget-header">
               <span class="market-widget-title">Exchange Rates</span>
@@ -591,7 +493,6 @@
               Source: <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener">ExchangeRate-API</a> · Updates daily · USD base
             </p>
           </div>
-
           <div class="market-widget" style="background:var(--navy);">
             <div style="padding:1.25rem;">
               <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">Why it matters</p>
@@ -599,14 +500,13 @@
               <a href="book.html" style="display:inline-block;margin-top:0.9rem;font-size:0.72rem;font-weight:700;color:var(--gold);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;">Discuss in a session →</a>
             </div>
           </div>
-
         </div>
       </div>
 
       <p class="news-disclaimer">
-        News from <a href="https://edition.cnn.com/business" target="_blank" rel="noopener">CNN Business</a> &amp; <a href="https://www.aljazeera.com/economy/" target="_blank" rel="noopener">Al Jazeera Economy</a>.
+        News from <a href="https://edition.cnn.com/business" target="_blank" rel="noopener">CNN Business</a>, <a href="https://www.bbc.com/news/business" target="_blank" rel="noopener">BBC Business</a> &amp; <a href="https://www.aljazeera.com/economy/" target="_blank" rel="noopener">Al Jazeera Economy</a>.
         Exchange rates from <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener">ExchangeRate-API</a>.
-        External content — Pareto is not affiliated with these publications. Use as real-world examples in your essays and commentaries.
+        External content — Pareto is not affiliated with these publications.
       </p>
 
     </div>
@@ -614,7 +514,6 @@
 
   <hr class="section-divider" />
 
-  <!-- ======== FREE RESOURCES TEASER ======== -->
   <section class="section resources-teaser" id="free-resources" aria-labelledby="free-resources-heading">
     <div class="container">
       <div class="section-editorial-header" data-aos="fade-up">
@@ -625,43 +524,36 @@
         Download free study materials — no sign-up needed. A taste of what's in the full library.
       </p>
       <div class="resources-teaser-grid">
-
         <div class="resource-teaser-card" data-aos="fade-up" data-aos-delay="0">
           <span class="resource-teaser-card__tag">IB Economics</span>
           <h4>IA Step-by-Step Checklist</h4>
           <p>Every criterion explained. Know what examiners look for before you write a single word.</p>
           <a href="resources.html" class="btn btn--outline-dark">Download Free</a>
         </div>
-
         <div class="resource-teaser-card" data-aos="fade-up" data-aos-delay="100">
           <span class="resource-teaser-card__tag">All Curricula</span>
           <h4>Key Diagrams Reference Sheet</h4>
           <p>Every essential diagram — supply & demand, market failure, macro models — in one clean PDF.</p>
           <a href="resources.html" class="btn btn--outline-dark">Download Free</a>
         </div>
-
         <div class="resource-teaser-card" data-aos="fade-up" data-aos-delay="200">
           <span class="resource-teaser-card__tag">IB Economics</span>
           <h4>IB Command Terms Guide</h4>
           <p>Understand exactly what "evaluate", "discuss", and "examine" require in Paper 1 and Paper 3.</p>
           <a href="resources.html" class="btn btn--outline-dark">Download Free</a>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ======== TESTIMONIALS ======== -->
   <section class="section testimonials" id="testimonials" aria-labelledby="testimonials-heading">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Student &amp; Parent Reviews</span>
         <h2 id="testimonials-heading">Results that speak for themselves</h2>
       </div>
-
       <div class="swiper swiper-testimonials" id="paretoSwiper">
         <div class="swiper-wrapper">
-
           <div class="swiper-slide">
             <div class="testimonial-card">
               <div class="testimonial-card__stars">★★★★★</div>
@@ -675,7 +567,6 @@
               </div>
             </div>
           </div>
-
           <div class="swiper-slide">
             <div class="testimonial-card">
               <div class="testimonial-card__stars">★★★★★</div>
@@ -689,7 +580,6 @@
               </div>
             </div>
           </div>
-
           <div class="swiper-slide">
             <div class="testimonial-card">
               <div class="testimonial-card__stars">★★★★★</div>
@@ -703,7 +593,6 @@
               </div>
             </div>
           </div>
-
           <div class="swiper-slide">
             <div class="testimonial-card">
               <div class="testimonial-card__stars">★★★★★</div>
@@ -717,7 +606,6 @@
               </div>
             </div>
           </div>
-
           <div class="swiper-slide">
             <div class="testimonial-card">
               <div class="testimonial-card__stars">★★★★★</div>
@@ -731,7 +619,6 @@
               </div>
             </div>
           </div>
-
           <div class="swiper-slide">
             <div class="testimonial-card">
               <div class="testimonial-card__stars">★★★★★</div>
@@ -745,7 +632,6 @@
               </div>
             </div>
           </div>
-
           <div class="swiper-slide">
             <div class="testimonial-card">
               <div class="testimonial-card__stars">★★★★★</div>
@@ -759,7 +645,6 @@
               </div>
             </div>
           </div>
-
           <div class="swiper-slide">
             <div class="testimonial-card">
               <div class="testimonial-card__stars">★★★★★</div>
@@ -773,7 +658,6 @@
               </div>
             </div>
           </div>
-
         </div>
         <div class="swiper-pagination"></div>
         <div class="swiper-button-prev"></div>
@@ -794,7 +678,6 @@
     });
   </script>
 
-  <!-- ======== CTA BANNER ======== -->
   <section class="cta-banner" aria-labelledby="cta-heading">
     <div class="container">
       <h2 id="cta-heading" data-aos="fade-up">Ready to reach your potential?</h2>
@@ -803,11 +686,9 @@
     </div>
   </section>
 
-  <!-- ======== FOOTER ======== -->
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__grid">
-
         <div class="footer__brand">
           <div class="footer__logo-lockup">
             <span class="footer__logo-name">Pareto</span>
@@ -816,7 +697,6 @@
           </div>
           <p class="footer__brand-desc">Online Economics tuition for IB, IGCSE and A-Level students. Excellence through insight.</p>
         </div>
-
         <div class="footer__col">
           <p class="footer__col-title">Navigate</p>
           <nav>
@@ -826,7 +706,6 @@
             <a href="book.html">Book a Session</a>
           </nav>
         </div>
-
         <div class="footer__col">
           <p class="footer__col-title">Programmes</p>
           <nav>
@@ -837,7 +716,6 @@
             <a href="book.html">Group Seminars</a>
           </nav>
         </div>
-
         <div class="footer__col">
           <p class="footer__col-title">Contact</p>
           <nav>
@@ -846,9 +724,7 @@
             <span>Worldwide · CET</span>
           </nav>
         </div>
-
       </div>
-
       <div class="footer__bottom">
         <p class="footer__copy">© 2026 Pareto Economics. All rights reserved. · <a href="privacy.html">Privacy</a> · <a href="#">Terms</a></p>
         <div class="footer__socials">
@@ -866,7 +742,6 @@
     </div>
   </footer>
 
-  <!-- ======== SCRIPTS ======== -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.0/dist/vanilla-tilt.min.js"></script>
@@ -874,8 +749,9 @@
 
   <script>
     const NEWS_FEEDS = [
-      { url: 'https://rss.cnn.com/rss/edition_business.rss',   source: 'CNN Business', count: 3 },
-      { url: 'https://www.aljazeera.com/xml/rss/all.xml',       source: 'Al Jazeera',   count: 3 },
+      { url: 'https://rss.cnn.com/rss/edition_business.rss',        source: 'CNN Business', count: 3 },
+      { url: 'https://feeds.bbci.co.uk/news/business/rss.xml',      source: 'BBC Business', count: 3 },
+      { url: 'https://www.aljazeera.com/xml/rss/all.xml',           source: 'Al Jazeera',   count: 3 },
     ];
 
     const CACHE_KEY = 'pareto_news_v3';
@@ -972,35 +848,23 @@
       return [];
     }
 
-    function extractFirstImage(html) {
+    function stripHtmlDesc(html) {
       if (!html) return '';
-      try { const d = document.createElement('div'); d.innerHTML = html; return d.querySelector('img[src]')?.getAttribute('src') || ''; }
+      try { const d = document.createElement('div'); d.innerHTML = html; return (d.textContent || '').replace(/\s+/g, ' ').trim(); }
       catch { return ''; }
     }
-    function getThumb(item) {
-      if (item.thumbnail?.startsWith('http')) return item.thumbnail;
-      const c = extractFirstImage(item.content);   if (c?.startsWith('http')) return c;
-      const d = extractFirstImage(item.description); if (d?.startsWith('http')) return d;
-      return '';
-    }
 
-    function newsCardHtml(item, variant) {
-      const thumb = getThumb(item);
-      const imgHtml = thumb
-        ? `<div class="news-card__img"><img src="${thumb}" alt="" loading="lazy" onerror="this.parentElement.classList.add('news-card__img--empty');this.remove()"/></div>`
-        : `<div class="news-card__img news-card__img--empty"></div>`;
-      const desc = variant !== 'small'
-        ? `<p class="news-card__desc">${stripHtml(item.description).substring(0, 160).trim()}…</p>` : '';
+    function newsFeedItemHtml(item) {
+      const excerpt = stripHtml(item.description).substring(0, 200).trim();
       return `
-        <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="news-card news-card--${variant}">
-          ${imgHtml}
-          <div class="news-card__body">
-            <span class="news-card__source">${item.feedSource}</span>
-            <h3 class="news-card__title">${item.title}</h3>
-            ${desc}
-            <span class="news-card__date">${formatDate(item.pubDate)}</span>
-            ${variant === 'featured' ? '<span class="news-card__read-more">Read article →</span>' : ''}
+        <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="news-feed-item">
+          <div class="news-feed-meta">
+            <span class="news-feed-source">${item.feedSource}</span>
+            <span class="news-feed-date">${formatDate(item.pubDate)}</span>
           </div>
+          <h3 class="news-feed-title">${item.title}</h3>
+          ${excerpt ? `<p class="news-feed-excerpt">${excerpt}…</p>` : ''}
+          <span class="news-feed-link">Read article →</span>
         </a>`;
     }
 
@@ -1008,21 +872,13 @@
       const skeleton = document.getElementById('newsSkeleton');
       const grid     = document.getElementById('newsGrid');
       if (!grid) return;
-      if (!items.length) {
-        skeleton.style.display = 'none';
-        grid.style.display = 'block';
-        grid.innerHTML = `<p class="news-error">News temporarily unavailable. Read the latest on <a href="https://edition.cnn.com/business" target="_blank" rel="noopener">CNN Business</a> or <a href="https://www.aljazeera.com/economy/" target="_blank" rel="noopener">Al Jazeera Economy</a>.</p>`;
-        return;
-      }
-      const featured = items[0], sideItems = items.slice(1,3), smallItems = items.slice(3,6);
-      grid.innerHTML = `
-        <div class="news-primary-row">
-          ${newsCardHtml(featured, 'featured')}
-          <div class="news-col-secondary">${sideItems.map(i => newsCardHtml(i, 'side')).join('')}</div>
-        </div>
-        ${smallItems.length ? `<div class="news-secondary-row">${smallItems.map(i => newsCardHtml(i, 'small')).join('')}</div>` : ''}`;
       skeleton.style.display = 'none';
       grid.style.display = 'block';
+      if (!items.length) {
+        grid.innerHTML = `<p class="news-error">News temporarily unavailable. Visit <a href="https://edition.cnn.com/business" target="_blank" rel="noopener">CNN Business</a>, <a href="https://www.bbc.com/news/business" target="_blank" rel="noopener">BBC Business</a> or <a href="https://www.aljazeera.com/economy/" target="_blank" rel="noopener">Al Jazeera Economy</a>.</p>`;
+        return;
+      }
+      grid.innerHTML = `<div class="news-feed">${items.slice(0, 9).map(newsFeedItemHtml).join('')}</div>`;
     }
 
     function renderHeroNews(items) {
