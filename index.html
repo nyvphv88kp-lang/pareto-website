@@ -158,7 +158,7 @@
     }
     .section-editorial-header__meta a:hover { text-decoration: underline; }
 
-    /* ── Economics in Focus news section ── */
+    /* ── Economics in Action news section ── */
     .economics-news { background: #f4f3f0; }
 
     /* News feed list */
@@ -249,17 +249,6 @@
     .market-disclaimer a { color: var(--gold); text-decoration: none; }
     .market-loading { padding: 1.5rem; text-align: center; color: var(--text-muted); font-size: 0.82rem; }
 
-    /* Placeholder when no image is available */
-    .news-card__img--empty {
-      background: linear-gradient(135deg, #0b1e36 0%, #14305a 100%);
-      position: relative; overflow: hidden;
-    }
-    .news-card__img--empty::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 60'%3E%3Cpolyline points='5,55 20,40 35,48 50,20 65,30 80,10 95,18' fill='none' stroke='%23c9a44a' stroke-width='2' stroke-opacity='0.25'/%3E%3C/svg%3E") center/70% no-repeat;
-    }
-
     /* Skeleton loader */
     .skeleton-feed {
       background: #fff; border-radius: 14px; border: 1px solid #e8e6e1; overflow: hidden;
@@ -295,10 +284,8 @@
     }
     .news-error a { color: var(--gold); }
 
-    /* ── Services section: keep existing but add editorial divider ── */
     .section--services { background: var(--bg); }
 
-    /* ── Homepage section spacing ── */
     .section-divider {
       border: none; border-top: 1px solid #e2e2e2; margin: 0;
     }
@@ -347,7 +334,6 @@
     <div class="container">
       <div class="hero__split">
 
-        <!-- Left: editorial headline -->
         <div>
           <div class="hero__eyebrow" data-aos="fade-right">
             <div class="hero__eyebrow-line"></div>
@@ -365,7 +351,6 @@
           </div>
         </div>
 
-        <!-- Right: live news panel -->
         <div class="hero__news-panel" data-aos="fade-left" data-aos-delay="200">
           <div class="hero__news-panel-header">
             <span class="hero__news-panel-title">Economics in the News</span>
@@ -383,10 +368,8 @@
       </div>
     </div>
 
-    <!-- Scrolling topics strip -->
     <div class="hero__ticker-strip">
       <div class="hero__ticker-inner">
-        <!-- Set 1 -->
         <span class="hero__ticker-item"><em>Monetary Policy</em><span class="hero__ticker-dot"></span></span>
         <span class="hero__ticker-item">Price Elasticity<span class="hero__ticker-dot"></span></span>
         <span class="hero__ticker-item"><em>Comparative Advantage</em><span class="hero__ticker-dot"></span></span>
@@ -399,7 +382,6 @@
         <span class="hero__ticker-item">Aggregate Demand<span class="hero__ticker-dot"></span></span>
         <span class="hero__ticker-item"><em>Exchange Rates</em><span class="hero__ticker-dot"></span></span>
         <span class="hero__ticker-item">IB Economics HL/SL<span class="hero__ticker-dot"></span></span>
-        <!-- Set 2 — duplicate for seamless loop -->
         <span class="hero__ticker-item"><em>Monetary Policy</em><span class="hero__ticker-dot"></span></span>
         <span class="hero__ticker-item">Price Elasticity<span class="hero__ticker-dot"></span></span>
         <span class="hero__ticker-item"><em>Comparative Advantage</em><span class="hero__ticker-dot"></span></span>
@@ -500,7 +482,6 @@
         </span>
       </div>
 
-      <!-- Skeleton loader shown while JS fetches -->
       <div id="newsSkeleton">
         <div class="news-layout">
           <div class="news-main">
@@ -508,8 +489,6 @@
               <div class="skeleton-feed-item"><div class="skeleton-line skeleton-line--short"></div><div class="skeleton-line skeleton-line--med" style="height:17px;width:80%;"></div><div class="skeleton-line skeleton-line--long"></div><div class="skeleton-line skeleton-line--long2"></div></div>
               <div class="skeleton-feed-item"><div class="skeleton-line skeleton-line--short"></div><div class="skeleton-line skeleton-line--med" style="height:17px;width:70%;"></div><div class="skeleton-line skeleton-line--long"></div><div class="skeleton-line skeleton-line--long2"></div></div>
               <div class="skeleton-feed-item"><div class="skeleton-line skeleton-line--short"></div><div class="skeleton-line skeleton-line--med" style="height:17px;width:85%;"></div><div class="skeleton-line skeleton-line--long"></div><div class="skeleton-line skeleton-line--long2"></div></div>
-              <div class="skeleton-feed-item"><div class="skeleton-line skeleton-line--short"></div><div class="skeleton-line skeleton-line--med" style="height:17px;width:75%;"></div><div class="skeleton-line skeleton-line--long"></div><div class="skeleton-line skeleton-line--long2"></div></div>
-              <div class="skeleton-feed-item"><div class="skeleton-line skeleton-line--short"></div><div class="skeleton-line skeleton-line--med" style="height:17px;width:90%;"></div><div class="skeleton-line skeleton-line--long"></div><div class="skeleton-line skeleton-line--long2"></div></div>
             </div>
           </div>
           <div class="market-panel">
@@ -521,18 +500,14 @@
         </div>
       </div>
 
-      <!-- 70/30 layout: news left, market data right -->
       <div class="news-layout">
 
-        <!-- LEFT 70%: news grid -->
         <div class="news-main">
           <div id="newsGrid" style="display:none;"></div>
         </div>
 
-        <!-- RIGHT 30%: live market data -->
         <div class="market-panel">
 
-          <!-- Exchange Rates widget -->
           <div class="market-widget">
             <div class="market-widget-header">
               <span class="market-widget-title">Exchange Rates</span>
@@ -546,7 +521,6 @@
             </p>
           </div>
 
-          <!-- Why it matters card -->
           <div class="market-widget" style="background:var(--navy);">
             <div style="padding:1.25rem;">
               <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">Why it matters</p>
@@ -556,7 +530,7 @@
           </div>
 
         </div>
-      </div><!-- end .news-layout -->
+      </div>
 
       <p class="news-disclaimer">
         News from <a href="https://edition.cnn.com/business" target="_blank" rel="noopener">CNN Business</a>, <a href="https://www.bbc.com/news/business" target="_blank" rel="noopener">BBC Business</a>, <a href="https://www.reuters.com/business/" target="_blank" rel="noopener">Reuters</a> &amp; <a href="https://www.theguardian.com/business" target="_blank" rel="noopener">The Guardian</a>.
@@ -610,7 +584,7 @@
   <section class="section testimonials" id="testimonials" aria-labelledby="testimonials-heading">
     <div class="container">
       <div class="section-header">
-        <h2 id="testimonials-heading" style="font-size: clamp(2.2rem, 4.5vw, 3.2rem); margin-bottom: 0.5rem;">Student and Parent Testimonials</h2>
+        <h2 id="testimonials-heading" style="font-size: 2rem; white-space: nowrap;">Student and Parent Testimonials</h2>
       </div>
 
       <div class="swiper swiper-testimonials" id="paretoSwiper">
@@ -676,7 +650,6 @@
             <div class="testimonial-card">
               <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
               <p class="testimonial-card__text">&ldquo;My Extended Essay research question was too broad and my argument was all over the place. Through the sessions I learned how to narrow the focus, build a coherent line of analysis, and structure each section with purpose. I finally understood what separates a strong EE from a vague one.&rdquo;</p>
-              <div class="testimonial-card">
               <div class="testimonial-card__author">
                 <div class="testimonial-card__avatar">LK</div>
                 <div>
@@ -737,7 +710,6 @@
     </div>
   </section>
 
-  <!-- Auto-play testimonials swiper -->
   <script>
     window.addEventListener('load', function() {
       setTimeout(function() {
@@ -831,13 +803,13 @@
   <!-- ======== LIVE NEWS LOADER ======== -->
   <script>
     const NEWS_FEEDS = [
-      { url: 'https://rss.cnn.com/rss/edition_business.rss',       source: 'CNN Business',  count: 2 },
-      { url: 'https://feeds.bbci.co.uk/news/business/rss.xml',     source: 'BBC Business',  count: 2 },
-      { url: 'https://feeds.reuters.com/reuters/businessNews',      source: 'Reuters',       count: 2 },
-      { url: 'https://www.theguardian.com/business/rss',            source: 'The Guardian',  count: 2 },
+      { url: 'https://rss.cnn.com/rss/edition_business.rss',       source: 'CNN Business',  count: 1 },
+      { url: 'https://feeds.bbci.co.uk/news/business/rss.xml',     source: 'BBC Business',  count: 1 },
+      { url: 'https://feeds.reuters.com/reuters/businessNews',      source: 'Reuters',       count: 1 },
+      { url: 'https://www.theguardian.com/business/rss',            source: 'The Guardian',  count: 1 },
     ];
 
-    const CACHE_KEY = 'pareto_news_v4';
+    const CACHE_KEY = 'pareto_news_v5';
     const CACHE_TTL = 5 * 60 * 60 * 1000;
     function getCached(allowStale) {
       try {
@@ -931,18 +903,6 @@
       return [];
     }
 
-    function extractFirstImage(html) {
-      if (!html) return '';
-      try { const d = document.createElement('div'); d.innerHTML = html; return d.querySelector('img[src]')?.getAttribute('src') || ''; }
-      catch { return ''; }
-    }
-    function getThumb(item) {
-      if (item.thumbnail?.startsWith('http')) return item.thumbnail;
-      const c = extractFirstImage(item.content);   if (c?.startsWith('http')) return c;
-      const d = extractFirstImage(item.description); if (d?.startsWith('http')) return d;
-      return '';
-    }
-
     function newsFeedItemHtml(item) {
       const excerpt = stripHtml(item.description).substring(0, 200).trim();
       return `
@@ -967,14 +927,14 @@
         grid.innerHTML = `<p class="news-error">News temporarily unavailable. Visit <a href="https://edition.cnn.com/business" target="_blank" rel="noopener">CNN Business</a>, <a href="https://www.bbc.com/news/business" target="_blank" rel="noopener">BBC Business</a> or <a href="https://www.reuters.com/business/" target="_blank" rel="noopener">Reuters</a>.</p>`;
         return;
       }
-      grid.innerHTML = `<div class="news-feed">${items.slice(0, 9).map(newsFeedItemHtml).join('')}</div>`;
+      grid.innerHTML = `<div class="news-feed">${items.slice(0, 3).map(newsFeedItemHtml).join('')}</div>`;
     }
 
     function renderHeroNews(items) {
       const el = document.getElementById('heroNewsItems');
       if (!el) return;
       if (!items.length) { el.innerHTML = '<div class="hero__news-loading">Headlines unavailable right now.</div>'; return; }
-      el.innerHTML = items.slice(0, 4).map(item => `
+      el.innerHTML = items.slice(0, 3).map(item => `
         <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="hero__news-item">
           <div class="hero__news-item-source">${item.feedSource}</div>
           <div class="hero__news-item-title">${item.title}</div>
