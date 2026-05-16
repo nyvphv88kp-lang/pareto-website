@@ -297,7 +297,7 @@
     }
     .news-error a { color: var(--gold); }
 
-    /* ── Services section ── */
+    /* ── Services section: keep existing but add editorial divider ── */
     .section--services { background: var(--bg); }
 
     /* ── Homepage section spacing ── */
@@ -315,27 +315,27 @@
       background: var(--gold);
       overflow: hidden;
       padding: 0;
-      border-top: 3px solid #b8922f;
-      border-bottom: 3px solid #b8922f;
+      border-top: 12px solid #b8922f;
+      border-bottom: 12px solid #b8922f;
     }
     .gold-ticker__inner {
       display: flex;
       width: max-content;
       animation: gold-scroll 30s linear infinite;
-      padding: 0.85rem 0;
+      padding: 3.4rem 0;
     }
     .gold-ticker__inner:hover { animation-play-state: paused; }
     .gold-ticker__item {
-      display: flex; align-items: center; gap: 0.5rem;
-      padding: 0 2rem;
-      font-size: 0.82rem; font-weight: 500; letter-spacing: 0.04em;
+      display: flex; align-items: center; gap: 2rem;
+      padding: 0 8rem;
+      font-size: 3.28rem; font-weight: 500; letter-spacing: 0.04em;
       color: var(--navy); white-space: nowrap; font-family: 'Inter', sans-serif;
     }
     .gold-ticker__item strong {
-      font-weight: 800; font-size: 0.88rem;
+      font-weight: 800; font-size: 3.52rem;
     }
     .gold-ticker__sep {
-      color: #0f2744; opacity: 0.35; font-size: 0.55rem; margin-left: 1.5rem;
+      color: #0f2744; opacity: 0.35; font-size: 2.2rem; margin-left: 6rem;
     }
     @keyframes gold-scroll {
       0%   { transform: translateX(0); }
@@ -376,81 +376,10 @@
     </div>
   </nav>
 
-  <!-- ======== HERO ======== -->
-  <section class="hero" aria-labelledby="hero-heading">
-    <div class="container">
-      <div class="hero__split">
-
-        <!-- Left: editorial headline -->
-        <div>
-          <div class="hero__eyebrow">
-            <div class="hero__eyebrow-line"></div>
-            <span class="hero__eyebrow-text">IB · IGCSE · A-Level · AP Economics</span>
-          </div>
-          <h1 id="hero-heading">
-            Economics,<br><em>mastered.</em>
-          </h1>
-          <p class="hero__sub">
-            Taught by an IB Examiner with 10+ years of international experience. Precision preparation that closes the gap between where you are and where you need to be.
-          </p>
-          <div class="hero__actions">
-            <a href="book.html" class="btn btn--primary">Book a Session</a>
-            <a href="resources.html" class="btn btn--outline">Free Resources</a>
-          </div>
-        </div>
-
-        <!-- Right: live news panel -->
-        <div class="hero__news-panel">
-          <div class="hero__news-panel-header">
-            <span class="hero__news-panel-title">Economics in the News</span>
-            <span class="hero__news-live">
-              <span class="hero__news-live-dot"></span>
-              Live
-            </span>
-          </div>
-          <div class="hero__news-items" id="heroNewsItems">
-            <div class="hero__news-loading">Loading latest headlines…</div>
-          </div>
-          <a href="#economics-news" class="hero__news-view-all">View all stories ↓</a>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Scrolling topics strip -->
-    <div class="hero__ticker-strip">
-      <div class="hero__ticker-inner">
-        <span class="hero__ticker-item"><em>Monetary Policy</em><span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item">Price Elasticity<span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item"><em>Comparative Advantage</em><span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item">Fiscal Stimulus<span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item"><em>Inflation &amp; CPI</em><span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item">GDP Growth<span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item"><em>Trade Policy</em><span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item">Environmental Economics<span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item"><em>Income Inequality</em><span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item">Aggregate Demand<span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item"><em>Exchange Rates</em><span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item">IB Economics HL/SL<span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item"><em>Monetary Policy</em><span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item">Price Elasticity<span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item"><em>Comparative Advantage</em><span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item">Fiscal Stimulus<span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item"><em>Inflation &amp; CPI</em><span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item">GDP Growth<span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item"><em>Trade Policy</em><span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item">Environmental Economics<span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item"><em>Income Inequality</em><span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item">Aggregate Demand<span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item"><em>Exchange Rates</em><span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item">IB Economics HL/SL<span class="hero__ticker-dot"></span></span>
-      </div>
-    </div>
-  </section>
-
   <!-- ======== GOLD STATS TICKER ======== -->
   <div class="gold-ticker" role="region" aria-label="Key statistics">
     <div class="gold-ticker__inner">
+      <!-- Set 1 -->
       <span class="gold-ticker__item"><strong>200+</strong> Students Taught <span class="gold-ticker__sep">◆</span></span>
       <span class="gold-ticker__item"><strong>10+</strong> Years Experience <span class="gold-ticker__sep">◆</span></span>
       <span class="gold-ticker__item"><strong>IB Examiner</strong> Status <span class="gold-ticker__sep">◆</span></span>
@@ -459,6 +388,7 @@
       <span class="gold-ticker__item"><strong>IB · IGCSE · A-Level · AP</strong> <span class="gold-ticker__sep">◆</span></span>
       <span class="gold-ticker__item"><strong>95%</strong> Pass Rate <span class="gold-ticker__sep">◆</span></span>
       <span class="gold-ticker__item"><strong>Worldwide</strong> Online Tuition <span class="gold-ticker__sep">◆</span></span>
+      <!-- Set 2 — duplicate for seamless loop -->
       <span class="gold-ticker__item"><strong>200+</strong> Students Taught <span class="gold-ticker__sep">◆</span></span>
       <span class="gold-ticker__item"><strong>10+</strong> Years Experience <span class="gold-ticker__sep">◆</span></span>
       <span class="gold-ticker__item"><strong>IB Examiner</strong> Status <span class="gold-ticker__sep">◆</span></span>
@@ -469,6 +399,9 @@
       <span class="gold-ticker__item"><strong>Worldwide</strong> Online Tuition <span class="gold-ticker__sep">◆</span></span>
     </div>
   </div>
+
+  <!-- ======== HERO — image placeholder ======== -->
+  <section class="hero"></section>
 
   <!-- ======== SERVICES ======== -->
   <section class="section section--services" id="services" aria-labelledby="services-heading">
@@ -530,6 +463,7 @@
         </span>
       </div>
 
+      <!-- Skeleton loader shown while JS fetches -->
       <div id="newsSkeleton">
         <div class="news-layout">
           <div class="news-main">
@@ -550,11 +484,18 @@
         </div>
       </div>
 
+      <!-- 70/30 layout: news left, market data right -->
       <div class="news-layout">
+
+        <!-- LEFT 70%: news grid -->
         <div class="news-main">
           <div id="newsGrid" style="display:none;"></div>
         </div>
+
+        <!-- RIGHT 30%: live market data -->
         <div class="market-panel">
+
+          <!-- Exchange Rates widget -->
           <div class="market-widget">
             <div class="market-widget-header">
               <span class="market-widget-title">Exchange Rates</span>
@@ -567,6 +508,8 @@
               Source: <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener">ExchangeRate-API</a> · Updates daily · USD base
             </p>
           </div>
+
+          <!-- Why it matters card -->
           <div class="market-widget" style="background:var(--navy);">
             <div style="padding:1.25rem;">
               <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">Why it matters</p>
@@ -574,8 +517,9 @@
               <a href="book.html" style="display:inline-block;margin-top:0.9rem;font-size:0.72rem;font-weight:700;color:var(--gold);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;">Discuss in a session →</a>
             </div>
           </div>
+
         </div>
-      </div>
+      </div><!-- end .news-layout -->
 
       <p class="news-disclaimer">
         News from <a href="https://edition.cnn.com/business" target="_blank" rel="noopener">CNN Business</a>, <a href="https://www.bbc.com/news/business" target="_blank" rel="noopener">BBC Business</a>, <a href="https://www.reuters.com/business/" target="_blank" rel="noopener">Reuters</a> &amp; <a href="https://www.theguardian.com/business" target="_blank" rel="noopener">The Guardian</a>.
@@ -599,24 +543,28 @@
         Download free study materials — no sign-up needed. A taste of what's in the full library.
       </p>
       <div class="resources-teaser-grid">
+
         <div class="resource-teaser-card" data-aos="fade-up" data-aos-delay="0">
           <span class="resource-teaser-card__tag">IB Economics</span>
           <h4>IA Step-by-Step Checklist</h4>
           <p>Every criterion explained. Know what examiners look for before you write a single word.</p>
           <a href="resources.html" class="btn btn--outline-dark">Download Free</a>
         </div>
+
         <div class="resource-teaser-card" data-aos="fade-up" data-aos-delay="100">
           <span class="resource-teaser-card__tag">All Curricula</span>
           <h4>Key Diagrams Reference Sheet</h4>
           <p>Every essential diagram — supply & demand, market failure, macro models — in one clean PDF.</p>
           <a href="resources.html" class="btn btn--outline-dark">Download Free</a>
         </div>
+
         <div class="resource-teaser-card" data-aos="fade-up" data-aos-delay="200">
           <span class="resource-teaser-card__tag">IB Economics</span>
           <h4>IB Command Terms Guide</h4>
           <p>Understand exactly what "evaluate", "discuss", and "examine" require in Paper 1 and Paper 3.</p>
           <a href="resources.html" class="btn btn--outline-dark">Download Free</a>
         </div>
+
       </div>
     </div>
   </section>
@@ -627,16 +575,122 @@
       <div class="section-header">
         <h2 id="testimonials-heading" style="font-size: 2rem; white-space: nowrap; color: #c9a44a;">Student and Parent Testimonials</h2>
       </div>
+
       <div class="swiper swiper-testimonials" id="paretoSwiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide"><div class="testimonial-card"><div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-card__text">"My son knew his content well but kept losing marks he shouldn't have. After a few sessions working through past papers and breaking down exactly how to approach command terms, the way he writes his answers changed completely. The exam technique guidance was the missing piece."</p><div class="testimonial-card__author"><div class="testimonial-card__avatar">ML</div><div><div class="testimonial-card__name">Mrs. L.</div><div class="testimonial-card__role">Parent of IB HL Student · Singapore</div></div></div></div></div>
-          <div class="swiper-slide"><div class="testimonial-card"><div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-card__text">"I had no idea how my IA was actually going to be marked until these sessions. Every criterion was explained clearly, the feedback on my drafts was specific and honest — not just encouraging — and I finally understood what the mark bands actually mean in practice."</p><div class="testimonial-card__author"><div class="testimonial-card__avatar">GF</div><div><div class="testimonial-card__name">Giulia F.</div><div class="testimonial-card__role">IB Economics Student · Milan, Italy</div></div></div></div></div>
-          <div class="swiper-slide"><div class="testimonial-card"><div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-card__text">"I used to memorise definitions and diagrams without really understanding them. After these sessions I actually get the logic — why markets behave a certain way, how policy decisions connect to theory. That shift made a real difference when I faced questions I hadn't seen before."</p><div class="testimonial-card__author"><div class="testimonial-card__avatar">OT</div><div><div class="testimonial-card__name">Oliver T.</div><div class="testimonial-card__role">A-Level Student · London, UK</div></div></div></div></div>
-          <div class="swiper-slide"><div class="testimonial-card"><div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-card__text">"What struck me most was how personalised the sessions were. Every lesson was adapted to exactly where my daughter was — her gaps, her pace, her syllabus. The fact that her tutor marks IB scripts means the feedback is grounded in what actually matters to examiners, not guesswork."</p><div class="testimonial-card__author"><div class="testimonial-card__avatar">RA</div><div><div class="testimonial-card__name">Mrs. Al-R.</div><div class="testimonial-card__role">Parent of IGCSE Student · Dubai, UAE</div></div></div></div></div>
-          <div class="swiper-slide"><div class="testimonial-card"><div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-card__text">"My Extended Essay research question was too broad and my argument was all over the place. Through the sessions I learned how to narrow the focus, build a coherent line of analysis, and structure each section with purpose. I finally understood what separates a strong EE from a vague one."</p><div class="testimonial-card__author"><div class="testimonial-card__avatar">LK</div><div><div class="testimonial-card__name">Lena K.</div><div class="testimonial-card__role">IB Student · Zurich, Switzerland</div></div></div></div></div>
-          <div class="swiper-slide"><div class="testimonial-card"><div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-card__text">"The group sessions were more useful than I expected. We went through Paper 1 and Paper 2 structure, how to write proper evaluations, and how to use diagrams effectively. Hearing the questions from the other students always revealed something I hadn't thought about — it pushes you in a way solo revision doesn't."</p><div class="testimonial-card__author"><div class="testimonial-card__avatar">RM</div><div><div class="testimonial-card__name">Rafael M.</div><div class="testimonial-card__role">IB HL Student · Sao Paulo, Brazil</div></div></div></div></div>
-          <div class="swiper-slide"><div class="testimonial-card"><div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-card__text">"As a parent, I appreciated that the sessions came with genuine examiner insight — not just tutoring from someone who studied the subject, but from someone who has sat at the other side of the marking process. The feedback my son received was precise in a way that schoolwork simply isn't."</p><div class="testimonial-card__author"><div class="testimonial-card__avatar">PC</div><div><div class="testimonial-card__name">Dr. Chen</div><div class="testimonial-card__role">Parent of IB Student · Vancouver, Canada</div></div></div></div></div>
-          <div class="swiper-slide"><div class="testimonial-card"><div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-card__text">"I had real gaps in macroeconomics and international trade that my school lessons hadn't filled. The sessions didn't just go over the same explanations — they found where my understanding actually broke down and rebuilt it properly. The approach is patient but demanding in the right way."</p><div class="testimonial-card__author"><div class="testimonial-card__avatar">SW</div><div><div class="testimonial-card__name">Sophie W.</div><div class="testimonial-card__role">IB HL Student · Munich, Germany</div></div></div></div></div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="testimonial-card__text">"My son knew his content well but kept losing marks he shouldn't have. After a few sessions working through past papers and breaking down exactly how to approach command terms, the way he writes his answers changed completely. The exam technique guidance was the missing piece."</p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">ML</div>
+                <div>
+                  <div class="testimonial-card__name">Mrs. L.</div>
+                  <div class="testimonial-card__role">Parent of IB HL Student · Singapore</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="testimonial-card__text">"I had no idea how my IA was actually going to be marked until these sessions. Every criterion was explained clearly, the feedback on my drafts was specific and honest — not just encouraging — and I finally understood what the mark bands actually mean in practice."</p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">GF</div>
+                <div>
+                  <div class="testimonial-card__name">Giulia F.</div>
+                  <div class="testimonial-card__role">IB Economics Student · Milan, Italy</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="testimonial-card__text">"I used to memorise definitions and diagrams without really understanding them. After these sessions I actually get the logic — why markets behave a certain way, how policy decisions connect to theory. That shift made a real difference when I faced questions I hadn't seen before."</p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">OT</div>
+                <div>
+                  <div class="testimonial-card__name">Oliver T.</div>
+                  <div class="testimonial-card__role">A-Level Student · London, UK</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="testimonial-card__text">"What struck me most was how personalised the sessions were. Every lesson was adapted to exactly where my daughter was — her gaps, her pace, her syllabus. The fact that her tutor marks IB scripts means the feedback is grounded in what actually matters to examiners, not guesswork."</p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">RA</div>
+                <div>
+                  <div class="testimonial-card__name">Mrs. Al-R.</div>
+                  <div class="testimonial-card__role">Parent of IGCSE Student · Dubai, UAE</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="testimonial-card__text">"My Extended Essay research question was too broad and my argument was all over the place. Through the sessions I learned how to narrow the focus, build a coherent line of analysis, and structure each section with purpose. I finally understood what separates a strong EE from a vague one."</p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">LK</div>
+                <div>
+                  <div class="testimonial-card__name">Lena K.</div>
+                  <div class="testimonial-card__role">IB Student · Zurich, Switzerland</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="testimonial-card__text">"The group sessions were more useful than I expected. We went through Paper 1 and Paper 2 structure, how to write proper evaluations, and how to use diagrams effectively. Hearing the questions from the other students always revealed something I hadn't thought about — it pushes you in a way solo revision doesn't."</p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">RM</div>
+                <div>
+                  <div class="testimonial-card__name">Rafael M.</div>
+                  <div class="testimonial-card__role">IB HL Student · Sao Paulo, Brazil</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="testimonial-card__text">"As a parent, I appreciated that the sessions came with genuine examiner insight — not just tutoring from someone who studied the subject, but from someone who has sat at the other side of the marking process. The feedback my son received was precise in a way that schoolwork simply isn't."</p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">PC</div>
+                <div>
+                  <div class="testimonial-card__name">Dr. Chen</div>
+                  <div class="testimonial-card__role">Parent of IB Student · Vancouver, Canada</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="testimonial-card__text">"I had real gaps in macroeconomics and international trade that my school lessons hadn't filled. The sessions didn't just go over the same explanations — they found where my understanding actually broke down and rebuilt it properly. The approach is patient but demanding in the right way."</p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">SW</div>
+                <div>
+                  <div class="testimonial-card__name">Sophie W.</div>
+                  <div class="testimonial-card__role">IB HL Student · Munich, Germany</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
         <div class="swiper-pagination"></div>
         <div class="swiper-button-prev"></div>
@@ -645,6 +699,7 @@
     </div>
   </section>
 
+  <!-- Auto-play testimonials swiper -->
   <script>
     window.addEventListener('load', function() {
       setTimeout(function() {
@@ -670,6 +725,7 @@
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__grid">
+
         <div class="footer__brand">
           <div class="footer__logo-lockup">
             <span class="footer__logo-name">Pareto</span>
@@ -678,6 +734,7 @@
           </div>
           <p class="footer__brand-desc">Online Economics tuition for IB, IGCSE and A-Level students. Excellence through insight.</p>
         </div>
+
         <div class="footer__col">
           <p class="footer__col-title">Navigate</p>
           <nav>
@@ -687,6 +744,7 @@
             <a href="book.html">Book a Session</a>
           </nav>
         </div>
+
         <div class="footer__col">
           <p class="footer__col-title">Programmes</p>
           <nav>
@@ -697,6 +755,7 @@
             <a href="book.html">Group Seminars</a>
           </nav>
         </div>
+
         <div class="footer__col">
           <p class="footer__col-title">Contact</p>
           <nav>
@@ -705,13 +764,21 @@
             <span>Worldwide · CET</span>
           </nav>
         </div>
+
       </div>
+
       <div class="footer__bottom">
         <p class="footer__copy">© 2026 Pareto Economics. All rights reserved. · <a href="privacy.html">Privacy</a> · <a href="#">Terms</a></p>
         <div class="footer__socials">
-          <a href="#" class="footer__social-btn" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-          <a href="#" class="footer__social-btn" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-          <a href="#" class="footer__social-btn" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+          <a href="#" class="footer__social-btn" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="footer__social-btn" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="footer__social-btn" aria-label="YouTube">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+          </a>
         </div>
       </div>
     </div>
@@ -723,6 +790,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.0/dist/vanilla-tilt.min.js"></script>
   <script src="animations.js"></script>
 
+  <!-- ======== LIVE NEWS LOADER ======== -->
   <script>
     const NEWS_FEEDS = [
       { url: 'https://rss.cnn.com/rss/edition_business.rss',       source: 'CNN Business',  count: 2 },
@@ -730,6 +798,7 @@
       { url: 'https://feeds.reuters.com/reuters/businessNews',      source: 'Reuters',       count: 2 },
       { url: 'https://www.theguardian.com/business/rss',            source: 'The Guardian',  count: 2 },
     ];
+
     const CACHE_KEY = 'pareto_news_v6';
     const CACHE_TTL = 5 * 60 * 60 * 1000;
     function getCached(allowStale) {
@@ -744,8 +813,10 @@
     function setCached(items) {
       try { localStorage.setItem(CACHE_KEY, JSON.stringify({ items, ts: Date.now() })); } catch {}
     }
+
     function stripHtml(html) {
-      const d = document.createElement('div'); d.innerHTML = html || '';
+      const d = document.createElement('div');
+      d.innerHTML = html || '';
       return (d.textContent || '').replace(/\s+/g, ' ').trim();
     }
     function formatDate(str) {
@@ -760,71 +831,126 @@
         .then(r => { clearTimeout(t); return r; })
         .catch(e => { clearTimeout(t); throw e; });
     }
+
     async function viaRss2Json(feed) {
-      const res  = await fetchWithTimeout(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}&count=${feed.count}`, 9000);
+      const res  = await fetchWithTimeout(
+        `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}&count=${feed.count}`, 9000);
       const data = await res.json();
       if (data.status !== 'ok' || !data.items?.length) throw new Error('bad');
-      return data.items.map(item => ({ title: item.title || '', link: item.link || '#', pubDate: item.pubDate || '', description: item.description || '', content: item.content || '', thumbnail: item.thumbnail || item.enclosure?.link || '', feedSource: feed.source }));
+      return data.items.map(item => ({
+        title: item.title || '', link: item.link || '#',
+        pubDate: item.pubDate || '', description: item.description || '',
+        content: item.content || '',
+        thumbnail: item.thumbnail || item.enclosure?.link || '',
+        feedSource: feed.source,
+      }));
     }
+
     async function viaCorsProxyIo(feed) {
-      const res = await fetchWithTimeout(`https://corsproxy.io/?${encodeURIComponent(feed.url)}`, 11000);
-      return parseRssXml(await res.text(), feed);
+      const res  = await fetchWithTimeout(`https://corsproxy.io/?${encodeURIComponent(feed.url)}`, 11000);
+      const text = await res.text();
+      return parseRssXml(text, feed);
     }
+
     async function viaAllOrigins(feed) {
-      const res = await fetchWithTimeout(`https://api.allorigins.win/get?url=${encodeURIComponent(feed.url)}`, 12000);
-      return parseRssXml((await res.json()).contents, feed);
+      const res  = await fetchWithTimeout(`https://api.allorigins.win/get?url=${encodeURIComponent(feed.url)}`, 12000);
+      const json = await res.json();
+      return parseRssXml(json.contents, feed);
     }
+
     function parseRssXml(text, feed) {
-      const xml = new DOMParser().parseFromString(text, 'text/xml');
+      const xml   = new DOMParser().parseFromString(text, 'text/xml');
       const nodes = Array.from(xml.querySelectorAll('item')).slice(0, feed.count);
       if (!nodes.length) throw new Error('empty');
       return nodes.map(node => {
         const get = sel => { try { return node.querySelector(sel)?.textContent?.trim() || ''; } catch { return ''; } };
         let thumb = '';
-        for (const fn of [
+        const imgTry = [
           () => node.querySelector('media\\:thumbnail')?.getAttribute('url'),
           () => node.querySelector('media\\:content[medium="image"]')?.getAttribute('url'),
           () => node.querySelector('media\\:content')?.getAttribute('url'),
           () => node.querySelector('enclosure[type^="image"]')?.getAttribute('url'),
           () => node.querySelector('enclosure')?.getAttribute('url'),
-        ]) { try { const v = fn(); if (v?.startsWith('http')) { thumb = v; break; } } catch {} }
+        ];
+        for (const fn of imgTry) {
+          try { const v = fn(); if (v?.startsWith('http')) { thumb = v; break; } } catch {}
+        }
         const linkEl = node.querySelector('link');
-        return { title: get('title'), link: linkEl?.textContent?.trim() || linkEl?.nextSibling?.nodeValue?.trim() || '#', pubDate: get('pubDate'), description: get('description'), content: (() => { try { return node.querySelector('content\\:encoded')?.textContent?.trim() || ''; } catch { return ''; } })(), thumbnail: thumb, feedSource: feed.source };
+        const link = linkEl?.textContent?.trim() || linkEl?.nextSibling?.nodeValue?.trim() || '#';
+        return {
+          title: get('title'), link, pubDate: get('pubDate'),
+          description: get('description'),
+          content: (() => { try { return node.querySelector('content\\:encoded')?.textContent?.trim() || ''; } catch { return ''; } })(),
+          thumbnail: thumb, feedSource: feed.source,
+        };
       });
     }
+
     async function fetchFeed(feed) {
-      try { return await viaRss2Json(feed); } catch {}
+      try { return await viaRss2Json(feed); }    catch {}
       try { return await viaCorsProxyIo(feed); } catch {}
-      try { return await viaAllOrigins(feed); } catch {}
+      try { return await viaAllOrigins(feed); }  catch {}
       return [];
     }
+
     function newsFeedItemHtml(item) {
       const excerpt = stripHtml(item.description).substring(0, 200).trim();
-      return `<a href="${item.link}" target="_blank" rel="noopener noreferrer" class="news-feed-item"><div class="news-feed-meta"><span class="news-feed-source">${item.feedSource}</span><span class="news-feed-date">${formatDate(item.pubDate)}</span></div><h3 class="news-feed-title">${item.title}</h3>${excerpt ? `<p class="news-feed-excerpt">${excerpt}…</p>` : ''}<span class="news-feed-link">Read article →</span></a>`;
+      return `
+        <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="news-feed-item">
+          <div class="news-feed-meta">
+            <span class="news-feed-source">${item.feedSource}</span>
+            <span class="news-feed-date">${formatDate(item.pubDate)}</span>
+          </div>
+          <h3 class="news-feed-title">${item.title}</h3>
+          ${excerpt ? `<p class="news-feed-excerpt">${excerpt}…</p>` : ''}
+          <span class="news-feed-link">Read article →</span>
+        </a>`;
     }
+
     function renderNewsGrid(items) {
       const skeleton = document.getElementById('newsSkeleton');
-      const grid = document.getElementById('newsGrid');
+      const grid     = document.getElementById('newsGrid');
       if (!grid) return;
-      skeleton.style.display = 'none'; grid.style.display = 'block';
-      if (!items.length) { grid.innerHTML = `<p class="news-error">News temporarily unavailable. Visit <a href="https://edition.cnn.com/business" target="_blank" rel="noopener">CNN Business</a> or <a href="https://www.bbc.com/news/business" target="_blank" rel="noopener">BBC Business</a>.</p>`; return; }
+      skeleton.style.display = 'none';
+      grid.style.display = 'block';
+      if (!items.length) {
+        grid.innerHTML = `<p class="news-error">News temporarily unavailable. Visit <a href="https://edition.cnn.com/business" target="_blank" rel="noopener">CNN Business</a>, <a href="https://www.bbc.com/news/business" target="_blank" rel="noopener">BBC Business</a> or <a href="https://www.aljazeera.com/economy/" target="_blank" rel="noopener">Al Jazeera Economy</a>.</p>`;
+        return;
+      }
       grid.innerHTML = `<div class="news-feed">${items.slice(0, 3).map(newsFeedItemHtml).join('')}</div>`;
     }
+
     function renderHeroNews(items) {
       const el = document.getElementById('heroNewsItems');
       if (!el) return;
       if (!items.length) { el.innerHTML = '<div class="hero__news-loading">Headlines unavailable right now.</div>'; return; }
-      el.innerHTML = items.slice(0, 4).map(item => `<a href="${item.link}" target="_blank" rel="noopener noreferrer" class="hero__news-item"><div class="hero__news-item-source">${item.feedSource}</div><div class="hero__news-item-title">${item.title}</div><div class="hero__news-item-date">${formatDate(item.pubDate)}</div></a>`).join('');
+      el.innerHTML = items.slice(0, 4).map(item => `
+        <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="hero__news-item">
+          <div class="hero__news-item-source">${item.feedSource}</div>
+          <div class="hero__news-item-title">${item.title}</div>
+          <div class="hero__news-item-date">${formatDate(item.pubDate)}</div>
+        </a>`).join('');
     }
+
     async function loadNews() {
       const cached = getCached(false);
       if (cached) { renderNewsGrid(cached); renderHeroNews(cached); return; }
-      const results = await Promise.all(NEWS_FEEDS.map(fetchFeed));
+
+      const results  = await Promise.all(NEWS_FEEDS.map(fetchFeed));
       const allItems = results.flat().filter(i => i.title);
       allItems.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
-      if (allItems.length) { setCached(allItems); renderNewsGrid(allItems); renderHeroNews(allItems); }
-      else { const stale = getCached(true); renderNewsGrid(stale || []); renderHeroNews(stale || []); }
+
+      if (allItems.length) {
+        setCached(allItems);
+        renderNewsGrid(allItems);
+        renderHeroNews(allItems);
+      } else {
+        const stale = getCached(true);
+        renderNewsGrid(stale || []);
+        renderHeroNews(stale || []);
+      }
     }
+
     window.addEventListener('load', loadNews);
 
     const RATE_PAIRS = [
@@ -836,20 +962,29 @@
       { code: 'BRL', name: 'USD / BRL', flag: '🇧🇷' },
       { code: 'MXN', name: 'USD / MXN', flag: '🇲🇽' },
     ];
+
     async function loadMarketData() {
       const el = document.getElementById('marketRates');
       if (!el) return;
       try {
-        const res = await fetchWithTimeout('https://open.er-api.com/v6/latest/USD', 8000);
+        const res  = await fetchWithTimeout('https://open.er-api.com/v6/latest/USD', 8000);
         const data = await res.json();
         if (data.result !== 'success' || !data.rates) throw new Error('bad');
         el.innerHTML = RATE_PAIRS.map(p => {
-          const rate = data.rates[p.code]; if (!rate) return '';
+          const rate = data.rates[p.code];
+          if (!rate) return '';
           const fmt = rate >= 100 ? rate.toFixed(2) : rate >= 10 ? rate.toFixed(3) : rate.toFixed(4);
-          return `<div class="market-rate-item"><span class="market-rate-flag">${p.flag}</span><span class="market-rate-pair">${p.name}</span><span class="market-rate-value">${fmt}</span></div>`;
+          return `<div class="market-rate-item">
+            <span class="market-rate-flag">${p.flag}</span>
+            <span class="market-rate-pair">${p.name}</span>
+            <span class="market-rate-value">${fmt}</span>
+          </div>`;
         }).join('');
-      } catch { el.innerHTML = '<div class="market-loading" style="font-size:0.75rem;padding:1rem;">Rates unavailable</div>'; }
+      } catch {
+        el.innerHTML = '<div class="market-loading" style="font-size:0.75rem;padding:1rem;">Rates unavailable</div>';
+      }
     }
+
     window.addEventListener('load', loadMarketData);
   </script>
 
