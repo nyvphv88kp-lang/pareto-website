@@ -315,27 +315,27 @@
       background: var(--gold);
       overflow: hidden;
       padding: 0;
-      border-top: 12px solid #b8922f;
-      border-bottom: 12px solid #b8922f;
+      border-top: 3px solid #b8922f;
+      border-bottom: 3px solid #b8922f;
     }
     .gold-ticker__inner {
       display: flex;
       width: max-content;
       animation: gold-scroll 30s linear infinite;
-      padding: 3.4rem 0;
+      padding: 0.85rem 0;
     }
     .gold-ticker__inner:hover { animation-play-state: paused; }
     .gold-ticker__item {
-      display: flex; align-items: center; gap: 2rem;
-      padding: 0 8rem;
-      font-size: 3.28rem; font-weight: 500; letter-spacing: 0.04em;
+      display: flex; align-items: center; gap: 0.5rem;
+      padding: 0 2rem;
+      font-size: 0.82rem; font-weight: 500; letter-spacing: 0.04em;
       color: var(--navy); white-space: nowrap; font-family: 'Inter', sans-serif;
     }
     .gold-ticker__item strong {
-      font-weight: 800; font-size: 3.52rem;
+      font-weight: 800; font-size: 0.88rem;
     }
     .gold-ticker__sep {
-      color: #0f2744; opacity: 0.35; font-size: 2.2rem; margin-left: 6rem;
+      color: #0f2744; opacity: 0.35; font-size: 0.55rem; margin-left: 1.5rem;
     }
     @keyframes gold-scroll {
       0%   { transform: translateX(0); }
@@ -376,6 +376,80 @@
     </div>
   </nav>
 
+  <!-- ======== HERO ======== -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="container">
+      <div class="hero__split">
+
+        <!-- Left: editorial headline -->
+        <div>
+          <div class="hero__eyebrow">
+            <div class="hero__eyebrow-line"></div>
+            <span class="hero__eyebrow-text">IB · IGCSE · A-Level · AP Economics</span>
+          </div>
+          <h1 id="hero-heading">
+            Economics,<br><em>mastered.</em>
+          </h1>
+          <p class="hero__sub">
+            Taught by an IB Examiner with 10+ years of international experience. Precision preparation that closes the gap between where you are and where you need to be.
+          </p>
+          <div class="hero__actions">
+            <a href="book.html" class="btn btn--primary">Book a Session</a>
+            <a href="resources.html" class="btn btn--outline">Free Resources</a>
+          </div>
+        </div>
+
+        <!-- Right: live news panel -->
+        <div class="hero__news-panel">
+          <div class="hero__news-panel-header">
+            <span class="hero__news-panel-title">Economics in the News</span>
+            <span class="hero__news-live">
+              <span class="hero__news-live-dot"></span>
+              Live
+            </span>
+          </div>
+          <div class="hero__news-items" id="heroNewsItems">
+            <div class="hero__news-loading">Loading latest headlines…</div>
+          </div>
+          <a href="#economics-news" class="hero__news-view-all">View all stories ↓</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Scrolling topics strip -->
+    <div class="hero__ticker-strip">
+      <div class="hero__ticker-inner">
+        <!-- Set 1 -->
+        <span class="hero__ticker-item"><em>Monetary Policy</em><span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item">Price Elasticity<span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item"><em>Comparative Advantage</em><span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item">Fiscal Stimulus<span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item"><em>Inflation &amp; CPI</em><span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item">GDP Growth<span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item"><em>Trade Policy</em><span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item">Environmental Economics<span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item"><em>Income Inequality</em><span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item">Aggregate Demand<span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item"><em>Exchange Rates</em><span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item">IB Economics HL/SL<span class="hero__ticker-dot"></span></span>
+        <!-- Set 2 — duplicate for seamless loop -->
+        <span class="hero__ticker-item"><em>Monetary Policy</em><span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item">Price Elasticity<span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item"><em>Comparative Advantage</em><span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item">Fiscal Stimulus<span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item"><em>Inflation &amp; CPI</em><span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item">GDP Growth<span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item"><em>Trade Policy</em><span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item">Environmental Economics<span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item"><em>Income Inequality</em><span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item">Aggregate Demand<span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item"><em>Exchange Rates</em><span class="hero__ticker-dot"></span></span>
+        <span class="hero__ticker-item">IB Economics HL/SL<span class="hero__ticker-dot"></span></span>
+      </div>
+    </div>
+  </section>
+
   <!-- ======== GOLD STATS TICKER ======== -->
   <div class="gold-ticker" role="region" aria-label="Key statistics">
     <div class="gold-ticker__inner">
@@ -399,9 +473,6 @@
       <span class="gold-ticker__item"><strong>Worldwide</strong> Online Tuition <span class="gold-ticker__sep">◆</span></span>
     </div>
   </div>
-
-  <!-- ======== HERO — image placeholder ======== -->
-  <section class="hero"></section>
 
   <!-- ======== SERVICES ======== -->
   <section class="section section--services" id="services" aria-labelledby="services-heading">
