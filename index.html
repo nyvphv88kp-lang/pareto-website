@@ -18,18 +18,14 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    /* ── Hero: split editorial layout ── */
+    /* ── Hero: full-width image ── */
     .hero {
       min-height: 92vh;
       background: linear-gradient(135deg, #0b1e36 0%, #0f2744 60%, #14305a 100%);
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 7rem 0 0; overflow: hidden; position: relative;
+      overflow: hidden; position: relative;
+      padding: 0;
     }
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    }
+    .hero::before { display: none; }
     .hero__split {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -377,77 +373,10 @@
   </nav>
 
   <!-- ======== HERO ======== -->
-  <section class="hero" aria-labelledby="hero-heading">
-    <div class="container">
-      <div class="hero__split">
-
-        <!-- Left: editorial headline -->
-        <div>
-          <div class="hero__eyebrow">
-            <div class="hero__eyebrow-line"></div>
-            <span class="hero__eyebrow-text">IB · IGCSE · A-Level · AP Economics</span>
-          </div>
-          <h1 id="hero-heading">
-            Economics,<br><em>mastered.</em>
-          </h1>
-          <p class="hero__sub">
-            Taught by an IB Examiner with 10+ years of international experience. Precision preparation that closes the gap between where you are and where you need to be.
-          </p>
-          <div class="hero__actions">
-            <a href="book.html" class="btn btn--primary">Book a Session</a>
-            <a href="resources.html" class="btn btn--outline">Free Resources</a>
-          </div>
-        </div>
-
-        <!-- Right: live news panel -->
-        <div class="hero__news-panel">
-          <div class="hero__news-panel-header">
-            <span class="hero__news-panel-title">Economics in the News</span>
-            <span class="hero__news-live">
-              <span class="hero__news-live-dot"></span>
-              Live
-            </span>
-          </div>
-          <div class="hero__news-items" id="heroNewsItems">
-            <div class="hero__news-loading">Loading latest headlines…</div>
-          </div>
-          <a href="#economics-news" class="hero__news-view-all">View all stories ↓</a>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Scrolling topics strip -->
-    <div class="hero__ticker-strip">
-      <div class="hero__ticker-inner">
-        <!-- Set 1 -->
-        <span class="hero__ticker-item"><em>Monetary Policy</em><span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item">Price Elasticity<span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item"><em>Comparative Advantage</em><span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item">Fiscal Stimulus<span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item"><em>Inflation &amp; CPI</em><span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item">GDP Growth<span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item"><em>Trade Policy</em><span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item">Environmental Economics<span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item"><em>Income Inequality</em><span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item">Aggregate Demand<span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item"><em>Exchange Rates</em><span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item">IB Economics HL/SL<span class="hero__ticker-dot"></span></span>
-        <!-- Set 2 — duplicate for seamless loop -->
-        <span class="hero__ticker-item"><em>Monetary Policy</em><span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item">Price Elasticity<span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item"><em>Comparative Advantage</em><span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item">Fiscal Stimulus<span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item"><em>Inflation &amp; CPI</em><span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item">GDP Growth<span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item"><em>Trade Policy</em><span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item">Environmental Economics<span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item"><em>Income Inequality</em><span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item">Aggregate Demand<span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item"><em>Exchange Rates</em><span class="hero__ticker-dot"></span></span>
-        <span class="hero__ticker-item">IB Economics HL/SL<span class="hero__ticker-dot"></span></span>
-      </div>
-    </div>
+  <section class="hero">
+    <img src="assets/images/hero-image.jpg"
+         alt="Economics classroom — textbooks, laptop with market data, and chalkboard"
+         style="width:100%; height:92vh; object-fit:cover; object-position:center center; display:block;">
   </section>
 
   <!-- ======== GOLD STATS TICKER ======== -->
