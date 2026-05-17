@@ -339,6 +339,48 @@
       100% { transform: translateX(-50%); }
     }
 
+    /* ── Clickable service cards ── */
+    a.service-card {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    a.service-card:hover .service-card__book-cta {
+      color: var(--gold);
+      gap: 0.6rem;
+    }
+    .service-card__icon-wrap {
+      width: 54px; height: 54px;
+      background: var(--navy);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.5rem;
+      flex-shrink: 0;
+    }
+    .service-card--premium .service-card__icon-wrap {
+      background: var(--gold);
+    }
+    .service-card__duration {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: #aaa; margin-bottom: 0.6rem;
+    }
+    .service-card--premium .service-card__duration { color: var(--gold); }
+    .service-card__book-cta {
+      display: flex; align-items: center; gap: 0.35rem;
+      margin-top: auto; padding-top: 1.25rem;
+      border-top: 1px solid #f0ede8;
+      width: 100%;
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--navy);
+      transition: color 0.2s, gap 0.2s;
+    }
+    .service-card--premium .service-card__book-cta {
+      border-top-color: rgba(201,164,74,0.25);
+      color: var(--gold);
+    }
+
     /* AOS override — prevent testimonials from staying hidden */
     .testimonials [data-aos] {
       opacity: 1 !important;
@@ -416,33 +458,60 @@
       </p>
       <div class="services-grid">
 
-        <div class="service-card" data-tilt>
-          <div class="service-card__icon">&#128218;</div>
+        <a href="book.html" class="service-card" data-tilt>
+          <div class="service-card__icon-wrap">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9a44a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <div class="service-card__duration">60 min session</div>
           <h3>1-to-1 Tutoring</h3>
-          <p>Private sessions tailored to your exact syllabus and learning gaps. I review your past work, identify the weak points, and focus every minute on what will raise your grade.</p>
-          <div class="service-card__price">$55 <span>/ 60 min session</span></div>
-        </div>
+          <p>Every session is built around you — your exam board, your syllabus, your gaps. I analyse your past papers, identify exactly where marks are being lost, and teach you the techniques that change the outcome. No templates. No wasted time.</p>
+          <div class="service-card__book-cta">Book a session <span>→</span></div>
+        </a>
 
-        <div class="service-card" data-tilt>
-          <div class="service-card__icon">&#128101;</div>
+        <a href="book.html" class="service-card" data-tilt>
+          <div class="service-card__icon-wrap">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9a44a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="service-card__duration">90 min · 2–4 students</div>
           <h3>Group Sessions</h3>
-          <p>Collaborate in a small group of 2&ndash;4 students. Cover paper structure, key diagrams, and exam technique together &mdash; more affordable, surprisingly effective, and energising.</p>
-          <div class="service-card__price">$30 <span>/ student &middot; 90 min</span></div>
-        </div>
+          <p>A focused small-group format that creates real intellectual momentum. We work through paper structure, key diagrams, and evaluation technique together — and hearing how your peers approach the same question sharpens your thinking in ways solo revision cannot replicate.</p>
+          <div class="service-card__book-cta">Book a session <span>→</span></div>
+        </a>
 
-        <div class="service-card" data-tilt>
-          <div class="service-card__icon">&#128221;</div>
-          <h3>Internal Assessment Support</h3>
-          <p>Your IB Economics Commentary or Written Report is worth 20% of your final grade. I'll walk you through every criterion, review your drafts, and tell you exactly what an examiner looks for &mdash; because I am one.</p>
-          <div class="service-card__price">$65 <span>/ 60 min session</span></div>
-        </div>
+        <a href="book.html" class="service-card" data-tilt>
+          <div class="service-card__icon-wrap">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9a44a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <polyline points="9 15 11 17 15 13"/>
+            </svg>
+          </div>
+          <div class="service-card__duration">60 min session</div>
+          <h3>Internal Assessment</h3>
+          <p>Your IA is worth 20% of your final grade — and most students leave marks on the table. I take you through every criterion with examiner-level precision, give you honest draft feedback, and make sure you understand exactly what the mark bands require before you submit.</p>
+          <div class="service-card__book-cta">Book a session <span>→</span></div>
+        </a>
 
-        <div class="service-card service-card--premium" data-tilt>
-          <div class="service-card__icon">&#127942;</div>
+        <a href="book.html" class="service-card service-card--premium" data-tilt>
+          <div class="service-card__icon-wrap">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0f2744" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 20h9"/>
+              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+            </svg>
+          </div>
+          <div class="service-card__duration">60 min session · Premium</div>
           <h3>Extended Essay</h3>
-          <p>The Extended Essay is a 4,000-word research paper with real university-level expectations. I guide you from topic selection through to a polished, grade-ready final draft.</p>
-          <div class="service-card__price">$75 <span>/ 60 min session</span></div>
-        </div>
+          <p>A 4,000-word research paper written to university standards — and most students attempt it without proper guidance. I help you choose a focused research question, build a coherent argument, and refine your draft until it meets the expectations of a top-band examiner.</p>
+          <div class="service-card__book-cta">Book a session <span>→</span></div>
+        </a>
 
       </div>
     </div>
