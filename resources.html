@@ -23,11 +23,14 @@
     /* ── Curriculum resource cards ── */
     .curriculum-cards {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 1.75rem;
     }
-    @media (max-width: 768px) {
-      .curriculum-cards { grid-template-columns: 1fr; max-width: 320px; }
+    @media (max-width: 900px) {
+      .curriculum-cards { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .curriculum-cards { grid-template-columns: 1fr; }
     }
 
     .curriculum-card {
@@ -45,6 +48,19 @@
       transform: translateY(-4px);
       box-shadow: 0 12px 32px rgba(15,39,68,0.12);
     }
+    .curriculum-card--educator .curriculum-card__square {
+      background: var(--gold);
+    }
+    .curriculum-card--educator .curriculum-card__square svg {
+      stroke: var(--navy);
+    }
+    .curriculum-card--educator .curriculum-card__badge {
+      color: var(--navy);
+      background: rgba(15,39,68,0.12);
+      border-color: rgba(15,39,68,0.25);
+    }
+    .curriculum-card--educator .curriculum-card__title { color: var(--navy); }
+
     .curriculum-card__square {
       aspect-ratio: 1 / 1;
       background: var(--navy);
@@ -131,7 +147,7 @@
   <section class="section" style="background:var(--bg);" aria-labelledby="student-resources-heading">
     <div class="container">
       <div class="section-editorial-header" data-aos="fade-up">
-        <h2 id="student-resources-heading">Student Resources</h2>
+        <h2 id="student-resources-heading">Exam Toolkit</h2>
         <span class="section-editorial-header__meta">Browse by curriculum below</span>
       </div>
       <div class="curriculum-cards">
@@ -182,15 +198,32 @@
           </div>
         </a>
 
+        <!-- Educator Hub -->
+        <a href="#educator-hub" class="curriculum-card curriculum-card--educator" data-aos="fade-up" data-aos-delay="300">
+          <div class="curriculum-card__square">
+            <svg viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            <span class="curriculum-card__badge">Educators</span>
+          </div>
+          <div class="curriculum-card__body">
+            <div class="curriculum-card__title">Educator Hub</div>
+            <p class="curriculum-card__desc">Lesson plans, assessment rubrics, and curriculum planning materials for IB, IGCSE, and A-Level Economics educators.</p>
+          </div>
+        </a>
+
       </div>
     </div>
   </section>
 
-  <!-- ======== TEACHER RESOURCES ======== -->
-  <section class="section teacher-resources-section" aria-labelledby="teacher-resources-heading">
+  <!-- ======== EDUCATOR HUB ======== -->
+  <section id="educator-hub" class="section teacher-resources-section" aria-labelledby="educator-hub-heading">
     <div class="container">
       <div class="section-editorial-header" data-aos="fade-up">
-        <h2 id="teacher-resources-heading">Teacher Resources</h2>
+        <h2 id="educator-hub-heading">Educator Hub</h2>
       </div>
       <div class="teacher-placeholder" data-aos="fade-up" data-aos-delay="50">
         <p>Teacher resources coming soon — lesson plans, assessment rubrics, and curriculum planning materials for IB, IGCSE, and A-Level Economics educators.</p>
@@ -214,6 +247,7 @@
         <button class="tab-btn" data-tab="ib" role="tab" aria-selected="true" aria-controls="tab-ib">IB Economics</button>
         <button class="tab-btn" data-tab="igcse" role="tab" aria-selected="false" aria-controls="tab-igcse">IGCSE Economics</button>
         <button class="tab-btn" data-tab="alevel" role="tab" aria-selected="false" aria-controls="tab-alevel">A-Level Economics</button>
+        <button class="tab-btn" data-tab="educators" role="tab" aria-selected="false" aria-controls="tab-educators">Educators Hub</button>
       </div>
 
       <!-- ===== IB ECONOMICS TAB ===== -->
@@ -504,6 +538,17 @@
             </div>
           </div>
 
+        </div>
+      </div>
+
+      <!-- ===== EDUCATORS HUB TAB ===== -->
+      <div id="tab-educators" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-educators">
+        <div class="resources-section-title" data-aos="fade-up">
+          <h3>Educator Materials</h3>
+          <span class="badge-free">Coming Soon</span>
+        </div>
+        <div class="teacher-placeholder" data-aos="fade-up" data-aos-delay="50">
+          <p>Lesson plans, assessment rubrics, and curriculum planning materials for IB, IGCSE, and A-Level Economics educators. Check back soon.</p>
         </div>
       </div>
 
