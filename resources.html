@@ -18,6 +18,9 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
+    /* AOS fallback — prevent blank page if AOS fails to init */
+    [data-aos] { opacity: 1 !important; transform: none !important; transition: none !important; }
+
     .tab-panel { display: none; }
 
     /* ── Curriculum resource cards ── */
