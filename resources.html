@@ -21,6 +21,24 @@
     /* AOS fallback — prevent blank page if AOS fails to init */
     [data-aos] { opacity: 1 !important; transform: none !important; transition: none !important; }
 
+    /* Page hero */
+    .page-hero {
+      padding: 10rem 0 5rem;
+      text-align: center;
+      background: linear-gradient(135deg, #0f2744 0%, #1a3a5e 100%);
+    }
+    .page-hero .section-label {
+      color: #c9a44a; font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      display: block; margin-bottom: 0.6rem;
+    }
+    .page-hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700; color: #ffffff; line-height: 1.2;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+    }
+    .page-hero p { color: rgba(255,255,255,.7); font-size: 1.05rem; margin-top: 0.8rem; }
+
     .tab-panel { display: none; }
 
     /* ── Curriculum resource cards ── */
