@@ -120,16 +120,24 @@
 
     .subsection-row__left { display: flex; align-items: flex-start; gap: 0.9rem; flex: 1; }
     .subsection-num {
-      font-size: 0.7rem; font-weight: 700; color: #bbb;
+      font-size: 0.82rem; font-weight: 700; color: #bbb;
       min-width: 28px; padding-top: 0.15rem;
       letter-spacing: 0.06em;
     }
     .subsection-name {
-      font-size: 0.9rem; color: var(--navy); font-weight: 500; line-height: 1.45;
+      font-size: 1.05rem; color: var(--navy); font-weight: 600; line-height: 1.45;
     }
     .subsection-tag {
-      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.08em;
+      font-size: 0.73rem; font-weight: 600; letter-spacing: 0.08em;
       text-transform: uppercase; color: #999; margin-top: 0.2rem;
+    }
+    .badge-hl-sm {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      background: rgba(109, 40, 217, 0.08); color: #6d28d9;
+      border: 1px solid rgba(109, 40, 217, 0.25); border-radius: 50px;
+      font-size: 0.68rem; font-weight: 700; padding: 2px 9px;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      vertical-align: middle; margin-left: 0.5rem;
     }
 
     .subsection-row__right { flex-shrink: 0; }
@@ -362,7 +370,7 @@
             <div class="subsection-row__left">
               <div class="subsection-num">2.4</div>
               <div>
-                <div class="subsection-name">Critique of maximising behaviour</div>
+                <div class="subsection-name">Critique of maximising behaviour <span class="badge-hl-sm">HL Only</span></div>
                 <div class="subsection-tag">Behavioural economics · Bounded rationality · Nudge theory</div>
               </div>
             </div>
@@ -423,7 +431,7 @@
               <div class="subsection-num">2.9</div>
               <div>
                 <div class="subsection-name">Market failure — common pool resources &amp; asymmetric information</div>
-                <div class="subsection-tag">Tragedy of the commons · Moral hazard · Adverse selection</div>
+                <div class="subsection-tag">Tragedy of the commons · Moral hazard <span class="badge-hl-sm">HL</span> · Adverse selection <span class="badge-hl-sm">HL</span></div>
               </div>
             </div>
             <div class="subsection-row__right">
