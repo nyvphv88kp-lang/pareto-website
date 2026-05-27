@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IGCSE Economics Resources — Pareto</title>
+  <meta name="description" content="Complete Cambridge IGCSE Economics resource library. Section-by-section notes, exam technique guides, and revision materials — written by an IB Examiner and Economics specialist." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    [data-aos] { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+    .page-hero {
+      padding: 10rem 0 5rem;
+      text-align: center;
+      background: linear-gradient(135deg, #0f2744 0%, #1a3a5e 100%);
+    }
+    .page-hero .section-label {
+      color: #c9a44a; font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      display: block; margin-bottom: 0.6rem;
+    }
+    .page-hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700; color: #ffffff; line-height: 1.2;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+    }
+    .page-hero p { color: rgba(255,255,255,.7); font-size: 1.05rem; margin-top: 0.8rem; }
+
+    .breadcrumb {
+      padding: 1rem 0;
+      border-bottom: 1px solid #e2e2e2;
+      background: #fff;
+    }
+    .breadcrumb__inner {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.8rem; color: var(--text-muted);
+    }
+    .breadcrumb__inner a { color: var(--gold); text-decoration: none; }
+    .breadcrumb__inner a:hover { text-decoration: underline; }
+    .breadcrumb__sep { color: #ccc; }
+
+    .access-legend {
+      display: flex; align-items: center; gap: 1.5rem;
+      flex-wrap: wrap;
+      padding: 1rem 1.5rem;
+      background: #fff;
+      border: 1px solid #e2e2e2;
+      border-radius: 12px;
+      margin-bottom: 2.5rem;
+      font-size: 0.82rem; color: var(--text-muted);
+    }
+    .access-legend strong { color: var(--navy); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    .badge-free-sm {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      background: #f0fdf4; color: #16a34a;
+      border: 1px solid #bbf7d0; border-radius: 50px;
+      font-size: 0.7rem; font-weight: 700; padding: 3px 10px;
+    }
+    .badge-premium-sm {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      background: rgba(201,164,74,0.1); color: var(--gold);
+      border: 1px solid rgba(201,164,74,0.3); border-radius: 50px;
+      font-size: 0.7rem; font-weight: 700; padding: 3px 10px;
+    }
+
+    .unit-block {
+      margin-bottom: 2rem;
+      border: 1px solid #e2e2e2;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .unit-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 1.5rem;
+      background: var(--navy);
+      gap: 1rem;
+    }
+    .unit-header--free { background: var(--navy); }
+    .unit-header--premium { background: #1a1a1a; }
+
+    .unit-header__left { display: flex; align-items: center; gap: 1rem; }
+    .unit-number {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.5rem; font-weight: 800;
+      color: var(--gold); line-height: 1; flex-shrink: 0;
+    }
+    .unit-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem; font-weight: 700;
+      color: #fff; line-height: 1.3;
+    }
+    .unit-subtitle {
+      font-size: 0.72rem; color: rgba(255,255,255,.45);
+      margin-top: 0.2rem;
+    }
+
+    .subsection-list { padding: 0.5rem 0; }
+    .subsection-row {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.9rem 1.5rem;
+      border-bottom: 1px solid #f0ede8;
+      gap: 1rem;
+    }
+    .subsection-row:last-child { border-bottom: none; }
+    .subsection-row--premium { background: #fafaf8; }
+
+    .subsection-row__left { display: flex; align-items: flex-start; gap: 0.9rem; flex: 1; }
+    .subsection-num {
+      font-size: 0.82rem; font-weight: 700; color: #bbb;
+      min-width: 28px; padding-top: 0.15rem;
+      letter-spacing: 0.06em;
+    }
+    .subsection-name {
+      font-size: 1.05rem; color: var(--navy); font-weight: 600; line-height: 1.45;
+    }
+    .subsection-tag {
+      font-size: 0.73rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: #999; margin-top: 0.2rem;
+    }
+
+    /* Extended badge — teal, distinct from IB HL purple */
+    .badge-ext-sm {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      background: rgba(13, 148, 136, 0.08); color: #0d9488;
+      border: 1px solid rgba(13, 148, 136, 0.28); border-radius: 50px;
+      font-size: 0.68rem; font-weight: 700; padding: 2px 9px;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      vertical-align: middle; margin-left: 0.5rem;
+    }
+
+    .subsection-row__right { flex-shrink: 0; }
+
+    .btn-download {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.45rem 1rem; border-radius: 8px;
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      text-decoration: none; transition: all 0.2s;
+      cursor: pointer; border: none;
+    }
+    .btn-download--free {
+      background: #f0fdf4; color: #16a34a;
+      border: 1px solid #bbf7d0;
+    }
+    .btn-download--free:hover { background: #dcfce7; }
+    .btn-download--premium {
+      background: rgba(201,164,74,0.1); color: var(--gold);
+      border: 1px solid rgba(201,164,74,0.35);
+    }
+    .btn-download--premium:hover { background: rgba(201,164,74,0.2); }
+    .lock-icon { font-size: 0.75rem; opacity: 0.7; }
+
+    .assessment-block {
+      margin-bottom: 2rem;
+      border: 1px solid rgba(201,164,74,0.35);
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .assessment-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 1.5rem;
+      background: linear-gradient(135deg, #0f2744 0%, #1a3a5e 100%);
+    }
+    .assessment-header--gold {
+      background: linear-gradient(135deg, #c9a44a 0%, #b8903e 100%);
+    }
+    .assessment-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem; font-weight: 700; color: #fff;
+    }
+    .assessment-header--gold .assessment-title { color: var(--navy); }
+    .assessment-sub { font-size: 0.72rem; color: rgba(255,255,255,.5); margin-top: 0.2rem; }
+    .assessment-header--gold .assessment-sub { color: rgba(15,39,68,.55); }
+
+    .section-divider-label {
+      display: flex; align-items: center; gap: 1rem;
+      margin: 3rem 0 1.5rem;
+    }
+    .section-divider-label__line { flex: 1; height: 1px; background: #e2e2e2; }
+    .section-divider-label__text {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: #bbb; white-space: nowrap;
+    }
+
+    .upgrade-banner {
+      background: var(--navy);
+      border-radius: 16px;
+      padding: 2rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 2rem; flex-wrap: wrap;
+      margin: 2rem 0;
+    }
+    .upgrade-banner__text h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: #fff; font-size: 1.2rem; margin-bottom: 0.4rem;
+    }
+    .upgrade-banner__text p { color: rgba(255,255,255,.65); font-size: 0.88rem; margin: 0; }
+    .upgrade-banner .btn { flex-shrink: 0; }
+  </style>
+</head>
+<body>
+
+  <!-- ======== NAVIGATION ======== -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo">Pareto<span>.</span></a>
+      <ul class="nav__links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="book.html">Book a Session</a></li>
+      </ul>
+      <a href="book.html" class="btn btn--primary nav__cta">Book Now</a>
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" style="display:none;" role="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resources.html">Resources</a>
+      <a href="book.html">Book a Session</a>
+      <a href="book.html" class="btn btn--primary">Book Now</a>
+    </div>
+  </nav>
+
+  <!-- ======== HERO ======== -->
+  <section class="page-hero" aria-labelledby="igcse-heading">
+    <div class="container">
+      <span class="section-label">Cambridge IGCSE Economics · 0455</span>
+      <h1 id="igcse-heading">IGCSE Economics Resource Library</h1>
+      <p>Section-by-section notes and revision guides — written by an Economics specialist. Free to start, premium to go further.</p>
+    </div>
+  </section>
+
+  <!-- ======== BREADCRUMB ======== -->
+  <div class="breadcrumb">
+    <div class="container">
+      <div class="breadcrumb__inner">
+        <a href="resources.html">Resources</a>
+        <span class="breadcrumb__sep">›</span>
+        <span>IGCSE Economics</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======== CONTENT ======== -->
+  <section class="section" style="background:var(--bg);">
+    <div class="container">
+
+      <!-- Legend -->
+      <div class="access-legend">
+        <strong>Access</strong>
+        <span class="badge-free-sm">✓ Free — Sections 1 &amp; 2</span>
+        <span class="badge-premium-sm">⭐ Premium — Sections 3–6 &amp; Exam Prep</span>
+        <span style="color:#0d9488; background:rgba(13,148,136,0.08); border:1px solid rgba(13,148,136,0.28); border-radius:50px; font-size:0.7rem; font-weight:700; padding:3px 10px;">Extended</span>
+        <span style="font-size:0.78rem; color:#999;">= Extended candidates only</span>
+        <span style="margin-left:auto; font-size:0.78rem;">Click any row to download the PDF</span>
+      </div>
+
+      <!-- ══════════════════════════════
+           FREE SECTIONS
+      ══════════════════════════════ -->
+
+      <!-- SECTION 1 -->
+      <div class="unit-block">
+        <div class="unit-header unit-header--free">
+          <div class="unit-header__left">
+            <div class="unit-number">1</div>
+            <div>
+              <div class="unit-title">The Basic Economic Problem</div>
+              <div class="unit-subtitle">Core &amp; Extended · 4 subsections</div>
+            </div>
+          </div>
+          <span class="badge-free-sm">Free</span>
+        </div>
+        <div class="subsection-list">
+          <div class="subsection-row">
+            <div class="subsection-row__left">
+              <div class="subsection-num">1.1</div>
+              <div>
+                <div class="subsection-name">The nature of the economic problem</div>
+                <div class="subsection-tag">Scarcity · Unlimited wants · Limited resources · Economic problem</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--free">↓ Download</a>
+            </div>
+          </div>
+          <div class="subsection-row">
+            <div class="subsection-row__left">
+              <div class="subsection-num">1.2</div>
+              <div>
+                <div class="subsection-name">The factors of production</div>
+                <div class="subsection-tag">Land · Labour · Capital · Enterprise · Factor rewards</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--free">↓ Download</a>
+            </div>
+          </div>
+          <div class="subsection-row">
+            <div class="subsection-row__left">
+              <div class="subsection-num">1.3</div>
+              <div>
+                <div class="subsection-name">Opportunity cost</div>
+                <div class="subsection-tag">Trade-offs · Choice · Real-world applications · Decision-making</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--free">↓ Download</a>
+            </div>
+          </div>
+          <div class="subsection-row">
+            <div class="subsection-row__left">
+              <div class="subsection-num">1.4</div>
+              <div>
+                <div class="subsection-name">Production possibility curves</div>
+                <div class="subsection-tag">PPC diagrams · Economic growth · Opportunity cost · Shifting the PPC</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--free">↓ Download</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2 -->
+      <div class="unit-block">
+        <div class="unit-header unit-header--free">
+          <div class="unit-header__left">
+            <div class="unit-number">2</div>
+            <div>
+              <div class="unit-title">The Allocation of Resources</div>
+              <div class="unit-subtitle">Core &amp; Extended · 11 subsections</div>
+            </div>
+          </div>
+          <span class="badge-free-sm">Free</span>
+        </div>
+        <div class="subsection-list">
+          <div class="subsection-row">
+            <div class="subsection-row__left">
+              <div class="subsection-num">2.1</div>
+              <div>
+                <div class="subsection-name">Microeconomics and macroeconomics</div>
+                <div class="subsection-tag">Definitions · Scope · Differences between micro and macro</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--free">↓ Download</a>
+            </div>
+          </div>
+          <div class="subsection-row">
+            <div class="subsection-row__left">
+              <div class="subsection-num">2.2</div>
+              <div>
+                <div class="subsection-name">The role of markets in allocating resources</div>
+                <div class="subsection-tag">Price mechanism · Rationing · Signalling · Incentive functions</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--free">↓ Download</a>
+            </div>
+          </div>
+          <div class="subsection-row">
+            <div class="subsection-row__left">
+              <div class="subsection-num">2.3</div>
+              <div>
+                <div class="subsection-name">Demand</div>
+                <div class="subsection-tag">Law of demand · Demand curve · Factors affecting demand · Shifts vs movements</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--free">↓ Download</a>
+            </div>
+          </div>
+          <div class="subsection-row">
+            <div class="subsection-row__left">
+              <div class="subsection-num">2.4</div>
+              <div>
+                <div class="subsection-name">Supply</div>
+                <div class="subsection-tag">Law of supply · Supply curve · Factors affecting supply · Shifts vs movements</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--free">↓ Download</a>
+            </div>
+          </div>
+          <div class="subsection-row">
+            <div class="subsection-row__left">
+              <div class="subsection-num">2.5</div>
+              <div>
+                <div class="subsection-name">Price determination</div>
+                <div class="subsection-tag">Equilibrium price · Equilibrium quantity · Surplus · Shortage</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--free">↓ Download</a>
+            </div>
+          </div>
+          <div class="subsection-row">
+            <div class="subsection-row__left">
+              <div class="subsection-num">2.6</div>
+              <div>
+                <div class="subsection-name">Price changes</div>
+                <div class="subsection-tag">Simultaneous shifts · Effect on equilibrium · Diagram analysis</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--free">↓ Download</a>
+            </div>
+          </div>
+          <div class="subsection-row">
+            <div class="subsection-row__left">
+              <div class="subsection-num">2.7</div>
+              <div>
+                <div class="subsection-name">Price elasticity of demand</div>
+                <div class="subsection-tag">PED formula · Elastic vs inelastic · Revenue implications · YED <span class="badge-ext-sm">Extended</span> · XED <span class="badge-ext-sm">Extended</span></div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--free">↓ Download</a>
+            </div>
+          </div>
+          <div class="subsection-row">
+            <div class="subsection-row__left">
+              <div class="subsection-num">2.8</div>
+              <div>
+                <div class="subsection-name">Price elasticity of supply</div>
+                <div class="subsection-tag">PES formula · Determinants · Short-run vs long-run · Time and capacity</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--free">↓ Download</a>
+            </div>
+          </div>
+          <div class="subsection-row">
+            <div class="subsection-row__left">
+              <div class="subsection-num">2.9</div>
+              <div>
+                <div class="subsection-name">Market economic system</div>
+                <div class="subsection-tag">Free market · Private ownership · Advantages · Disadvantages</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--free">↓ Download</a>
+            </div>
+          </div>
+          <div class="subsection-row">
+            <div class="subsection-row__left">
+              <div class="subsection-num">2.10</div>
+              <div>
+                <div class="subsection-name">Market failure</div>
+                <div class="subsection-tag">Externalities · Public goods · Merit goods · Demerit goods · Information failure · Government intervention</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--free">↓ Download</a>
+            </div>
+          </div>
+          <div class="subsection-row">
+            <div class="subsection-row__left">
+              <div class="subsection-num">2.11</div>
+              <div>
+                <div class="subsection-name">Mixed economic system</div>
+                <div class="subsection-tag">Command economy · Mixed economy · Role of government · Privatisation</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--free">↓ Download</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upgrade banner -->
+      <div class="upgrade-banner">
+        <div class="upgrade-banner__text">
+          <h3>Unlock Sections 3–6 + Exam Preparation</h3>
+          <p>Microeconomic decision makers, government macroeconomy, development economics, international trade, and full Paper 1 &amp; 2 exam technique — all in one premium pack.</p>
+        </div>
+        <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn btn--primary">Get Premium Access</a>
+      </div>
+
+      <!-- PREMIUM DIVIDER -->
+      <div class="section-divider-label">
+        <div class="section-divider-label__line"></div>
+        <div class="section-divider-label__text">⭐ Premium — unlock to download</div>
+        <div class="section-divider-label__line"></div>
+      </div>
+
+      <!-- SECTION 3 -->
+      <div class="unit-block">
+        <div class="unit-header unit-header--premium">
+          <div class="unit-header__left">
+            <div class="unit-number" style="color:var(--gold);">3</div>
+            <div>
+              <div class="unit-title">Microeconomic Decision Makers</div>
+              <div class="unit-subtitle">Core &amp; Extended · 8 subsections</div>
+            </div>
+          </div>
+          <span class="badge-premium-sm">⭐ Premium</span>
+        </div>
+        <div class="subsection-list">
+          <div class="subsection-row subsection-row--premium">
+            <div class="subsection-row__left">
+              <div class="subsection-num">3.1</div>
+              <div>
+                <div class="subsection-name">Money and banking</div>
+                <div class="subsection-tag">Functions of money · Commercial banks · Central bank · Credit creation</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--premium"><span class="lock-icon">🔒</span> Get Access</a>
+            </div>
+          </div>
+          <div class="subsection-row subsection-row--premium">
+            <div class="subsection-row__left">
+              <div class="subsection-num">3.2</div>
+              <div>
+                <div class="subsection-name">Households</div>
+                <div class="subsection-tag">Income · Spending patterns · Saving · Factors influencing consumer decisions</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--premium"><span class="lock-icon">🔒</span> Get Access</a>
+            </div>
+          </div>
+          <div class="subsection-row subsection-row--premium">
+            <div class="subsection-row__left">
+              <div class="subsection-num">3.3</div>
+              <div>
+                <div class="subsection-name">Workers</div>
+                <div class="subsection-tag">Labour supply · Wage determination · Factors affecting wages · Wage differentials</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--premium"><span class="lock-icon">🔒</span> Get Access</a>
+            </div>
+          </div>
+          <div class="subsection-row subsection-row--premium">
+            <div class="subsection-row__left">
+              <div class="subsection-num">3.4</div>
+              <div>
+                <div class="subsection-name">Trade unions</div>
+                <div class="subsection-tag">Role of trade unions · Collective bargaining · Effects on wages and employment</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--premium"><span class="lock-icon">🔒</span> Get Access</a>
+            </div>
+          </div>
+          <div class="subsection-row subsection-row--premium">
+            <div class="subsection-row__left">
+              <div class="subsection-num">3.5</div>
+              <div>
+                <div class="subsection-name">Firms</div>
+                <div class="subsection-tag">Types of business organisations · Business objectives · Sole trader · Partnership · Company</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--premium"><span class="lock-icon">🔒</span> Get Access</a>
+            </div>
+          </div>
+          <div class="subsection-row subsection-row--premium">
+            <div class="subsection-row__left">
+              <div class="subsection-num">3.6</div>
+              <div>
+                <div class="subsection-name">Firms and production</div>
+                <div class="subsection-tag">Productivity · Division of labour · Economies of scale · Diseconomies of scale</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--premium"><span class="lock-icon">🔒</span> Get Access</a>
+            </div>
+          </div>
+          <div class="subsection-row subsection-row--premium">
+            <div class="subsection-row__left">
+              <div class="subsection-num">3.7</div>
+              <div>
+                <div class="subsection-name">Firms' costs, revenue and objectives <span class="badge-ext-sm">Extended</span></div>
+                <div class="subsection-tag">Fixed &amp; variable costs · Average cost · Revenue · Break-even analysis · Profit maximisation</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--premium"><span class="lock-icon">🔒</span> Get Access</a>
+            </div>
+          </div>
+          <div class="subsection-row subsection-row--premium">
+            <div class="subsection-row__left">
+              <div class="subsection-num">3.8</div>
+              <div>
+                <div class="subsection-name">Market structure <span class="badge-ext-sm">Extended</span></div>
+                <div class="subsection-tag">Perfect competition · Monopoly · Oligopoly · Market power · Consumer welfare</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--premium"><span class="lock-icon">🔒</span> Get Access</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 4 -->
+      <div class="unit-block">
+        <div class="unit-header unit-header--premium">
+          <div class="unit-header__left">
+            <div class="unit-number" style="color:var(--gold);">4</div>
+            <div>
+              <div class="unit-title">Government and the Macroeconomy</div>
+              <div class="unit-subtitle">Core &amp; Extended · 8 subsections</div>
+            </div>
+          </div>
+          <span class="badge-premium-sm">⭐ Premium</span>
+        </div>
+        <div class="subsection-list">
+          <div class="subsection-row subsection-row--premium">
+            <div class="subsection-row__left">
+              <div class="subsection-num">4.1</div>
+              <div>
+                <div class="subsection-name">The role of government</div>
+                <div class="subsection-tag">Public goods · Merit goods · Demerit goods · Government spending · Taxation</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--premium"><span class="lock-icon">🔒</span> Get Access</a>
+            </div>
+          </div>
+          <div class="subsection-row subsection-row--premium">
+            <div class="subsection-row__left">
+              <div class="subsection-num">4.2</div>
+              <div>
+                <div class="subsection-name">The macroeconomic aims of government</div>
+                <div class="subsection-tag">Economic growth · Low inflation · Low unemployment · Balance of payments · Equity</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--premium"><span class="lock-icon">🔒</span> Get Access</a>
+            </div>
+          </div>
+          <div class="subsection-row subsection-row--premium">
+            <div class="subsection-row__left">
+              <div class="subsection-num">4.3</div>
+              <div>
+                <div class="subsection-name">Fiscal policy</div>
+                <div class="subsection-tag">Government budget · Types of tax · Direct vs indirect · Multiplier effect <span class="badge-ext-sm">Extended</span></div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--premium"><span class="lock-icon">🔒</span> Get Access</a>
+            </div>
+          </div>
+          <div class="subsection-row subsection-row--premium">
+            <div class="subsection-row__left">
+              <div class="subsection-num">4.4</div>
+              <div>
+                <div class="subsection-name">Monetary policy</div>
+                <div class="subsection-tag">Interest rates · Money supply · Credit availability · Central bank · Inflation targeting</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--premium"><span class="lock-icon">🔒</span> Get Access</a>
+            </div>
+          </div>
+          <div class="subsection-row subsection-row--premium">
+            <div class="subsection-row__left">
+              <div class="subsection-num">4.5</div>
+              <div>
+                <div class="subsection-name">Supply-side policy</div>
+                <div class="subsection-tag">Labour market reforms · Privatisation · Deregulation · Education and training</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--premium"><span class="lock-icon">🔒</span> Get Access</a>
+            </div>
+          </div>
+          <div class="subsection-row subsection-row--premium">
+            <div class="subsection-row__left">
+              <div class="subsection-num">4.6</div>
+              <div>
+                <div class="subsection-name">Economic growth</div>
+                <div class="subsection-tag">Causes of growth · Benefits · Costs · Sustainable growth · AD/AS framework</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--premium"><span class="lock-icon">🔒</span> Get Access</a>
+            </div>
+          </div>
+          <div class="subsection-row subsection-row--premium">
+            <div class="subsection-row__left">
+              <div class="subsection-num">4.7</div>
+              <div>
+                <div class="subsection-name">Employment and unemployment</div>
+                <div class="subsection-tag">Types of unemployment · Causes · Consequences · Policies to reduce unemployment</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--premium"><span class="lock-icon">🔒</span> Get Access</a>
+            </div>
+          </div>
+          <div class="subsection-row subsection-row--premium">
+            <div class="subsection-row__left">
+              <div class="subsection-num">4.8</div>
+              <div>
+                <div class="subsection-name">Inflation and deflation</div>
+                <div class="subsection-tag">CPI · Causes of inflation · Demand-pull vs cost-push · Consequences · Policies</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--premium"><span class="lock-icon">🔒</span> Get Access</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 5 -->
+      <div class="unit-block">
+        <div class="unit-header unit-header--premium">
+          <div class="unit-header__left">
+            <div class="unit-number" style="color:var(--gold);">5</div>
+            <div>
+              <div class="unit-title">Economic Development</div>
+              <div class="unit-subtitle">Core &amp; Extended · 4 subsections</div>
+            </div>
+          </div>
+          <span class="badge-premium-sm">⭐ Premium</span>
+        </div>
+        <div class="subsection-list">
+          <div class="subsection-row subsection-row--premium">
+            <div class="subsection-row__left">
+              <div class="subsection-num">5.1</div>
+              <div>
+                <div class="subsection-name">Living standards</div>
+                <div class="subsection-tag">GDP per capita · HDI · Limitations of indicators · Comparing countries</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--premium"><span class="lock-icon">🔒</span> Get Access</a>
+            </div>
+          </div>
+          <div class="subsection-row subsection-row--premium">
+            <div class="subsection-row__left">
+              <div class="subsection-num">5.2</div>
+              <div>
+                <div class="subsection-name">Poverty</div>
+                <div class="subsection-tag">Absolute vs relative poverty · Causes · Consequences · Policies to reduce poverty</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--premium"><span class="lock-icon">🔒</span> Get Access</a>
+            </div>
+          </div>
+          <div class="subsection-row subsection-row--premium">
+            <div class="subsection-row__left">
+              <div class="subsection-num">5.3</div>
+              <div>
+                <div class="subsection-name">Population</div>
+                <div class="subsection-tag">Population growth · Age structure · Migration · Dependency ratio · Demographic transition</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--premium"><span class="lock-icon">🔒</span> Get Access</a>
+            </div>
+          </div>
+          <div class="subsection-row subsection-row--premium">
+            <div class="subsection-row__left">
+              <div class="subsection-num">5.4</div>
+              <div>
+                <div class="subsection-name">Differences in economic development between countries</div>
+                <div class="subsection-tag">Barriers to development · Foreign aid · Trade · Debt relief · Domestic factors</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--premium"><span class="lock-icon">🔒</span> Get Access</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 6 -->
+      <div class="unit-block">
+        <div class="unit-header unit-header--premium">
+          <div class="unit-header__left">
+            <div class="unit-number" style="color:var(--gold);">6</div>
+            <div>
+              <div class="unit-title">International Trade and Globalisation</div>
+              <div class="unit-subtitle">Core &amp; Extended · 4 subsections</div>
+            </div>
+          </div>
+          <span class="badge-premium-sm">⭐ Premium</span>
+        </div>
+        <div class="subsection-list">
+          <div class="subsection-row subsection-row--premium">
+            <div class="subsection-row__left">
+              <div class="subsection-num">6.1</div>
+              <div>
+                <div class="subsection-name">International specialisation</div>
+                <div class="subsection-tag">Absolute advantage · Comparative advantage · Division of labour · Terms of trade <span class="badge-ext-sm">Extended</span></div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--premium"><span class="lock-icon">🔒</span> Get Access</a>
+            </div>
+          </div>
+          <div class="subsection-row subsection-row--premium">
+            <div class="subsection-row__left">
+              <div class="subsection-num">6.2</div>
+              <div>
+                <div class="subsection-name">Globalisation, free trade and protection</div>
+                <div class="subsection-tag">Tariffs · Quotas · Subsidies · WTO · Arguments for and against protectionism</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--premium"><span class="lock-icon">🔒</span> Get Access</a>
+            </div>
+          </div>
+          <div class="subsection-row subsection-row--premium">
+            <div class="subsection-row__left">
+              <div class="subsection-num">6.3</div>
+              <div>
+                <div class="subsection-name">Foreign exchange rates</div>
+                <div class="subsection-tag">Floating vs fixed rates · Depreciation · Appreciation · Effects on trade and economy</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--premium"><span class="lock-icon">🔒</span> Get Access</a>
+            </div>
+          </div>
+          <div class="subsection-row subsection-row--premium">
+            <div class="subsection-row__left">
+              <div class="subsection-num">6.4</div>
+              <div>
+                <div class="subsection-name">Current account of the balance of payments</div>
+                <div class="subsection-tag">Components · Trade in goods · Trade in services · Deficits · Surpluses · Policies</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--premium"><span class="lock-icon">🔒</span> Get Access</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXAM PREPARATION -->
+      <div class="section-divider-label">
+        <div class="section-divider-label__line"></div>
+        <div class="section-divider-label__text">⭐ Exam Preparation — Premium</div>
+        <div class="section-divider-label__line"></div>
+      </div>
+
+      <div class="assessment-block">
+        <div class="assessment-header assessment-header--gold">
+          <div>
+            <div class="assessment-title">Cambridge IGCSE Exam Papers &amp; Technique</div>
+            <div class="assessment-sub">Papers 1 &amp; 2 · Structured answers · Data response · Multiple choice strategy</div>
+          </div>
+          <span class="badge-premium-sm">⭐ Premium</span>
+        </div>
+        <div class="subsection-list">
+          <div class="subsection-row subsection-row--premium">
+            <div class="subsection-row__left">
+              <div class="subsection-num">P1</div>
+              <div>
+                <div class="subsection-name">Paper 1 — Multiple choice</div>
+                <div class="subsection-tag">Strategy guide · Common traps · Time management · Question-type breakdown</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--premium"><span class="lock-icon">🔒</span> Get Access</a>
+            </div>
+          </div>
+          <div class="subsection-row subsection-row--premium">
+            <div class="subsection-row__left">
+              <div class="subsection-num">P2</div>
+              <div>
+                <div class="subsection-name">Paper 2 — Structured questions &amp; data response</div>
+                <div class="subsection-tag">Structured answer technique · Data response · Define–explain–evaluate · Mark allocation</div>
+              </div>
+            </div>
+            <div class="subsection-row__right">
+              <a href="https://gumroad.com" target="_blank" rel="noopener" class="btn-download btn-download--premium"><span class="lock-icon">🔒</span> Get Access</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======== CTA ======== -->
+  <section class="cta-banner" aria-labelledby="igcse-cta-heading">
+    <div class="container">
+      <h2 id="igcse-cta-heading" data-aos="fade-up">Need personal guidance on IGCSE Economics?</h2>
+      <p data-aos="fade-up" data-aos-delay="100">Book a 1-to-1 session and get your exam technique, essay structure, and data response skills honed by an expert Economics tutor.</p>
+      <a href="book.html" class="btn btn--primary" data-aos="fade-up" data-aos-delay="200">Book a Session</a>
+    </div>
+  </section>
+
+  <!-- ======== FOOTER ======== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo-lockup">
+            <span class="footer__logo-name">Pareto</span>
+            <span class="footer__logo-bullet">●</span>
+            <span class="footer__logo-economics">Economics</span>
+          </div>
+          <p class="footer__brand-desc">Online Economics tuition for IB, IGCSE and A-Level students. Excellence through insight.</p>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Navigate</p>
+          <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="resources.html">Resources</a>
+            <a href="book.html">Book a Session</a>
+          </nav>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Programmes</p>
+          <nav>
+            <a href="book.html">IB Economics SL/HL</a>
+            <a href="book.html">IGCSE Economics</a>
+            <a href="book.html">A-Level Economics</a>
+            <a href="book.html">IA &amp; EE Coaching</a>
+            <a href="book.html">Group Seminars</a>
+          </nav>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <nav>
+            <a href="mailto:info@pareto.education">info@pareto.education</a>
+            <span>By appointment</span>
+            <span>Worldwide · CET</span>
+          </nav>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 Pareto Economics. All rights reserved. · <a href="privacy.html">Privacy</a> · <a href="#">Terms</a></p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social-btn" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="footer__social-btn" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="footer__social-btn" aria-label="YouTube">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.min.js"></script>
+  <script src="animations.js"></script>
+</body>
+</html>

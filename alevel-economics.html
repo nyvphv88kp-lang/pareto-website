@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A-Level Economics Resources — Coming Soon — Pareto</title>
+  <meta name="description" content="A-Level Economics resources for AQA, Edexcel and OCR — being crafted by an Economics specialist. Launching soon." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    [data-aos] { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+    .coming-soon-hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 5rem;
+      background: linear-gradient(135deg, #0f2744 0%, #1a3a5e 60%, #0f2744 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle geometric background pattern */
+    .coming-soon-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(201,164,74,0.06) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(201,164,74,0.06) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .coming-soon-hero .container { position: relative; max-width: 680px; }
+
+    .breadcrumb-dark {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.8rem; color: rgba(255,255,255,0.45);
+      justify-content: center;
+      margin-bottom: 2.5rem;
+    }
+    .breadcrumb-dark a { color: var(--gold); text-decoration: none; }
+    .breadcrumb-dark a:hover { text-decoration: underline; }
+    .breadcrumb-dark span { color: rgba(255,255,255,0.3); }
+
+    .cs-eyebrow {
+      display: inline-block;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold);
+      border: 1px solid rgba(201,164,74,0.4);
+      border-radius: 50px; padding: 0.35rem 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .cs-heading {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 800; color: #fff;
+      line-height: 1.15; margin-bottom: 1.5rem;
+    }
+    .cs-heading em {
+      font-style: italic; color: var(--gold);
+    }
+
+    .cs-body {
+      font-size: 1.08rem; color: rgba(255,255,255,0.7);
+      line-height: 1.75; margin-bottom: 2.5rem;
+      max-width: 520px; margin-left: auto; margin-right: auto;
+    }
+
+    .cs-actions {
+      display: flex; align-items: center; justify-content: center;
+      gap: 1rem; flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+
+    .cs-divider {
+      width: 60px; height: 1px;
+      background: rgba(201,164,74,0.4);
+      margin: 0 auto 2.5rem;
+    }
+
+    .cs-boards {
+      display: flex; align-items: center; justify-content: center;
+      gap: 1rem; flex-wrap: wrap;
+    }
+    .cs-board-tag {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(255,255,255,0.5);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 6px; padding: 0.4rem 0.9rem;
+    }
+    .cs-board-label {
+      font-size: 0.7rem; color: rgba(255,255,255,0.3);
+      letter-spacing: 0.08em; text-transform: uppercase;
+      margin-right: 0.25rem;
+    }
+
+    /* Override btn--outline for dark bg */
+    .btn--outline-light {
+      display: inline-flex; align-items: center;
+      padding: 0.75rem 1.75rem; border-radius: 8px;
+      font-size: 0.88rem; font-weight: 600;
+      text-decoration: none; transition: all 0.2s;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.8);
+      background: transparent;
+    }
+    .btn--outline-light:hover {
+      border-color: rgba(255,255,255,0.6);
+      color: #fff;
+      background: rgba(255,255,255,0.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======== NAVIGATION ======== -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo">Pareto<span>.</span></a>
+      <ul class="nav__links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="book.html">Book a Session</a></li>
+      </ul>
+      <a href="book.html" class="btn btn--primary nav__cta">Book Now</a>
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" style="display:none;" role="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resources.html">Resources</a>
+      <a href="book.html">Book a Session</a>
+      <a href="book.html" class="btn btn--primary">Book Now</a>
+    </div>
+  </nav>
+
+  <!-- ======== COMING SOON HERO ======== -->
+  <section class="coming-soon-hero">
+    <div class="container">
+
+      <div class="breadcrumb-dark">
+        <a href="resources.html">Resources</a>
+        <span>›</span>
+        <span style="color:rgba(255,255,255,0.55);">A-Level Economics</span>
+      </div>
+
+      <div class="cs-eyebrow">A-Level Economics · AQA · Edexcel · OCR</div>
+
+      <h1 class="cs-heading">
+        Being crafted.<br>
+        <em>Launching soon.</em>
+      </h1>
+
+      <p class="cs-body">
+        A-Level Economics resources are currently in development — theme-by-theme revision notes, data response practice, 25-mark essay frameworks, and evaluation guides for all major exam boards. While you wait, a 1-to-1 session covers anything you need right now.
+      </p>
+
+      <div class="cs-actions">
+        <a href="book.html" class="btn btn--primary">Book a Session</a>
+        <a href="resources.html" class="btn--outline-light">← Back to Resources</a>
+      </div>
+
+      <div class="cs-divider"></div>
+
+      <div class="cs-boards">
+        <span class="cs-board-label">Covering</span>
+        <span class="cs-board-tag">AQA</span>
+        <span class="cs-board-tag">Edexcel</span>
+        <span class="cs-board-tag">OCR</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======== FOOTER ======== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo-lockup">
+            <span class="footer__logo-name">Pareto</span>
+            <span class="footer__logo-bullet">●</span>
+            <span class="footer__logo-economics">Economics</span>
+          </div>
+          <p class="footer__brand-desc">Online Economics tuition for IB, IGCSE and A-Level students. Excellence through insight.</p>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Navigate</p>
+          <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="resources.html">Resources</a>
+            <a href="book.html">Book a Session</a>
+          </nav>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Programmes</p>
+          <nav>
+            <a href="book.html">IB Economics SL/HL</a>
+            <a href="book.html">IGCSE Economics</a>
+            <a href="book.html">A-Level Economics</a>
+            <a href="book.html">IA &amp; EE Coaching</a>
+            <a href="book.html">Group Seminars</a>
+          </nav>
+        </div>
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <nav>
+            <a href="mailto:info@pareto.education">info@pareto.education</a>
+            <span>By appointment</span>
+            <span>Worldwide · CET</span>
+          </nav>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 Pareto Economics. All rights reserved. · <a href="privacy.html">Privacy</a> · <a href="#">Terms</a></p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social-btn" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="footer__social-btn" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="footer__social-btn" aria-label="YouTube">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="animations.js"></script>
+</body>
+</html>
