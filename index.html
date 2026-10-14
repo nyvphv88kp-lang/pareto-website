@@ -301,9 +301,22 @@
     body > .section { padding: 4rem 0; }
     .testimonials .section-header { margin-bottom: 2.5rem; }
     .cta-banner { padding: 4rem 0; }
+    /* Tablets & phones: hero hugs the image instead of filling 92vh of empty navy */
+    @media (max-width: 1024px) {
+      .hero { min-height: 0; padding: calc(76px + 1.25rem) 1.25rem 1.5rem; }
+    }
+    /* Testimonial arrows: brand gold, hidden on phones (swipe + dots instead) */
+    .swiper-testimonials .swiper-button-prev,
+    .swiper-testimonials .swiper-button-next { color: var(--gold); }
+    @media (max-width: 768px) {
+      .swiper-testimonials .swiper-button-prev,
+      .swiper-testimonials .swiper-button-next { display: none; }
+    }
     @media (max-width: 768px) {
       body > .section { padding: 3rem 0; }
       .cta-banner { padding: 3rem 0; }
+      .section-editorial-header { flex-wrap: wrap; gap: 0.4rem 1.5rem; }
+      .section-editorial-header__meta { margin-left: 0; white-space: normal; }
     }
     .section-divider {
       border: none; border-top: 1px solid #e2e2e2; margin: 0;
@@ -646,7 +659,7 @@
   <section class="section testimonials" id="testimonials" aria-labelledby="testimonials-heading">
     <div class="container">
       <div class="section-header">
-        <h2 id="testimonials-heading" style="font-size: 2rem; white-space: nowrap; color: #c9a44a;">Student and Parent Testimonials</h2>
+        <h2 id="testimonials-heading" style="font-size: clamp(1.6rem, 5vw, 2rem); color: #c9a44a;">Student and Parent Testimonials</h2>
       </div>
 
       <div class="swiper swiper-testimonials" id="paretoSwiper">
