@@ -305,6 +305,10 @@
     @media (max-width: 1024px) {
       .hero { min-height: 0; padding: calc(76px + 1.25rem) 1.25rem 1.5rem; }
     }
+    /* Moving gold banner: computers only — hidden on phones and tablets (incl. iPad landscape) */
+    @media (max-width: 1024px), (hover: none) and (pointer: coarse) {
+      .gold-ticker { display: none; }
+    }
     /* Testimonial arrows: brand gold, hidden on phones (swipe + dots instead) */
     .swiper-testimonials .swiper-button-prev,
     .swiper-testimonials .swiper-button-next { color: var(--gold); }
