@@ -96,6 +96,15 @@ document.addEventListener('DOMContentLoaded', function () {
       link.classList.add('active');
     }
   });
+  // Student / Teacher Resources point at sections of resources.html, so match them by page + hash
+  const STUDENT_PAGES = ['resources.html', 'ib-economics.html', 'igcse-economics.html', 'alevel-economics.html'];
+  function markResources() {
+    const teachers = currentPage === 'resources.html' && location.hash === '#educator-hub';
+    document.querySelectorAll('[data-nav="students"]').forEach(a => a.classList.toggle('active', STUDENT_PAGES.includes(currentPage) && !teachers));
+    document.querySelectorAll('[data-nav="teachers"]').forEach(a => a.classList.toggle('active', teachers));
+  }
+  markResources();
+  window.addEventListener('hashchange', markResources);
 
   /* --- FAQ Accordion (Book page) --- */
   document.querySelectorAll('.faq-trigger').forEach(trigger => {

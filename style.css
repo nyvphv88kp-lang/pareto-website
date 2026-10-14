@@ -210,7 +210,7 @@ p  { font-size: 1rem; color: var(--text-muted); }
   font-weight: 500;
   padding: 0.4rem 0;
 }
-.nav__mobile .btn { align-self: flex-start; margin-top: 0.5rem; }
+.nav__mobile .btn { align-self: flex-start; margin-top: 0.5rem; padding: 0.75rem 1.6rem; color: var(--navy); font-weight: 600; }
 
 /* --- Hero --- */
 .hero {
@@ -1127,6 +1127,12 @@ p  { font-size: 1rem; color: var(--text-muted); }
   .services-grid { grid-template-columns: 1fr 1fr; }
   .about-content { grid-template-columns: 280px 1fr; gap: 3rem; }
   .session-selector { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Menu switches to ☰ at 819px and below (full menu fits from 820px = iPad portrait) */
+@media (max-width: 819px) {
+  .nav__links, .nav__cta { display: none; }
+  .nav__hamburger { display: flex; }
 }
 
 @media (max-width: 768px) {

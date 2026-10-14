@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 
   <!-- Site CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=20261014g" />
 
   <style>
     /* AOS fallback — prevent blank page if AOS fails to init */
@@ -138,10 +138,10 @@
       <ul class="nav__links" role="list">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="book.html">Book a Session</a></li>
+        <li><a href="resources.html#student-resources" data-nav="students" title="Student resources">Students' Portal</a></li>
+        <li><a href="resources.html#educator-hub" data-nav="teachers" title="Teacher resources">Educators Hub</a></li>
       </ul>
-      <a href="book.html" class="btn btn--primary nav__cta">Book Now</a>
+      <a href="book.html" class="btn btn--primary nav__cta">Book a Session</a>
       <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -149,9 +149,9 @@
     <div class="nav__mobile" style="display:none;" role="menu">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="resources.html">Resources</a>
-      <a href="book.html">Book a Session</a>
-      <a href="book.html" class="btn btn--primary">Book Now</a>
+      <a href="resources.html#student-resources" data-nav="students" title="Student resources">Students' Portal</a>
+      <a href="resources.html#educator-hub" data-nav="teachers" title="Teacher resources">Educators Hub</a>
+      <a href="book.html" class="btn btn--primary">Book a Session</a>
     </div>
   </nav>
 
@@ -165,7 +165,7 @@
   </section>
 
   <!-- ======== STUDENT RESOURCES ======== -->
-  <section class="section" style="background:var(--bg);" aria-labelledby="student-resources-heading">
+  <section id="student-resources" class="section" style="background:var(--bg);" aria-labelledby="student-resources-heading">
     <div class="container">
       <div class="section-editorial-header" data-aos="fade-up">
         <h2 id="student-resources-heading">Exam Toolkit</h2>
@@ -659,8 +659,8 @@
 
   <!-- ======== SCRIPTS ======== -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="animations.js"></script>
-  <script src="coming-soon.js"></script>
+  <script src="animations.js?v=20261014g"></script>
+  <script src="coming-soon.js?v=20261014g"></script>
   <script>
     function switchTab(tabId) {
       document.querySelectorAll('.tab-btn').forEach(btn => {
