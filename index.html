@@ -23,7 +23,7 @@
       min-height: 92vh;
       background: linear-gradient(135deg, #0b1e36 0%, #0f2744 60%, #14305a 100%);
       overflow: hidden; position: relative;
-      padding: 0.35in;
+      padding: calc(77px + 0.125in) 0.35in 0.35in; /* clears the fixed 77px menu bar + a 1/8 in gap above the photo */
       display: flex; align-items: center; justify-content: center;
     }
     .hero::before { display: none; }
@@ -303,7 +303,7 @@
     .cta-banner { padding: 4rem 0; }
     /* Tablets & phones: hero hugs the image instead of filling 92vh of empty navy */
     @media (max-width: 1024px) {
-      .hero { min-height: 0; padding: calc(76px + 1.25rem) 1.25rem 1.5rem; }
+      .hero { min-height: 0; padding: calc(77px + 0.125in) 1.25rem 1.5rem; }
     }
     /* Moving gold banner: computers only — hidden on phones and tablets (incl. iPad landscape) */
     @media (max-width: 1024px), (hover: none) and (pointer: coarse) {
@@ -443,7 +443,7 @@
   <section class="hero">
     <img src="assets/images/hero-image.jpg"
          alt="Economics classroom — textbooks, laptop with market data, and chalkboard"
-         style="width:100%; height:auto; max-height:calc(92vh - 0.7in); object-fit:contain; display:block;">
+         style="width:100%; height:auto; max-height:calc(92vh - 77px - 0.125in - 0.35in); object-fit:contain; display:block;">
   </section>
 
   <!-- ======== GOLD STATS TICKER ======== -->
