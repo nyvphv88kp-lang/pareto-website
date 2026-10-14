@@ -1137,8 +1137,8 @@
       { url: 'https://www.cnbc.com/id/20910258/device/rss/rss.html',         source: 'CNBC Economy',  count: 2 },
     ];
 
-    const CACHE_KEY = 'pareto_news_v7';
-    const CACHE_TTL = 5 * 60 * 60 * 1000;
+    const CACHE_KEY = 'pareto_news_v8';
+    const CACHE_TTL = 30 * 60 * 1000; // re-check the news every 30 minutes
     function getCached(allowStale) {
       try {
         const raw = localStorage.getItem(CACHE_KEY);
@@ -1176,7 +1176,9 @@
         `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}`, 9000);
       const data = await res.json();
       if (data.status !== 'ok' || !data.items?.length) throw new Error('bad');
-      return data.items.slice(0, feed.count).map(item => ({
+      // feeds aren't always newest-first (BBC isn't), so sort by date before taking the latest few
+      const newest = [...data.items].sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+      return newest.slice(0, feed.count).map(item => ({
         title: item.title || '', link: item.link || '#',
         pubDate: item.pubDate || '', description: item.description || '',
         content: item.content || '',
