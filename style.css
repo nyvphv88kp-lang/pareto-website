@@ -148,13 +148,13 @@ p  { font-size: 1rem; color: var(--text-muted); }
   letter-spacing: -0.02em;
   display: flex;
   align-items: center;
-  gap: 0.65rem;
 }
 .nav__logo::before {
   content: '';
   display: inline-block;
   width: 36px;
   height: 36px;
+  margin-right: 0.65rem; /* space only between icon and word — the "." sits right after "Pareto" */
   flex-shrink: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='36' height='36' rx='8' fill='%23c9a44a'/%3E%3Cpath d='M7 7 C9 7 13 11 18 19 C22 25 27 29 29 29' stroke='%230f2744' stroke-width='3' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='7' cy='7' r='2.5' fill='%230f2744'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
