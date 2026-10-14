@@ -470,6 +470,255 @@
     </div>
   </div>
 
+  <!-- ======== CURRICULUM BOOKSHELF ======== -->
+  <style>
+    /* Phones & tablets only (incl. iPad landscape) — hidden on computers, like the gold ticker is the reverse */
+    .shelf-section { display: none; background: #f4f3f0; padding: 4.5rem 0 4rem; }
+    @media (max-width: 1024px), (hover: none) and (pointer: coarse) {
+      .shelf-section { display: block; }
+    }
+    .shelf-section .section-label { margin-bottom: 0.6rem; }
+    .shelf-head h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); color: var(--navy); margin: 0 0 0.6rem; }
+    .shelf-head p { max-width: 520px; color: var(--text-muted); line-height: 1.7; margin: 0; }
+
+    .shelf-layout {
+      display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+      gap: 3.5rem; align-items: end; margin-top: 2.75rem;
+    }
+
+    /* ── The shelf ── */
+    .shelf { position: relative; padding: 0 0.75rem; }
+    .shelf__books {
+      display: flex; align-items: flex-end; justify-content: center;
+      gap: clamp(6px, 1.2vw, 12px); height: 380px; position: relative; z-index: 1;
+    }
+    .shelf__board {
+      height: 16px; border-radius: 3px; position: relative; z-index: 2;
+      background: linear-gradient(180deg, #1a3a5e 0%, var(--navy) 60%, #0a1c33 100%);
+      border-top: 2px solid var(--gold);
+      box-shadow: 0 14px 22px -10px rgba(15,39,68,.45);
+    }
+    .shelf__hint {
+      text-align: center; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: #9a8a5e; margin-top: 1rem;
+    }
+
+    /* ── A book spine ── */
+    .book {
+      --c: var(--navy); --ink: var(--gold); --band: var(--gold);
+      position: relative; flex: 0 0 auto; width: var(--w); height: var(--h);
+      border: 0; padding: 0; cursor: pointer; font: inherit;
+      border-radius: 4px 4px 2px 2px; color: var(--ink);
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.28) 0%, rgba(255,255,255,.10) 9%, rgba(255,255,255,0) 22%,
+                        rgba(0,0,0,0) 78%, rgba(0,0,0,.22) 100%),
+        var(--c);
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,.08), 0 2px 4px rgba(15,39,68,.18);
+      transform-origin: bottom center;
+      transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease;
+      display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+      padding: 18px 0 14px; overflow: hidden;
+    }
+    .book::before, .book::after {            /* gold foil bands */
+      content: ''; position: absolute; left: 10%; right: 10%; height: 0;
+      border-top: 1.5px solid var(--band); border-bottom: 1.5px solid var(--band);
+      padding-top: 3px; opacity: .85;
+    }
+    .book::before { top: 10px; }
+    .book::after  { bottom: 40px; }
+    .book__text {
+      writing-mode: vertical-rl; display: flex; flex-direction: column; align-items: flex-start; gap: 5px;
+      margin-top: 16px; white-space: nowrap; line-height: 1;
+    }
+    .book__title {
+      font-family: var(--font-head); font-weight: 700;
+      font-size: clamp(1.05rem, 1.9vw, 1.45rem); letter-spacing: 0.01em;
+    }
+    .book__level {
+      font-family: var(--font-body); font-size: 0.6rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase; opacity: .8; padding-top: 2px;
+    }
+    .book__spacer { flex: 1; }
+    .book__mark {                            /* Pareto "publisher" logo */
+      width: 18px; height: 18px; border-radius: 4px; flex: 0 0 auto;
+      background: var(--gold) url("data:image/svg+xml,%3Csvg viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 7 C9 7 13 11 18 19 C22 25 27 29 29 29' stroke='%230f2744' stroke-width='3.4' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='7' cy='7' r='2.8' fill='%230f2744'/%3E%3C/svg%3E") center/100% no-repeat;
+    }
+    .book--gold .book__mark { background-color: var(--navy); background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 7 C9 7 13 11 18 19 C22 25 27 29 29 29' stroke='%23c9a44a' stroke-width='3.4' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='7' cy='7' r='2.8' fill='%23c9a44a'/%3E%3C/svg%3E"); }
+
+    .book--ib    { --c: var(--navy);  --ink: var(--gold); --w: 92px; --h: 340px; }
+    .book--igcse { --c: var(--gold);  --ink: var(--navy); --band: var(--navy); --w: 84px; --h: 300px; }
+    .book--alevel{ --c: #22466e;      --ink: #f3e6c0;   --w: 98px; --h: 360px; }
+    .book--ap    { --c: #efe6cf;      --ink: var(--navy); --band: var(--gold); --w: 78px; --h: 270px; }
+
+    .book:hover { transform: translateY(-8px); box-shadow: inset 0 0 0 1px rgba(0,0,0,.08), 0 14px 20px -8px rgba(15,39,68,.35); }
+    .book[aria-pressed="true"] {
+      transform: translateY(-12px) scale(1.03);
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,.08), 0 22px 30px -10px rgba(15,39,68,.45);
+    }
+    .book[aria-pressed="true"]::after { opacity: 1; }
+    .book:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+    .book--igcse:focus-visible { outline-color: var(--navy); }
+
+    /* ── Detail card ── */
+    .shelf-card {
+      background: var(--white); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);
+      overflow: hidden; position: relative;
+    }
+    .shelf-card__band { height: 8px; background: var(--card-c, var(--navy)); transition: background .35s ease; }
+    .shelf-card__body { padding: 2rem 2.25rem 2.25rem; transition: opacity .25s ease, transform .25s ease; }
+    .shelf-card__body.is-swapping { opacity: 0; transform: translateY(6px); }
+    .shelf-card__eyebrow {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold);
+    }
+    .shelf-card h3 { font-size: clamp(1.5rem, 2.6vw, 2rem); color: var(--navy); margin: 0.5rem 0 0.75rem; }
+    .shelf-card p { color: var(--text-muted); line-height: 1.7; margin: 0 0 1.25rem; }
+    .shelf-card__chips { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0 0 1.75rem; padding: 0; list-style: none; }
+    .shelf-card__chips li {
+      font-size: 0.78rem; font-weight: 600; color: var(--navy); background: #f4f1e8;
+      border: 1px solid #e9e1c9; border-radius: 999px; padding: 0.35rem 0.8rem;
+    }
+    .shelf-card__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+    .shelf-card__link {
+      font-size: 0.85rem; font-weight: 600; color: var(--navy); text-decoration: none;
+      border-bottom: 1px solid currentColor; padding-bottom: 2px;
+    }
+    .shelf-card__link:hover { color: var(--gold); }
+
+    @media (max-width: 900px) {
+      .shelf-layout { grid-template-columns: 1fr; gap: 2.25rem; }
+      .shelf__books { height: 330px; }
+      .book--ib { --h: 300px; } .book--igcse { --h: 265px; } .book--alevel { --h: 320px; } .book--ap { --h: 240px; }
+    }
+    @media (max-width: 480px) {
+      .shelf-section { padding: 3rem 0; }
+      .shelf { padding: 0; }
+      .shelf__books { height: 270px; }
+      .book--ib    { --w: 68px; --h: 245px; }
+      .book--igcse { --w: 64px; --h: 215px; }
+      .book--alevel{ --w: 72px; --h: 260px; }
+      .book--ap    { --w: 60px; --h: 195px; }
+      .book__title { font-size: 1rem; }
+      .shelf-card__body { padding: 1.5rem 1.4rem 1.75rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .book, .shelf-card__body, .shelf-card__band { transition: none; }
+    }
+  </style>
+
+  <section class="shelf-section" id="curriculums" aria-labelledby="curriculums-heading">
+    <div class="container">
+      <div class="shelf-head" data-aos="fade-up">
+        <span class="section-label">Curriculums we teach</span>
+        <h2 id="curriculums-heading">Pick your book.</h2>
+        <p>Four exam systems, one standard of teaching. Choose yours to see what we cover.</p>
+      </div>
+
+      <div class="shelf-layout">
+        <div class="shelf">
+          <div class="shelf__books" role="group" aria-label="Curriculums">
+            <button class="book book--ib" type="button" aria-pressed="true" aria-controls="shelfCard" data-book="ib">
+              <span class="book__text"><span class="book__title">IB Economics</span><span class="book__level">SL · HL</span></span>
+              <span class="book__spacer"></span><span class="book__mark" aria-hidden="true"></span>
+            </button>
+            <button class="book book--igcse book--gold" type="button" aria-pressed="false" aria-controls="shelfCard" data-book="igcse">
+              <span class="book__text"><span class="book__title">IGCSE Economics</span><span class="book__level">Cambridge 0455</span></span>
+              <span class="book__spacer"></span><span class="book__mark" aria-hidden="true"></span>
+            </button>
+            <button class="book book--alevel" type="button" aria-pressed="false" aria-controls="shelfCard" data-book="alevel">
+              <span class="book__text"><span class="book__title">A-Level Economics</span><span class="book__level">AQA · Edexcel · OCR</span></span>
+              <span class="book__spacer"></span><span class="book__mark" aria-hidden="true"></span>
+            </button>
+            <button class="book book--ap" type="button" aria-pressed="false" aria-controls="shelfCard" data-book="ap">
+              <span class="book__text"><span class="book__title">AP Economics</span><span class="book__level">Micro · Macro</span></span>
+              <span class="book__spacer"></span><span class="book__mark" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="shelf__board" aria-hidden="true"></div>
+          <p class="shelf__hint" aria-hidden="true">Tap a book to open it</p>
+        </div>
+
+        <article class="shelf-card" id="shelfCard" aria-live="polite">
+          <div class="shelf-card__band"></div>
+          <div class="shelf-card__body">
+            <div class="shelf-card__eyebrow" data-f="eyebrow"></div>
+            <h3 data-f="title"></h3>
+            <p data-f="desc"></p>
+            <ul class="shelf-card__chips" data-f="chips"></ul>
+            <div class="shelf-card__actions">
+              <a class="btn btn--primary" data-f="cta" href="#"></a>
+              <a class="shelf-card__link" href="book.html">Book a session</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      const BOOKS = {
+        ib: {
+          color: '#0f2744', eyebrow: 'IB Diploma · SL & HL', title: 'IB Economics',
+          desc: 'The full IB course, taught with a sharp focus on what earns marks, plus dedicated support for your Internal Assessment and Extended Essay.',
+          chips: ['Introduction', 'Microeconomics', 'Macroeconomics', 'International', 'Development', 'IA & EE'],
+          cta: ['Explore IB resources', 'ib-economics.html'],
+        },
+        igcse: {
+          color: '#c9a44a', eyebrow: 'Cambridge IGCSE · 0455', title: 'IGCSE Economics',
+          desc: 'Strong foundations for the Cambridge syllabus, Core and Extended, from the basic economic problem to international trade, with focused practice for Papers 1 and 2.',
+          chips: ['Basic economic problem', 'Allocation of resources', 'Decision makers', 'Macroeconomy', 'Development', 'International trade'],
+          cta: ['Explore IGCSE resources', 'igcse-economics.html'],
+        },
+        alevel: {
+          color: '#22466e', eyebrow: 'AQA · Edexcel · OCR', title: 'A-Level Economics',
+          desc: 'Micro and macro for the major UK exam boards, with real attention to evaluation and essay technique. Full resource library launching soon.',
+          chips: ['Microeconomics', 'Macroeconomics', 'Essay technique', 'Data response'],
+          cta: ["See what's coming", 'alevel-economics.html'],
+        },
+        ap: {
+          color: '#efe6cf', eyebrow: 'College Board · Advanced Placement', title: 'AP Economics',
+          desc: 'Targeted preparation for AP Microeconomics and AP Macroeconomics: accurate graphs, faster multiple choice and confident free-response answers.',
+          chips: ['AP Microeconomics', 'AP Macroeconomics', 'Multiple choice', 'Free response'],
+          cta: ['Book an AP session', 'book.html'],
+        },
+      };
+      const shelf = document.querySelector('.shelf__books');
+      const card  = document.getElementById('shelfCard');
+      if (!shelf || !card) return;
+      const body  = card.querySelector('.shelf-card__body');
+      const band  = card.querySelector('.shelf-card__band');
+      const f = k => card.querySelector(`[data-f="${k}"]`);
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function fill(key) {
+        const b = BOOKS[key];
+        band.style.background = b.color;
+        f('eyebrow').textContent = b.eyebrow;
+        f('title').textContent = b.title;
+        f('desc').textContent = b.desc;
+        f('chips').innerHTML = b.chips.map(c => `<li>${c}</li>`).join('');
+        f('cta').textContent = b.cta[0] + ' →';
+        f('cta').href = b.cta[1];
+      }
+      function open(btn) {
+        if (btn.getAttribute('aria-pressed') === 'true') return;
+        shelf.querySelectorAll('.book').forEach(x => x.setAttribute('aria-pressed', x === btn ? 'true' : 'false'));
+        if (reduce) return fill(btn.dataset.book);
+        body.classList.add('is-swapping');
+        setTimeout(() => { fill(btn.dataset.book); body.classList.remove('is-swapping'); }, 200);
+      }
+      shelf.addEventListener('click', e => { const b = e.target.closest('.book'); if (b) open(b); });
+      shelf.addEventListener('keydown', e => {
+        if (!['ArrowLeft', 'ArrowRight'].includes(e.key)) return;
+        const all = [...shelf.querySelectorAll('.book')];
+        const i = all.indexOf(document.activeElement); if (i < 0) return;
+        const next = all[(i + (e.key === 'ArrowRight' ? 1 : all.length - 1)) % all.length];
+        next.focus(); open(next); e.preventDefault();
+      });
+      fill('ib');
+    })();
+  </script>
+
   <!-- ======== SERVICES ======== -->
   <section class="section section--services" id="services" aria-labelledby="services-heading">
     <div class="container">
