@@ -425,7 +425,7 @@
         <li><a href="resources.html#student-resources" data-nav="students" title="Student resources">Students' Portal</a></li>
         <li><a href="resources.html#educator-hub" data-nav="teachers" title="Teacher resources">Educators Hub</a></li>
       </ul>
-      <a href="book.html" class="btn btn--primary nav__cta">Book a Session</a>
+      <a href="book.html" class="btn btn--primary nav__cta" style="visibility:hidden" aria-hidden="true" tabindex="-1">Book a Session</a>
       <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -440,11 +440,63 @@
   </nav>
 
   <!-- ======== HERO ======== -->
-  <section class="hero">
-    <img src="assets/images/hero-image.jpg"
-         alt="Economics classroom — textbooks, laptop with market data, and chalkboard"
-         style="width:100%; height:auto; max-height:calc(92vh - 77px - 0.125in - 0.35in); object-fit:contain; display:block;">
+  <section class="hx hx--b hx--right hx--short hx--edge" aria-label="Introduction">
+    <div class="hxb-bg"></div>
+    <div class="container"><div class="hxb-text">
+      <div class="hx-eyebrow">IB · IGCSE · A-Level · AP Economics</div>
+      <h1>Excellence<br><em>through insight.</em></h1>
+      <div class="hx-actions"><a href="book.html" class="hx-btn hx-btn--gold">Book a session</a><a href="resources.html#student-resources" class="hx-btn hx-btn--ghost">Explore resources</a></div>
+      <p class="hx-trust">Expert online Economics tutoring, built around your syllabus and exam board</p>
+    </div></div>
   </section>
+  <style>
+  .hx { position: relative; overflow: hidden; background: radial-gradient(ellipse at 70% 30%, #1a3a5e 0%, #0f2744 55%, #0a1c33 100%); color: #fff;
+        padding: calc(77px + 4.5rem) 0 4.5rem; }
+  .hx-sd { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .09; pointer-events: none; }
+  .hx .container { position: relative; z-index: 1; }
+  .hx-eyebrow { display: flex; align-items: center; gap: .8rem; font: 700 .74rem/1.4 var(--font-body); letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.4rem; }
+  .hx-eyebrow::before { content: ''; width: 2.4rem; height: 2px; background: var(--gold); flex: none; }
+  .hx h1 { text-wrap: balance; font-family: var(--font-head); font-weight: 700; font-size: clamp(2.2rem, 4vw, 3.35rem); line-height: 1.08; color: #fff; margin: 0 0 1.3rem; letter-spacing: -0.01em; }
+  .hx h1 em { color: var(--gold-light, #e8c96a); font-style: italic; }
+  .hx-sub { font-size: 1.08rem; line-height: 1.7; color: rgba(255,255,255,.75); max-width: 34rem; margin: 0 0 2rem; }
+  .hx-actions { display: flex; flex-wrap: wrap; gap: .9rem; }
+  .hx-btn { display: inline-flex; align-items: center; justify-content: center; padding: .95rem 1.7rem; border-radius: 999px; font: 600 1rem var(--font-body); text-decoration: none; transition: transform .2s ease, background .2s ease; }
+  .hx-btn:hover { transform: translateY(-2px); }
+  .hx-btn--gold { background: var(--gold); color: var(--navy); }
+  .hx-btn--ghost { border: 1.5px solid rgba(255,255,255,.45); color: #fff; }
+  .hx-btn--ghost:hover { background: rgba(255,255,255,.08); }
+  .hx-trust { margin-top: 2.2rem; padding-top: 1.4rem; border-top: 1px solid rgba(255,255,255,.12); font-size: .9rem; color: rgba(255,255,255,.65); letter-spacing: .02em; }
+  .hx-trust b { color: var(--gold); font-weight: 600; }
+  @media (max-width: 640px) { .hx { padding: calc(77px + 2.5rem) 0 3rem; } .hx-actions { flex-direction: column; align-items: stretch; } }
+
+    .hx--b { min-height: min(84vh, 760px); display: flex; align-items: center; }
+    .hxb-bg { position: absolute; inset: 0; background: url(assets/images/hero-image.jpg) 18% 42% / auto 128% no-repeat; }
+    .hxb-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,28,51,.96) 0%, rgba(15,39,68,.86) 40%, rgba(15,39,68,.45) 72%, rgba(15,39,68,.3) 100%); }
+    .hxb-text { max-width: 36rem; }
+    .hx--b h1 { font-size: clamp(2.6rem, 5.2vw, 4.4rem); line-height: 1.04; margin-bottom: 2rem; }
+    .hx--b .hx-trust { margin-top: 1.8rem; border-top: 0; padding-top: 0; }
+    @media (max-width: 900px) { .hxb-bg { background-size: cover; background-position: 30% center; } .hxb-bg::after { background: linear-gradient(180deg, rgba(10,28,51,.9), rgba(15,39,68,.85)); } }
+
+    .hx--right .hxb-bg { background-position: 8% 42%; }
+    .hx--right .hxb-bg::after { background: linear-gradient(270deg, rgba(10,28,51,.96) 0%, rgba(15,39,68,.86) 40%, rgba(15,39,68,.45) 72%, rgba(15,39,68,.3) 100%); }
+    .hx--right .container { width: 100%; }
+    .hx--right .hxb-text { margin-left: auto; margin-right: 0; }
+    @media (max-width: 900px) { .hx--right .hxb-text { margin-left: 0; } .hx--right .hxb-bg::after { background: linear-gradient(180deg, rgba(10,28,51,.9), rgba(15,39,68,.85)); } }
+
+    .hx--short { min-height: min(59vh, 530px); padding: calc(77px + 2.6rem) 0 2.6rem; }
+    @media (max-width: 900px) { .hx--short { min-height: 0; } }
+    .hx--short h1 { font-size: clamp(2.3rem, 4.1vw, 3.5rem); margin-bottom: 1.4rem; }
+    .hx--short .hx-eyebrow { margin-bottom: 1rem; }
+    .hx--short .hx-trust { margin-top: 1.2rem; }
+    .hx--short .hxb-bg { background-size: cover; background-position: 30% 48%; }
+
+    .hx--edge .hxb-text { text-align: right; max-width: none; }
+    .hx--edge .hx-eyebrow { justify-content: flex-end; }
+    .hx--edge .hx-eyebrow::before { order: 0; }
+    .hx--edge .hx-actions { justify-content: flex-end; }
+    .hx--edge .hx-sub, .hx--edge .hx-trust { margin-left: auto; }
+    @media (max-width: 900px) { .hx--edge .hxb-text { text-align: left; } .hx--edge .hx-eyebrow, .hx--edge .hx-actions { justify-content: flex-start; } }
+</style>
 
   <!-- ======== GOLD STATS TICKER ======== -->
   <div class="gold-ticker" role="region" aria-label="Key statistics">
