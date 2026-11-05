@@ -89,17 +89,18 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* --- Active Nav Link --- */
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const pageName = path => path.split('#')[0].split('/').pop().replace(/\.html$/, '') || 'index';
+  const currentPage = pageName(window.location.pathname);
   document.querySelectorAll('.nav__links a, .nav__mobile a').forEach(link => {
     const href = link.getAttribute('href');
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+    if (!href.includes('#') && pageName(href) === currentPage) {
       link.classList.add('active');
     }
   });
-  // Student / Teacher Resources point at sections of resources.html, so match them by page + hash
-  const STUDENT_PAGES = ['resources.html', 'ib-economics.html', 'igcse-economics.html', 'alevel-economics.html'];
+  // Student / Teacher Resources point at sections of the resources page, so match them by page + hash
+  const STUDENT_PAGES = ['resources', 'ib-economics', 'igcse-economics', 'alevel-economics'];
   function markResources() {
-    const teachers = currentPage === 'resources.html' && location.hash === '#educator-hub';
+    const teachers = currentPage === 'resources' && location.hash === '#educator-hub';
     document.querySelectorAll('[data-nav="students"]').forEach(a => a.classList.toggle('active', STUDENT_PAGES.includes(currentPage) && !teachers));
     document.querySelectorAll('[data-nav="teachers"]').forEach(a => a.classList.toggle('active', teachers));
   }

@@ -92,7 +92,7 @@
           <h2 id="pressTitle">This edition is still at the press.</h2>
           <p id="pressText">We're putting the finishing touches on our study guides, so that every page is accurate, clear and genuinely exam-ready. This resource will be available here very soon. In the meantime, we're happy to help you one-to-one.</p>
           <div class="press-card__actions">
-            <a class="btn btn--primary" href="book.html">Book a session</a>
+            <a class="btn btn--primary" href="/book">Book a session</a>
             <button class="press-close-link" type="button">Keep browsing</button>
           </div>
         </div>
