@@ -1,12 +1,12 @@
 /* ============================================
    PARETO — "Coming soon" notice for resources
-   Any link still pointing at the Gumroad placeholder
-   (exactly https://gumroad.com) opens this notice instead.
-   Real product links (gumroad.com/l/...) are left alone.
+   Any link pointing at #coming-soon opens this notice.
+   When a PDF is ready, replace that button's href with the
+   real product link and its "Coming soon" label.
    ============================================ */
 
 (function () {
-  const PLACEHOLDER = /^https?:\/\/(www\.)?gumroad\.com\/?$/i;
+  const PLACEHOLDER = /^#coming-soon$/;
 
   const css = `
     .press-overlay {

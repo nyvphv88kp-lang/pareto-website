@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <title>Book a Session — Pareto Economics Tutoring</title>
   <link rel="canonical" href="https://paretoedu.org/book" />
   <meta name="description" content="Book a 1-to-1 tutoring session, group class, IA support, or Extended Essay session with an IB Examiner. Choose your time and join online." />
@@ -16,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 
   <!-- Site CSS -->
-  <link rel="stylesheet" href="style.css?v=20261014g" />
+  <link rel="stylesheet" href="style.css?v=20261105a" />
 
   <style>
     /* Hero — guaranteed visible regardless of style.css version */
@@ -208,6 +211,16 @@
 
       </div>
 
+      <p style="margin-top:1rem; font-size:0.85rem; color:var(--text-muted);">Calendar not loading? <a href="https://cal.com/paretoeducation.org" style="color:var(--navy); text-decoration:underline;">Open the booking page</a>.</p>
+      <noscript>
+        <ul style="margin-top:0.5rem; font-size:0.9rem;">
+          <li><a href="https://cal.com/paretoeducation.org/1-to-1-tutoring-session">Book 1-to-1 tutoring</a></li>
+          <li><a href="https://cal.com/paretoeducation.org/group-session">Book a group session</a></li>
+          <li><a href="https://cal.com/paretoeducation.org/ib-internal-assessment-support">Book IA support</a></li>
+          <li><a href="https://cal.com/paretoeducation.org/extended-essay-premium">Book Extended Essay support</a></li>
+        </ul>
+      </noscript>
+
       <!-- Step 3: How It Works -->
       <div class="section-header" style="text-align:left; max-width:100%; margin:3rem 0 1.5rem;" data-aos="fade-up">
         <span class="section-label">Step 3</span>
@@ -323,7 +336,7 @@
             <span class="footer__logo-bullet">●</span>
             <span class="footer__logo-economics">Economics</span>
           </div>
-          <p class="footer__brand-desc">Online Economics tuition for IB, IGCSE and A-Level students. Excellence through insight.</p>
+          <p class="footer__brand-desc">Online Economics tuition for IB, IGCSE, A-Level and AP students. Excellence through insight.</p>
         </div>
 
         <div class="footer__col">
@@ -339,9 +352,9 @@
         <div class="footer__col">
           <p class="footer__col-title">Programmes</p>
           <nav>
-            <a href="/book">IB Economics SL/HL</a>
-            <a href="/book">IGCSE Economics</a>
-            <a href="/book">A-Level Economics</a>
+            <a href="/ib-economics">IB Economics SL/HL</a>
+            <a href="/igcse-economics">IGCSE Economics</a>
+            <a href="/alevel-economics">A-Level Economics</a>
             <a href="/book">IA &amp; EE Coaching</a>
             <a href="/book">Group Seminars</a>
           </nav>
@@ -358,6 +371,8 @@
 
       </div>
 
+      <p class="footer__notice">Pareto is an independent tutoring service. This work has been developed independently from and is not endorsed by the International Baccalaureate (IB). Pareto is not affiliated with or endorsed by Cambridge International, Pearson, AQA, OCR or the College Board. AP&reg; is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this website.</p>
+
       <div class="footer__bottom">
         <p class="footer__copy">© 2026 Pareto Economics. All rights reserved. · <a href="/privacy">Privacy</a> · <a href="#">Terms</a></p>
         <div class="footer__socials">
@@ -373,37 +388,27 @@
   <script type="text/javascript">
     (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
 
-    Cal("init", "1-to-1-tutoring-session", {origin:"https://cal.com"});
-    Cal.ns["1-to-1-tutoring-session"]("inline", {
-      elementOrSelector:"#my-cal-inline-1-to-1-tutoring-session",
-      config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
-      calLink: "paretoeducation.org/1-to-1-tutoring-session",
-    });
-    Cal.ns["1-to-1-tutoring-session"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-
-    Cal("init", "group-session", {origin:"https://cal.com"});
-    Cal.ns["group-session"]("inline", {
-      elementOrSelector:"#my-cal-inline-group-session",
-      config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
-      calLink: "paretoeducation.org/group-session",
-    });
-    Cal.ns["group-session"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-
-    Cal("init", "ib-internal-assessment-support", {origin:"https://cal.com"});
-    Cal.ns["ib-internal-assessment-support"]("inline", {
-      elementOrSelector:"#my-cal-inline-ib-internal-assessment-support",
-      config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
-      calLink: "paretoeducation.org/ib-internal-assessment-support",
-    });
-    Cal.ns["ib-internal-assessment-support"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-
-    Cal("init", "extended-essay-premium", {origin:"https://cal.com"});
-    Cal.ns["extended-essay-premium"]("inline", {
-      elementOrSelector:"#my-cal-inline-extended-essay-premium",
-      config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
-      calLink: "paretoeducation.org/extended-essay-premium",
-    });
-    Cal.ns["extended-essay-premium"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    // Load a calendar only when its session type is chosen
+    const calEvents = {
+      '1to1':  '1-to-1-tutoring-session',
+      'group': 'group-session',
+      'ia':    'ib-internal-assessment-support',
+      'ee':    'extended-essay-premium'
+    };
+    const calLoaded = {};
+    function loadCal(session) {
+      const slug = calEvents[session];
+      if (!slug || calLoaded[session]) return;
+      calLoaded[session] = true;
+      Cal("init", slug, {origin:"https://cal.com"});
+      Cal.ns[slug]("inline", {
+        elementOrSelector: "#my-cal-inline-" + slug,
+        config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+        calLink: "paretoeducation.org/" + slug,
+      });
+      Cal.ns[slug]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    }
+    loadCal('1to1');
   </script>
 
   <!-- ======== SESSION SWITCHER ======== -->
@@ -432,13 +437,14 @@
         });
         var target = document.getElementById(calMap[session]);
         if (target) target.classList.add('active');
+        loadCal(session);
       });
     });
   </script>
 
   <!-- ======== SITE SCRIPTS ======== -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="animations.js?v=20261014g"></script>
+  <script src="animations.js?v=20261105a"></script>
 
 </body>
 </html>

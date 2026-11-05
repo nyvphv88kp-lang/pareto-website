@@ -626,6 +626,13 @@ p  { font-size: 1rem; color: var(--text-muted); }
   display: block;
 }
 .footer__col nav a:hover { color: var(--white); }
+.footer__notice {
+  font-size: 0.72rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,.62);
+  max-width: 78ch;
+  margin: 0 0 1.25rem;
+}
 .footer__bottom {
   display: flex;
   align-items: center;
@@ -862,7 +869,7 @@ p  { font-size: 1rem; color: var(--text-muted); }
   overflow: hidden;
 }
 .resource-card__preview--blur::after {
-  content: '🔒 Preview';
+  content: 'Coming soon';
   position: absolute;
   inset: 0;
   background: rgba(15,39,68,.55);

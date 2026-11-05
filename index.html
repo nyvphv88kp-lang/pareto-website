@@ -3,8 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <title>Pareto — Expert Economics Tutoring | IB · IGCSE · A-Level</title>
   <link rel="canonical" href="https://paretoedu.org/" />
+  <link rel="preload" as="image" href="assets/images/hero-image.jpg" media="(min-width: 701px)" />
+  <link rel="preload" as="image" href="assets/images/hero-image-mobile.jpg" media="(max-width: 700px)" />
   <meta name="description" content="Learn Economics from an IB Examiner with 10+ years of international experience. Premium 1-to-1 tutoring, group sessions, and curated resources for IB, IGCSE, and A-Level students worldwide." />
   <meta name="keywords" content="IB Economics tutor, IGCSE Economics, A-Level Economics, IB examiner tutor, Extended Essay economics, Internal Assessment economics" />
   <meta property="og:title" content="Pareto — Expert Economics Tutoring" />
@@ -16,7 +21,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="style.css?v=20261014g" />
+  <link rel="stylesheet" href="style.css?v=20261105a" />
 
   <style>
     /* ── Hero: full-width image with framed border ── */
@@ -472,6 +477,7 @@
 
     .hx--b { min-height: min(84vh, 760px); display: flex; align-items: center; }
     .hxb-bg { position: absolute; inset: 0; background: url(assets/images/hero-image.jpg) 18% 42% / auto 128% no-repeat; }
+    @media (max-width: 700px) { .hxb-bg { background-image: url(assets/images/hero-image-mobile.jpg); } }
     .hxb-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,28,51,.96) 0%, rgba(15,39,68,.86) 40%, rgba(15,39,68,.45) 72%, rgba(15,39,68,.3) 100%); }
     .hxb-text { max-width: 36rem; }
     .hx--b h1 { font-size: clamp(2.6rem, 5.2vw, 4.4rem); line-height: 1.04; margin-bottom: 2rem; }
@@ -835,8 +841,8 @@
           <p>A 4,000-word research paper written to university standards — and most students attempt it without proper guidance. I help you choose a focused research question, build a coherent argument, and refine your draft until it meets the expectations of a top-band examiner.</p>
           <div class="service-card__book-cta">Book a session <span>→</span></div>
         </a>
-
       </div>
+      <p style="margin-top:2rem; max-width:720px; color:var(--text-muted); line-height:1.75;">Online Economics tutoring for <a href="/ib-economics" style="color:var(--navy); text-decoration:underline;">IB Economics</a> (SL and HL), <a href="/igcse-economics" style="color:var(--navy); text-decoration:underline;">IGCSE Economics</a> (Cambridge 0455), <a href="/alevel-economics" style="color:var(--navy); text-decoration:underline;">A-Level Economics</a> (AQA, Edexcel and OCR) and AP Microeconomics and Macroeconomics.</p>
     </div>
   </section>
 
@@ -928,11 +934,11 @@
   <section class="section resources-teaser" id="free-resources" aria-labelledby="free-resources-heading">
     <div class="container">
       <div class="section-editorial-header" data-aos="fade-up">
-        <h2 id="free-resources-heading">Start for free</h2>
+        <h2 id="free-resources-heading">Free study guides, coming soon</h2>
         <span class="section-editorial-header__meta"><a href="/resources" style="color:var(--gold);text-decoration:none;">Full resource library →</a></span>
       </div>
       <p style="max-width:560px; color:var(--text-muted); line-height:1.75; margin-bottom:2rem;" data-aos="fade-up" data-aos-delay="50">
-        Download free study materials — no sign-up needed. A taste of what's in the full library.
+        The first free guides are being finished now. Here's what's coming.
       </p>
       <div class="resources-teaser-grid">
 
@@ -940,21 +946,21 @@
           <span class="resource-teaser-card__tag">IB Economics</span>
           <h4>IA Step-by-Step Checklist</h4>
           <p>Every criterion explained. Know what examiners look for before you write a single word.</p>
-          <a href="/resources" class="btn btn--outline-dark">Download Free</a>
+          <a href="/resources" class="btn btn--outline-dark">See the library</a>
         </div>
 
         <div class="resource-teaser-card" data-aos="fade-up" data-aos-delay="100">
           <span class="resource-teaser-card__tag">All Curricula</span>
           <h4>Key Diagrams Reference Sheet</h4>
           <p>Every essential diagram — supply & demand, market failure, macro models — in one clean PDF.</p>
-          <a href="/resources" class="btn btn--outline-dark">Download Free</a>
+          <a href="/resources" class="btn btn--outline-dark">See the library</a>
         </div>
 
         <div class="resource-teaser-card" data-aos="fade-up" data-aos-delay="200">
           <span class="resource-teaser-card__tag">IB Economics</span>
           <h4>IB Command Terms Guide</h4>
           <p>Understand exactly what "evaluate", "discuss", and "examine" require in Paper 1 and Paper 3.</p>
-          <a href="/resources" class="btn btn--outline-dark">Download Free</a>
+          <a href="/resources" class="btn btn--outline-dark">See the library</a>
         </div>
 
       </div>
@@ -1124,7 +1130,7 @@
             <span class="footer__logo-bullet">●</span>
             <span class="footer__logo-economics">Economics</span>
           </div>
-          <p class="footer__brand-desc">Online Economics tuition for IB, IGCSE and A-Level students. Excellence through insight.</p>
+          <p class="footer__brand-desc">Online Economics tuition for IB, IGCSE, A-Level and AP students. Excellence through insight.</p>
         </div>
 
         <div class="footer__col">
@@ -1140,9 +1146,9 @@
         <div class="footer__col">
           <p class="footer__col-title">Programmes</p>
           <nav>
-            <a href="/book">IB Economics SL/HL</a>
-            <a href="/book">IGCSE Economics</a>
-            <a href="/book">A-Level Economics</a>
+            <a href="/ib-economics">IB Economics SL/HL</a>
+            <a href="/igcse-economics">IGCSE Economics</a>
+            <a href="/alevel-economics">A-Level Economics</a>
             <a href="/book">IA &amp; EE Coaching</a>
             <a href="/book">Group Seminars</a>
           </nav>
@@ -1159,6 +1165,8 @@
 
       </div>
 
+      <p class="footer__notice">Pareto is an independent tutoring service. This work has been developed independently from and is not endorsed by the International Baccalaureate (IB). Pareto is not affiliated with or endorsed by Cambridge International, Pearson, AQA, OCR or the College Board. AP&reg; is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this website.</p>
+
       <div class="footer__bottom">
         <p class="footer__copy">© 2026 Pareto Economics. All rights reserved. · <a href="/privacy">Privacy</a> · <a href="#">Terms</a></p>
         <div class="footer__socials">
@@ -1174,7 +1182,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.0/dist/vanilla-tilt.min.js"></script>
-  <script src="animations.js?v=20261014g"></script>
+  <script src="animations.js?v=20261105a"></script>
 
   <!-- ======== LIVE NEWS LOADER ======== -->
   <script>

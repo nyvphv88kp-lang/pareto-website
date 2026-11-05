@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <title>Page not found — Pareto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <link rel="stylesheet" href="/style.css?v=20261105a" />
+  <style>
+    .nf { background: var(--navy); color: #fff; padding: calc(77px + 4.5rem) 0 5rem; }
+    .nf__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 400px); gap: 3rem; align-items: center; }
+    .nf h1 { color: #fff; font-size: clamp(2.3rem, 5vw, 3.6rem); line-height: 1.08; margin: 0 0 1.1rem; }
+    .nf p { color: rgba(255,255,255,.78); font-size: 1.05rem; line-height: 1.75; max-width: 46ch; margin: 0 0 2rem; }
+    .nf__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.6rem; }
+    .nf__link { color: #fff; font-weight: 600; font-size: 0.95rem; text-decoration: underline; text-underline-offset: 4px; }
+    .nf__link:hover { color: var(--gold-light); }
+    .nf a:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 3px; }
+    .nf__diagram { width: 100%; height: auto; display: block; }
+    @media (max-width: 820px) {
+      .nf { padding: calc(77px + 3rem) 0 3.5rem; }
+      .nf__grid { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
+      .nf__diagram { max-width: 320px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="/" class="nav__logo">Pareto<span>.</span></a>
+      <ul class="nav__links" role="list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/resources#student-resources" data-nav="students" title="Student resources">Students' Portal</a></li>
+        <li><a href="/resources#educator-hub" data-nav="teachers" title="Teacher resources">Educators Hub</a></li>
+      </ul>
+      <a href="/book" class="btn btn--primary nav__cta">Book a Session</a>
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" style="display:none;" role="menu">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/resources#student-resources" data-nav="students" title="Student resources">Students' Portal</a>
+      <a href="/resources#educator-hub" data-nav="teachers" title="Teacher resources">Educators Hub</a>
+      <a href="/book" class="btn btn--primary">Book a Session</a>
+    </div>
+  </nav>
+
+
+  <main class="nf" aria-labelledby="nf-heading">
+    <div class="container nf__grid">
+      <div>
+        <h1 id="nf-heading">This page doesn't exist.</h1>
+        <p>The address may be mistyped, or the page may have moved. Try one of these instead.</p>
+        <div class="nf__actions">
+          <a class="btn btn--primary" href="/">Go to the home page</a>
+          <a class="nf__link" href="/resources">Browse study resources</a>
+          <a class="nf__link" href="/book">Book a session</a>
+        </div>
+      </div>
+      <!-- A point beyond the Pareto frontier: the one place you can't reach -->
+      <svg class="nf__diagram" viewBox="0 0 360 300" aria-hidden="true" focusable="false">
+        <path d="M40 70 C150 70 270 150 290 260 H40 Z" fill="#c9a44a" fill-opacity=".1"/>
+        <path d="M40 20 V260 H340" fill="none" stroke="#fff" stroke-opacity=".4" stroke-width="1.5"/>
+        <path d="M40 70 C150 70 270 150 290 260" fill="none" stroke="#c9a44a" stroke-width="3" stroke-linecap="round"/>
+        <path d="M40 92 H290 V260" fill="none" stroke="#fff" stroke-opacity=".4" stroke-width="1" stroke-dasharray="4 5"/>
+        <circle cx="290" cy="92" r="7" fill="#e8c96a"/>
+        <text x="290" y="72" text-anchor="middle" fill="#fff" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600">You are here</text>
+      </svg>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__brand">
+          <div class="footer__logo-lockup">
+            <span class="footer__logo-name">Pareto</span>
+            <span class="footer__logo-bullet">●</span>
+            <span class="footer__logo-economics">Economics</span>
+          </div>
+          <p class="footer__brand-desc">Online Economics tuition for IB, IGCSE, A-Level and AP students. Excellence through insight.</p>
+        </div>
+
+        <div class="footer__col">
+          <p class="footer__col-title">Navigate</p>
+          <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/resources">Resources</a>
+            <a href="/book">Book a Session</a>
+          </nav>
+        </div>
+
+        <div class="footer__col">
+          <p class="footer__col-title">Programmes</p>
+          <nav>
+            <a href="/ib-economics">IB Economics SL/HL</a>
+            <a href="/igcse-economics">IGCSE Economics</a>
+            <a href="/alevel-economics">A-Level Economics</a>
+            <a href="/book">IA &amp; EE Coaching</a>
+            <a href="/book">Group Seminars</a>
+          </nav>
+        </div>
+
+        <div class="footer__col">
+          <p class="footer__col-title">Contact</p>
+          <nav>
+            <a href="mailto:info@paretoedu.org">info@paretoedu.org</a>
+            <span>By appointment</span>
+            <span>Online, worldwide</span>
+          </nav>
+        </div>
+
+      </div>
+
+      <p class="footer__notice">Pareto is an independent tutoring service. This work has been developed independently from and is not endorsed by the International Baccalaureate (IB). Pareto is not affiliated with or endorsed by Cambridge International, Pearson, AQA, OCR or the College Board. AP&reg; is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this website.</p>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 Pareto Economics. All rights reserved. · <a href="/privacy">Privacy</a> · <a href="#">Terms</a></p>
+        <div class="footer__socials">
+          <a href="https://www.instagram.com/paretoeducationorg/" class="footer__social-btn" aria-label="Pareto Education on Instagram" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="/animations.js?v=20261105a"></script>
+
+</body>
+</html>
