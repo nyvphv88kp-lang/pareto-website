@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 
   <!-- Site CSS -->
-  <link rel="stylesheet" href="style.css?v=20261105a" />
+  <link rel="stylesheet" href="style.css?v=20261105b" />
 
   <style>
     /* AOS fallback — prevent blank page if AOS fails to init */
@@ -131,6 +131,8 @@
       color: var(--text-muted);
     }
     .teacher-placeholder p { font-size: 0.9rem; line-height: 1.7; margin: 0; }
+    /* Keep buttons right-aligned on cards with no price label */
+    .resource-card__footer > .btn:only-child { margin-left: auto; }
   </style>
 </head>
 <body>
@@ -287,7 +289,7 @@
         <div class="resources-grid">
 
           <div class="resource-card" data-aos="fade-up" data-aos-delay="0">
-            <div class="resource-card__preview">📋</div>
+            <div class="resource-card__preview"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="M8.5 13l2.5 2.5 4.5-5"/></svg></div>
             <div class="resource-card__body">
               <div class="resource-card__tag">IB Economics · IA</div>
               <h4>IA Step-by-Step Checklist</h4>
@@ -300,7 +302,7 @@
           </div>
 
           <div class="resource-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="resource-card__preview">📊</div>
+            <div class="resource-card__preview"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 3v17h17"/><path d="M7 17 18 6"/><path d="M7 6l11 11"/></svg></div>
             <div class="resource-card__body">
               <div class="resource-card__tag">IB Economics · All Papers</div>
               <h4>Key Diagrams Reference Sheet</h4>
@@ -313,7 +315,7 @@
           </div>
 
           <div class="resource-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="resource-card__preview">📖</div>
+            <div class="resource-card__preview"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg></div>
             <div class="resource-card__body">
               <div class="resource-card__tag">IB Economics · Paper 1 &amp; 3</div>
               <h4>Command Terms Guide</h4>
@@ -336,52 +338,48 @@
         <div class="resources-grid">
 
           <div class="resource-card" data-aos="fade-up" data-aos-delay="0">
-            <div class="resource-card__preview resource-card__preview--blur">📝</div>
+            <div class="resource-card__preview"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
             <div class="resource-card__body">
               <div class="resource-card__tag">IB Economics · IA</div>
               <h4>IA Complete Guide</h4>
               <p>Full examiner-written guide: how to choose an article, structure your commentary, apply theory, and hit every mark band.</p>
               <div class="resource-card__footer">
-                <span class="resource-card__price">$35</span>
                 <a href="#coming-soon" class="btn btn--primary" style="padding:0.5rem 1rem; font-size:0.82rem;">Coming soon</a>
               </div>
             </div>
           </div>
 
           <div class="resource-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="resource-card__preview resource-card__preview--blur">🏆</div>
+            <div class="resource-card__preview resource-card__preview--premium"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
             <div class="resource-card__body">
               <div class="resource-card__tag">IB Economics · Extended Essay</div>
               <h4>Extended Essay Masterguide</h4>
               <p>From selecting a research question to structuring your argument and hitting the highest mark bands. Includes model extracts.</p>
               <div class="resource-card__footer">
-                <span class="resource-card__price">$45</span>
                 <a href="#coming-soon" class="btn btn--primary" style="padding:0.5rem 1rem; font-size:0.82rem;">Coming soon</a>
               </div>
             </div>
           </div>
 
           <div class="resource-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="resource-card__preview resource-card__preview--blur">📦</div>
+            <div class="resource-card__preview"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 12l10 5 10-5"/><path d="M2 17l10 5 10-5"/></svg></div>
             <div class="resource-card__body">
               <div class="resource-card__tag">IB Economics · Revision</div>
               <h4>IB Paper 1 Mastery Pack</h4>
               <p>Essay frameworks, model answers, diagram guides, and real-world example banks for every Paper 1 topic.</p>
               <div class="resource-card__footer">
-                <span class="resource-card__price">$30</span>
                 <a href="#coming-soon" class="btn btn--primary" style="padding:0.5rem 1rem; font-size:0.82rem;">Coming soon</a>
               </div>
             </div>
           </div>
 
           <div class="resource-card" data-aos="fade-up" data-aos-delay="300">
-            <div class="resource-card__preview resource-card__preview--blur">🌍</div>
+            <div class="resource-card__preview"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
             <div class="resource-card__body">
               <div class="resource-card__tag">IB Economics · Real World</div>
               <h4>Real-World Examples &amp; Policy Pack</h4>
               <p>Curated real-world examples and policy case studies for every IB Economics topic. Makes Paper 1 and Paper 3 much easier.</p>
               <div class="resource-card__footer">
-                <span class="resource-card__price">$25</span>
                 <a href="#coming-soon" class="btn btn--primary" style="padding:0.5rem 1rem; font-size:0.82rem;">Coming soon</a>
               </div>
             </div>
@@ -401,7 +399,7 @@
         <div class="resources-grid">
 
           <div class="resource-card" data-aos="fade-up">
-            <div class="resource-card__preview">📊</div>
+            <div class="resource-card__preview"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 3v17h17"/><path d="M7 17 18 6"/><path d="M7 6l11 11"/></svg></div>
             <div class="resource-card__body">
               <div class="resource-card__tag">IGCSE Economics · All Topics</div>
               <h4>Key Diagrams Reference Sheet</h4>
@@ -414,7 +412,7 @@
           </div>
 
           <div class="resource-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="resource-card__preview">✅</div>
+            <div class="resource-card__preview"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
             <div class="resource-card__body">
               <div class="resource-card__tag">IGCSE Economics · Exam Technique</div>
               <h4>IGCSE Exam Technique Guide</h4>
@@ -436,39 +434,36 @@
         <div class="resources-grid">
 
           <div class="resource-card" data-aos="fade-up">
-            <div class="resource-card__preview resource-card__preview--blur">📦</div>
+            <div class="resource-card__preview"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 12l10 5 10-5"/><path d="M2 17l10 5 10-5"/></svg></div>
             <div class="resource-card__body">
               <div class="resource-card__tag">IGCSE Economics · Full Revision</div>
               <h4>IGCSE Complete Revision Pack</h4>
               <p>Topic-by-topic notes, worksheets, model answers, and diagram practice for the entire IGCSE Economics syllabus.</p>
               <div class="resource-card__footer">
-                <span class="resource-card__price">$35</span>
                 <a href="#coming-soon" class="btn btn--primary" style="padding:0.5rem 1rem; font-size:0.82rem;">Coming soon</a>
               </div>
             </div>
           </div>
 
           <div class="resource-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="resource-card__preview resource-card__preview--blur">💡</div>
+            <div class="resource-card__preview"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7.5"/><path d="M21 21l-4.6-4.6"/></svg></div>
             <div class="resource-card__body">
               <div class="resource-card__tag">IGCSE Economics · Microeconomics</div>
               <h4>Microeconomics Worksheet Pack</h4>
               <p>Structured practice questions for supply &amp; demand, elasticity, market failure, and government intervention.</p>
               <div class="resource-card__footer">
-                <span class="resource-card__price">$15</span>
                 <a href="#coming-soon" class="btn btn--primary" style="padding:0.5rem 1rem; font-size:0.82rem;">Coming soon</a>
               </div>
             </div>
           </div>
 
           <div class="resource-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="resource-card__preview resource-card__preview--blur">🌐</div>
+            <div class="resource-card__preview"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 3v17h17"/><path d="M7.5 15.5l3.5-4 3 2.5 5-7"/></svg></div>
             <div class="resource-card__body">
               <div class="resource-card__tag">IGCSE Economics · Macroeconomics</div>
               <h4>Macroeconomics Worksheet Pack</h4>
               <p>Practice questions on economic growth, inflation, unemployment, trade, and development.</p>
               <div class="resource-card__footer">
-                <span class="resource-card__price">$15</span>
                 <a href="#coming-soon" class="btn btn--primary" style="padding:0.5rem 1rem; font-size:0.82rem;">Coming soon</a>
               </div>
             </div>
@@ -488,7 +483,7 @@
         <div class="resources-grid">
 
           <div class="resource-card" data-aos="fade-up">
-            <div class="resource-card__preview">📊</div>
+            <div class="resource-card__preview"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 3v17h17"/><path d="M7 17 18 6"/><path d="M7 6l11 11"/></svg></div>
             <div class="resource-card__body">
               <div class="resource-card__tag">A-Level Economics · Core</div>
               <h4>A-Level Key Diagrams Sheet</h4>
@@ -501,7 +496,7 @@
           </div>
 
           <div class="resource-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="resource-card__preview">📰</div>
+            <div class="resource-card__preview"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h8"/><path d="M8 9h2"/></svg></div>
             <div class="resource-card__body">
               <div class="resource-card__tag">A-Level Economics · Essay Skills</div>
               <h4>Essay Writing Framework</h4>
@@ -523,39 +518,36 @@
         <div class="resources-grid">
 
           <div class="resource-card" data-aos="fade-up">
-            <div class="resource-card__preview resource-card__preview--blur">📦</div>
+            <div class="resource-card__preview"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 12l10 5 10-5"/><path d="M2 17l10 5 10-5"/></svg></div>
             <div class="resource-card__body">
               <div class="resource-card__tag">A-Level Economics · Full</div>
               <h4>A-Level Complete Pack</h4>
               <p>Comprehensive notes, worksheets, model essays, and exam technique guide for the full A-Level Economics syllabus.</p>
               <div class="resource-card__footer">
-                <span class="resource-card__price">$40</span>
                 <a href="#coming-soon" class="btn btn--primary" style="padding:0.5rem 1rem; font-size:0.82rem;">Coming soon</a>
               </div>
             </div>
           </div>
 
           <div class="resource-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="resource-card__preview resource-card__preview--blur">💡</div>
+            <div class="resource-card__preview"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7.5"/><path d="M21 21l-4.6-4.6"/></svg></div>
             <div class="resource-card__body">
               <div class="resource-card__tag">A-Level Economics · Microeconomics</div>
               <h4>A-Level Micro Revision Pack</h4>
               <p>Detailed notes and practice for market structures, elasticity, welfare economics, and labour markets.</p>
               <div class="resource-card__footer">
-                <span class="resource-card__price">$20</span>
                 <a href="#coming-soon" class="btn btn--primary" style="padding:0.5rem 1rem; font-size:0.82rem;">Coming soon</a>
               </div>
             </div>
           </div>
 
           <div class="resource-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="resource-card__preview resource-card__preview--blur">🌐</div>
+            <div class="resource-card__preview"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 3v17h17"/><path d="M7.5 15.5l3.5-4 3 2.5 5-7"/></svg></div>
             <div class="resource-card__body">
               <div class="resource-card__tag">A-Level Economics · Macroeconomics</div>
               <h4>A-Level Macro Revision Pack</h4>
               <p>Covers national income, monetary policy, fiscal policy, exchange rates, and development economics with practice questions.</p>
               <div class="resource-card__footer">
-                <span class="resource-card__price">$20</span>
                 <a href="#coming-soon" class="btn btn--primary" style="padding:0.5rem 1rem; font-size:0.82rem;">Coming soon</a>
               </div>
             </div>
@@ -649,8 +641,8 @@
 
   <!-- ======== SCRIPTS ======== -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="animations.js?v=20261105a"></script>
-  <script src="coming-soon.js?v=20261105a"></script>
+  <script src="animations.js?v=20261105b"></script>
+  <script src="coming-soon.js?v=20261105b"></script>
   <script>
     function switchTab(tabId) {
       document.querySelectorAll('.tab-btn').forEach(btn => {
